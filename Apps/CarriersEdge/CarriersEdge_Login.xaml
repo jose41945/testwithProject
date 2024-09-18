@@ -1,0 +1,451 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="CarriersEdge_Login" this:CarriersEdge_Login.in_Site="FDG" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Site" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>2476,5763</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Top100_Get_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Numerics</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+      <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence sap2010:Annotation.AnnotationText="-Launch the Carrier's Edge &#xA;-Checking the Carrier's Edge Login Screen appeard or not&#xA;-Login to carrier's Edge based on the In-Site&#xA;-Throwing System Exception If any error occurs while Logging in" DisplayName="CarriersEdge Login" sap:VirtualizedContainerService.HintSize="2486,5698" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="bln_CariersEdgeLogin" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message-Start Login" sap:VirtualizedContainerService.HintSize="2424,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Start: CarriersEdge Login&quot;]" />
+    <ui:AddLogFields DisplayName="Add Log Fields - Application" sap:VirtualizedContainerService.HintSize="2424,122" sap2010:WorkflowViewState.IdRef="AddLogFields_1">
+      <ui:AddLogFields.Fields>
+        <InArgument x:TypeArguments="x:String" x:Key="Application">CarriersEdge</InArgument>
+      </ui:AddLogFields.Fields>
+    </ui:AddLogFields>
+    <TryCatch DisplayName="Try Catch if Carriersedge Failed to Launch" sap:VirtualizedContainerService.HintSize="2424,4957" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <Sequence DisplayName="Try Launch CarriersEdge" sap:VirtualizedContainerService.HintSize="2386,3792" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:String" Name="str_CarriersEdgeUrl" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign DisplayName="Assigning bool_CariersEdgeLogin to flase" sap:VirtualizedContainerService.HintSize="2324,114" sap2010:WorkflowViewState.IdRef="Assign_3">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Boolean">[bln_CariersEdgeLogin]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="CarriersEdge_URL" CacheStrategy="None" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="2324,175" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+            <ui:GetRobotAsset.Value>
+              <OutArgument x:TypeArguments="x:String">[str_CarriersEdgeUrl]</OutArgument>
+            </ui:GetRobotAsset.Value>
+          </ui:GetRobotAsset>
+          <uix:NApplicationCard AttachMode="SingleWindow" CloseMode="Never" DisplayName="Login Screen" sap:VirtualizedContainerService.HintSize="2324,3415" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="28b52b36-b232-43b0-af11-2ff8cd0a86a5" Version="V2" WindowResize="Maximize">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="2290,3175" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NCheckState DisplayName="Check App State 'Login_LoginButton'" sap:VirtualizedContainerService.HintSize="2228,3085" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="28b52b36-b232-43b0-af11-2ff8cd0a86a5" Version="V3">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Target appears-LaunchSuccessful" sap:VirtualizedContainerService.HintSize="1678,2843" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="x:String" Name="str_UserName" />
+                          <Variable x:TypeArguments="ss:SecureString" Name="sstr_Password" />
+                        </Sequence.Variables>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message - LaunchSuccessful" sap:VirtualizedContainerService.HintSize="1616,175" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Carriers Edge Launch Successful&quot;]" />
+                        <Assign DisplayName="Assigning bool_CariersEdgeLogin to True" sap:VirtualizedContainerService.HintSize="1616,114" sap2010:WorkflowViewState.IdRef="Assign_1">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Boolean">[bln_CariersEdgeLogin]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <ui:GetRobotCredential TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="&quot;CarriersEdge_Credentials_&quot;+in_Site" AssetName="[&quot;CarriersEdge_Credentials_&quot;+in_Site]" CacheStrategy="None" DisplayName="Get Credential from Asset" sap:VirtualizedContainerService.HintSize="1616,206" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[sstr_Password]" Username="[str_UserName]">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:GetRobotCredential>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1616,175" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Processing for the Site : &quot;+in_Site]" />
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Username'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="1616,286" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="28b52b36-b232-43b0-af11-2ff8cd0a86a5" Text="[str_UserName]" Version="V3">
+                          <uix:NTypeInto.Target>
+                            <uix:TargetAnchorable BrowserURL="https://www.carriersedge.com/login/" CVScreenId="d193de75-b8cc-4982-917a-eb31d09e5611" ContentHash="vVvbkZRYr0SnZaVp_9g3cA" CvElementArea="463, 329, 212, 34" CvType="InputBox" DesignTimeRectangle="741, 330, 210, 31" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='j_username' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='j_username' tag='INPUT' type='text' class='' placeholder='Username' aaname='' /&gt;" Guid="8ecb1656-2c42-4197-9460-c1473ef83623" InformativeScreenshot="3ca78518242b4155745e324e24d2d48e.png" Reference="AniWOyIB2EmcyKwwtqRJzg/syoh9b0eykCVDyBRx5jaHA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CarriersEdge Login - CarriersEdge' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                          </uix:NTypeInto.Target>
+                          <uix:NTypeInto.VerifyOptions>
+                            <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                              <uix:VerifyExecutionTypeIntoOptions.Retry>
+                                <InArgument x:TypeArguments="x:Boolean" />
+                              </uix:VerifyExecutionTypeIntoOptions.Retry>
+                              <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                <InArgument x:TypeArguments="x:Double" />
+                              </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                            </uix:VerifyExecutionTypeIntoOptions>
+                          </uix:NTypeInto.VerifyOptions>
+                        </uix:NTypeInto>
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Password'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="1616,286" sap2010:WorkflowViewState.IdRef="NTypeInto_2" IsPassword="True" ScopeIdentifier="28b52b36-b232-43b0-af11-2ff8cd0a86a5" SecureText="[sstr_Password]" Version="V3">
+                          <uix:NTypeInto.Target>
+                            <uix:TargetAnchorable BrowserURL="https://www.carriersedge.com/login/" CVScreenId="89a890a6-a297-484f-8710-0874fe7d3857" ContentHash="F8Awc_Q5EEGDdcbE4EEceA" CvElementArea="708, 329, 213, 34" CvType="InputBox" DesignTimeRectangle="986, 330, 210, 31" DesignTimeScaleFactor="1" ElementType="InputBoxPassword" FullSelectorArgument="&lt;webctrl id='j_password' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='j_password' tag='INPUT' type='password' class='' placeholder='Password' aaname='' /&gt;" Guid="60101518-cbd9-47d2-a41f-25c45e730616" InformativeScreenshot="15cb6c4f0332bdd7ac5462dfd2c8a662.png" Reference="AniWOyIB2EmcyKwwtqRJzg/vSYfTmItdUyqOIPjA9xUXg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CarriersEdge Login - CarriersEdge' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                          </uix:NTypeInto.Target>
+                          <uix:NTypeInto.VerifyOptions>
+                            <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                              <uix:VerifyExecutionTypeIntoOptions.Retry>
+                                <InArgument x:TypeArguments="x:Boolean" />
+                              </uix:VerifyExecutionTypeIntoOptions.Retry>
+                              <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                <InArgument x:TypeArguments="x:Double" />
+                              </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                            </uix:VerifyExecutionTypeIntoOptions>
+                          </uix:NTypeInto.VerifyOptions>
+                        </uix:NTypeInto>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Login'" sap:VirtualizedContainerService.HintSize="1616,225" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="28b52b36-b232-43b0-af11-2ff8cd0a86a5" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://www.carriersedge.com/login/" CVScreenId="a620479e-6074-40ba-be14-664dfe1e1317" ContentHash="5ofmxj9390-fuIY5v3YqqA" CvElementArea="838, 375, 83, 32" CvTextArea="860, 383, 36, 16" CvTextArgument="Login" CvType="Button" DesignTimeRectangle="839, 376, 80, 29" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl tag='BUTTON' type='' aaname='Login' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='' aaname='Login' class='btnLogin' check:text='Login' /&gt;" Guid="ca981680-1cf8-4a71-93c6-ba7a6e878154" InformativeScreenshot="bb196e0963c3d6b24fd7ea49514b58c5.png" Reference="AniWOyIB2EmcyKwwtqRJzg/lM4Yh02eDEKcmConK87Kig" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CarriersEdge Login - *' /&gt;" SearchSteps="Selector, CV" Version="V4" Visibility="Interactive" />
+                          </uix:NClick.Target>
+                          <uix:NClick.VerifyOptions>
+                            <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                              <uix:VerifyExecutionOptions.Retry>
+                                <InArgument x:TypeArguments="x:Boolean" />
+                              </uix:VerifyExecutionOptions.Retry>
+                              <uix:VerifyExecutionOptions.Timeout>
+                                <InArgument x:TypeArguments="x:Double" />
+                              </uix:VerifyExecutionOptions.Timeout>
+                            </uix:VerifyExecutionOptions>
+                          </uix:NClick.VerifyOptions>
+                        </uix:NClick>
+                        <uix:NApplicationCard AttachMode="SingleWindow" CloseMode="Never" DisplayName="Main Screen" sap:VirtualizedContainerService.HintSize="1616,1286" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" OpenMode="Never" ScopeGuid="9a510d43-1972-43df-9a2e-5b1b294d4a32" Version="V2">
+                          <uix:NApplicationCard.Body>
+                            <ActivityAction x:TypeArguments="x:Object">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                              </ActivityAction.Argument>
+                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1582,1044" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <uix:NCheckState DisplayName="Check App State 'Progress Header'" sap:VirtualizedContainerService.HintSize="1520,954" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="28b52b36-b232-43b0-af11-2ff8cd0a86a5" Version="V3">
+                                  <uix:NCheckState.IfExists>
+                                    <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,258" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,168" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;CarriersEdge Login Successful&quot;]" />
+                                    </Sequence>
+                                  </uix:NCheckState.IfExists>
+                                  <uix:NCheckState.IfNotExists>
+                                    <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="1016,712" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <uix:NCheckState DisplayName="Check App State 'Login_InvalidError'" sap:VirtualizedContainerService.HintSize="954,622" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="9a510d43-1972-43df-9a2e-5b1b294d4a32" Version="V3">
+                                        <uix:NCheckState.IfExists>
+                                          <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,380" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,175" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Error" Message="[&quot;Invalid User Name or Password for this site - &quot;+ in_Site]" />
+                                            <Throw Exception="[New SystemException(&quot;Failed login for Site &quot;+in_Site+&quot;, Invalid User Name or Password&quot;)]" sap:VirtualizedContainerService.HintSize="388,115" sap2010:WorkflowViewState.IdRef="Throw_6" />
+                                          </Sequence>
+                                        </uix:NCheckState.IfExists>
+                                        <uix:NCheckState.IfNotExists>
+                                          <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,380" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,175" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Error" Message="[&quot;Failed login for Site &quot;+in_Site+&quot;, could not find Progress Header on main screen&quot;]" />
+                                            <Throw Exception="[New SystemException(&quot;Failed login for Site &quot;+in_Site+&quot;, could not find Progress Header on main screen&quot;)]" sap:VirtualizedContainerService.HintSize="388,115" sap2010:WorkflowViewState.IdRef="Throw_5" />
+                                          </Sequence>
+                                        </uix:NCheckState.IfNotExists>
+                                        <uix:NCheckState.Target>
+                                          <uix:TargetAnchorable BrowserURL="https://www.carriersedge.com/ce/login.jsp?error=true" CVScreenId="1d3460b7-0cb8-4996-aa0b-6079d18e72d8" ContentHash="7rSyoNHI7EmljLZtuvpaXg" CvTextArea="463, 280, 292, 15" CvTextArgument="Invalid username and/or password, please try again." CvType="Text" DesignTimeRectangle="464, 280, 455, 15" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Invalid username and/or password, please try again.' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Invalid username and/or password, please try again.' tag='P' type='' class='' check:text='Invalid username and/or password, please try again.' /&gt;" Guid="28e2dfe4-c958-458e-a6c3-5b4b2a185455" InformativeScreenshot="bcfb74ead80029e17d98745746eb4553.png" Reference="AniWOyIB2EmcyKwwtqRJzg/ZKdKktqA2ku1ltqXtXsZng" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CarriersEdge Login *' /&gt;" SearchSteps="Selector, CV" Version="V4" Visibility="Interactive" />
+                                        </uix:NCheckState.Target>
+                                      </uix:NCheckState>
+                                    </Sequence>
+                                  </uix:NCheckState.IfNotExists>
+                                  <uix:NCheckState.Target>
+                                    <uix:TargetAnchorable BrowserURL="https://www.carriersedge.com/ce/carrier_administrator_home.html" ContentHash="NfyumnHX5Eubf_bYwNj0kQ" DesignTimeRectangle="1184, 135, 225, 77" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='A' aaname='Progress*' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='A' aaname='Progress*' type='' class='' check:text='Progress Report on activities &amp;amp; results' /&gt;" Guid="417b856c-daee-490e-962b-61f6efb37363" InformativeScreenshot="82174afc2bff1c82e96acba52cf89c14.png" Reference="AniWOyIB2EmcyKwwtqRJzg/UaT_A-WqUU2Wj9sZW9NgBA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Impact - * - CarriersEdge' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                                  </uix:NCheckState.Target>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </uix:NCheckState>
+                              </Sequence>
+                            </ActivityAction>
+                          </uix:NApplicationCard.Body>
+                          <uix:NApplicationCard.TargetApp>
+                            <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" ContentHash="ijETMRGrsEWEiZQRUXnKTw" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFvSURBVDhPldC9SwJxGAdwE4oQC7IlXOqIBu9OvdKQyCGJXmgLRLyjsGgKWlyCliA6HKMpevEl6MW9TYhehoig/oCIcAkiHEocfEmw788ewSOHX1/4wPk8Pl/0TK1SiksNnSCAB0ZgACxQ3/9JYwE2WIILeIUcfMALZCAEbUCXCPtAwwm4LSekyndSLFaT4hfk8VyuJKQadsw7+MFw3A4RuC7GpcTdlk+PRaYOosG59EZ49uxwNZB61EfT+X3nPcoKKDvH9zqaj2dgGfo/d71mq32lR3AsjDmcWlRyaRnIyW7tze8LXW0vTp9kd4ZT1ZQosGMRhqAPDP/LragNVpiHJ5ei1mSXVvJ6wg+T48EAK1gD9obrv6ZVmooG4RJqDMpi7MgMxjfaIlTAKJBlBXBEa75QAaNTwTGt+EMFfijAHo35QwV2eIZNGvOHCrrhBsI05g8VdMEpyDTmDxX0wjpYaMwfKrCBzJ7/HSow/1JNP/f82S1lQ3MTAAAAAElFTkSuQmCC" InformativeScreenshot="c96d67736efd2f4a34f4d0a9e7705529.jpg" Reference="AniWOyIB2EmcyKwwtqRJzg/cmlAl9OuiE-_vzRhBU290w" Selector="&lt;html app='chrome.exe' title='Impact - * - CarriersEdge' /&gt;" Title="Impact - KAG Food Products, LLC - CarriersEdge" Url="https://www.carriersedge.com/ce/*" />
+                          </uix:NApplicationCard.TargetApp>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NApplicationCard>
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not appear - LaunchFailed" sap:VirtualizedContainerService.HintSize="496,537" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message - Failed" sap:VirtualizedContainerService.HintSize="434,175" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Error" Message="[&quot;Failed Lauching Carriers Edge &quot;]" />
+                        <Assign DisplayName="Assigning bool_CariersEdgeLogin to False" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_2">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Boolean">[bln_CariersEdgeLogin]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <ui:KillProcess AppliesTo="{x:Null}" Process="{x:Null}" ContinueOnError="True" DisplayName="Kill Process - Application\Chrome" sap:VirtualizedContainerService.HintSize="434,158" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="mschrome" />
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="https://www.carriersedge.com/login/" CVScreenId="a620479e-6074-40ba-be14-664dfe1e1317" ContentHash="5ofmxj9390-fuIY5v3YqqA" CvElementArea="838, 375, 83, 32" CvTextArea="860, 383, 36, 16" CvTextArgument="Login" CvType="Button" DesignTimeRectangle="839, 376, 80, 29" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl tag='BUTTON' type='' aaname='Login' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='' aaname='Login' class='btnLogin' check:text='Login' /&gt;" Guid="ca981680-1cf8-4a71-93c6-ba7a6e878154" InformativeScreenshot="bb196e0963c3d6b24fd7ea49514b58c5.png" Reference="AniWOyIB2EmcyKwwtqRJzg/lM4Yh02eDEKcmConK87Kig" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CarriersEdge Login - *' /&gt;" SearchSteps="Selector, CV" Version="V4" Visibility="Interactive" />
+                    </uix:NCheckState.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NCheckState>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" ContentHash="qI0UnDnNy0W0gbeZs3P15w" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFvSURBVDhPldC9SwJxGAdwE4oQC7IlXOqIBu9OvdKQyCGJXmgLRLyjsGgKWlyCliA6HKMpevEl6MW9TYhehoig/oCIcAkiHEocfEmw788ewSOHX1/4wPk8Pl/0TK1SiksNnSCAB0ZgACxQ3/9JYwE2WIILeIUcfMALZCAEbUCXCPtAwwm4LSekyndSLFaT4hfk8VyuJKQadsw7+MFw3A4RuC7GpcTdlk+PRaYOosG59EZ49uxwNZB61EfT+X3nPcoKKDvH9zqaj2dgGfo/d71mq32lR3AsjDmcWlRyaRnIyW7tze8LXW0vTp9kd4ZT1ZQosGMRhqAPDP/LragNVpiHJ5ei1mSXVvJ6wg+T48EAK1gD9obrv6ZVmooG4RJqDMpi7MgMxjfaIlTAKJBlBXBEa75QAaNTwTGt+EMFfijAHo35QwV2eIZNGvOHCrrhBsI05g8VdMEpyDTmDxX0wjpYaMwfKrCBzJ7/HSow/1JNP/f82S1lQ3MTAAAAAElFTkSuQmCC" InformativeScreenshot="4f304eb9b6d7228c11b4a37cd71fcbad.jpg" Reference="AniWOyIB2EmcyKwwtqRJzg/bIfqYAE0kEiNnNxGgOkrbQ" Selector="&lt;html app='chrome.exe' title='CarriersEdge Login - CarriersEdge' /&gt;" Title="Interactive online training | CarriersEdge" Url="https://www.carriersedge.com/login/" />
+            </uix:NApplicationCard.TargetApp>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </uix:NApplicationCard>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="2390,444" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Catch Launch CarriersEdge" sap:VirtualizedContainerService.HintSize="416,374" sap2010:WorkflowViewState.IdRef="Sequence_13">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,173" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Error" Message="[&quot;CarriersEdge Login failed: &quot; &amp; exception.Message]" />
+              <Throw Exception="[New SystemException(&quot;CarriersEdge Login failed: &quot; &amp; exception.Message)]" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="Throw_4" />
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="2390,379" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="ui:BusinessRuleException">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Catch Launch CarriersEdge" sap:VirtualizedContainerService.HintSize="416,309" sap2010:WorkflowViewState.IdRef="Sequence_17">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,173" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Error" Message="[&quot;CarriersEdge Login failed: &quot; &amp; exception.Message]" />
+              <Rethrow sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <ui:RemoveLogFields DisplayName="Remove Log Fields - Application" sap:VirtualizedContainerService.HintSize="2424,122" sap2010:WorkflowViewState.IdRef="RemoveLogFields_1">
+      <ui:RemoveLogFields.Fields>
+        <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
+          <InArgument x:TypeArguments="x:String">Application</InArgument>
+        </scg:List>
+      </ui:RemoveLogFields.Fields>
+    </ui:RemoveLogFields>
+    <ui:LogMessage DisplayName="Log Message - End" sap:VirtualizedContainerService.HintSize="2424,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;End: CarriersEdge Login&quot;]" />
+  </Sequence>
+</Activity>

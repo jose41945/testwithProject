@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="R4gCp-viZ02ws0L-cN4_Og" Reference="AniWOyIB2EmcyKwwtqRJzg/Yn7oy00vpEqrS7fdYLcFhw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" CVScreenId="05e8bd6b-1587-4c36-8a11-1bdf4bd72667" CvTextArea="49, 34, 21, 12" CvTextArgument="Edit" CvType="Text" DesignTimeRectangle="43, 31, 34, 19" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;ctrl automationid='MenuBar' name='Application' role='menu bar' /&gt;&lt;ctrl name='Edit' role='menu item' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='MenuBar' name='Application' role='menu bar' /&gt;&lt;ctrl name='Edit' role='menu item' automationid='' check:text='Edit' /&gt;" Guid="abeca851-da3b-49a6-bc78-83e10484db3f" ScopeSelectorArgument="&lt;wnd app='tts_flm.exe' cls='FNWND*' title='File Maintenance' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="4d2fe096b41c10b58c200026f32b4037.png" xmlns="">0BVqwkB09g0ifbhiJ-3_mPA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

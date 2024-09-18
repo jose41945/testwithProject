@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="sQPw8SOHqEqEES0W97aQMA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="113, 94, 53, 35" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd aaname='OK' cls='Button' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='OK' cls='Button' title='&amp;amp;OK' check:text='unchecked' /&gt;" Guid="445c3ece-2468-471d-a615-a8ced6a5cdca" ImageBase64="" ScopeSelectorArgument="&lt;wnd app='tts_flm.exe' cls='FNWNS*' title='Error connecting to TMDatabase.cDatabaseSettings' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="88813edfd1418f27cb411ef390efde1f.png" xmlns="">0J0lukJ55CEmFesXpFz8yXA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

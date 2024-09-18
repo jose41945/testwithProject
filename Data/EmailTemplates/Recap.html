@@ -1,0 +1,211 @@
+﻿<!DOCTYPE html>
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<!--[if !mso]><!-- --><meta http-equiv="X-UA-Compatible" content="IE=edge"><!--<![endif]-->
+<title>Bot Recap</title>
+ <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Barlow Condensed">
+
+<!--[if gte mso 9]>
+<xml>
+<o:OfficeDocumentSettings>
+<o:AllowPNG/>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml>
+<![endif]-->
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+<style type="text/css">
+body{ margin:0; padding:0;}
+.large-icon{ font-size:100px; }
+.green-font{ color: #007A00; }
+.red-font{ color: #7A0000 ; }
+.yellow-font{ color: #E1E100 ; }
+.good-icon{ content: "\2713"; }
+.table{ width:950px !important;}
+
+/**** Set the "border" color (bgcolorDark) and "fill" (bgcolorLight) color here!  It will also need to be updated in the CSS section labeled "ACTION CONTENT" ****/
+.bgcolorDark{background:#004068;}
+.bgcolorLight{background: #00ACC4;}
+
+
+.row-header{background: #D8D8D8;}
+.green-row{ background:#C6EFCE;}
+.yellow-row{background: #FFEB9C;}
+.red-row{background: #FFC7CE;}
+.datacell-header{border-bottom: 1px solid #000000;border-right: 1px solid #000000;padding: 3px;text-align: center;}
+.datacell-row{border-bottom: 1px solid #000000;border-right: 1px solid #000000;padding: 3px;text-align: left;}
+.datacell-icon{border-bottom: 1px solid #000000;border-right: 1px solid #000000;padding: 3px;text-align: center;font-size: 14;}
+table {
+  border-collapse: collapse;
+}
+
+/**** ACTION CONTENT ****/
+#action-row{height: 100%;}
+/**** background should match bgcolorLight ****/
+table.action-block{table-layout: fixed; font-family:Lato,sans-serif; font-size:10.5pt; background: #00ACC4;}
+/**** background should match bgcolorDark ****/
+table.action-block .action-spacer{width: 18px; background: #004068;}
+table.action-block .action-header-container {font-size: 20px; font-weight: 500; text-align: center;}
+table.action-block .action-header {width: 32%; font-size: 20px; font-weight: 500; text-align: center; padding: 10px 10px 0px 10px}
+
+/**** To update the height of the content boxes at the bottom of the email, change the height property in the below line ****/
+table.action-block .action-content {height: 150px; padding: 10px 10px 10px 10px; vertical-align: top}
+
+@media only screen and (max-width: 850px) {
+	
+	.table{ width:100% !important;}
+	.banner{ height:auto; display:block; width:100% !important;}
+	.break{ display:block; width:100% !important;}
+	}
+
+
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+</head>
+
+<body>
+<table bgcolor="#ffffff" width="100%" border="0" cellspacing="10px" cellpadding="0">
+  <tr>
+    <td valign="top">
+    	<table class="table" width="950" cellpadding="0" cellspacing="0" border="0"  align="center">
+            <tr>
+            	<td class="bgcolorDark">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0"  align="center">
+                        <tr>
+                        	<td style="padding: 18px 18px 18px 18px ;">
+								<table width="100%" cellpadding="0" cellspacing="0" border="0"  align="center">					
+									<tr> <!-- Summary Row -->
+										<td class="bgcolorDark" width="90%" style="padding: 0 0 0 0 ;">
+											<table width="100%" cellpadding="0" cellspacing="0" border="0"  align="center">
+												<tr>
+													<td style="padding: 0 0 0 0 ;">
+														<table width="100%" cellpadding="0" cellspacing="0" border="0"  align="center">
+															<tr>
+																<td class="bgcolorLight" style="padding: 18px 18px 0 18px;">
+																	<table width="100%" cellpadding="0" cellspacing="0" border="0"  align="center">
+																		<tr>
+																			<!--Update the width of the logo image here-->
+																			<td width="118px"><img src='{{LogoBase64}}'/></td>
+																			<td valign="middle" style="font-family:Barlow Condensed ,sans-serif; font-size:45px;"><strong>Bot Recap</strong></td>
+																			{{OI}}
+																			
+																		</tr>
+																	</table>
+																</td>
+																<td class="bgcolorLight" valign="top" width="350px" style="padding: 18px 18px 0 18px;text-align:right;">
+																	<table width="100%" cellpadding="0" cellspacing="0" border="0"  align="center">
+																		<tr>
+																			<td valign="top">
+																				<table width="100%" cellpadding="0" cellspacing="0" border="0"  align="center" style="font-family:Lato,sans-serif; font-size:15px;">
+																					<tr>
+																						<td style="text-align:right"><strong>Process:&nbsp;</strong></td><td>{{Process}}</td>
+																					</tr>
+																					<tr>
+																						<td style="text-align:right"><strong>Action:&nbsp;</strong></td><td>{{Action}}</td>
+																					</tr>
+																					<tr>
+																						<td style="text-align:right"><strong>Environment:&nbsp;</strong></td><td>{{Framework_Environment}}</td>
+																					</tr>
+																					<tr>
+																						<td style="text-align:right"><strong>Job ID:&nbsp;</strong></td><td><a href="{{JobLogURL}}">{{JobID}}</a></td>
+																					</tr>
+																					<tr>
+																						<td style="text-align:right"><strong>Transaction Count:&nbsp;</strong></td><td>{{T_TotalCount}}</td>
+																					</tr>
+																					<tr>
+																						<td style="text-align:right"><strong>Success:&nbsp;</strong></td><td class="green-font">{{T_SuccessCount}}</td>
+																					</tr>
+																					<tr>
+																						<td style="text-align:right"><strong>BE:&nbsp;</strong></td><td class="yellow-font">{{T_BECount}}</td>
+																					</tr>
+																					<tr>
+																						<td style="text-align:right"><strong>SE:&nbsp;</strong></td><td class="red-font">{{T_SECount}}</td>
+																					</tr>
+																					{{QueueStats_Chunk}}
+																				</table>
+																			</td>
+																		</tr>
+																	</table>
+																</td>
+															</tr>
+															<tr>
+																<td  class="bgcolorLight" colspan="5" style="font-family:Lato,sans-serif; font-size:10.5pt;padding: 18px;">
+Here you will find a summary of the most recent run ofthe automated process ACME Performer. To the right you will 
+find stats summarizing the run and below you will find a detailed listing of all the transactions impacted by the run. In 
+the 3 footer sections there are brief explanations of what RPA is, what this particular bot is, and what actions need to 
+be taken from this recap. If you have any questions you can reply to this email or contact replyto@client.com . 
+<strong>All information for these transactions and more can be found at the report located here: ACME Report</strong>
+																</td>
+															</tr>
+														</table>
+													</td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+									<tr> <!-- Report Title Row -->
+										<td class="bgcolorDark" width="90%" style="padding: 18px 0 18px 0 ;">
+											<table width="100%" cellpadding="0" cellspacing="0" border="0"  align="center">
+												<td class="bgcolorLight" style="font-family:Lato,sans-serif; font-size:9pt;padding: 18px;">
+{{NonTransactionSE}}
+										<!--</td>
+									</tr>
+									<tr>
+										<td class="bgcolorLight">-->
+											{{DatatableHTML}}
+												</td>
+											</table>
+										</td>
+									</tr> 
+									<tr id="action-row"> <!-- Actions Row -->
+										<td class="bgcolorDark">
+											<table width="100%" cellpadding="0" cellspacing="0" border="0" class="action-block">
+												<tr class="action-header-container">
+													<td class="action-header">What is RPA?</td>
+													<td class="action-spacer"></td> <!--space-->
+													<td class="action-header">What is this bot?</td>
+													<td class="action-spacer"></td> <!--space-->
+													<td class="action-header">Action Needed</td>
+												</tr>
+												<tr class="action-content">
+    											    <td class="action-content">
+    											        <strong>Robotic Process Automation (RPA)</strong> 
+    											        is a technology that uses software robots to automate repetitive and manual tasks in business processes.  RPA robots mimic the way people interact with applications, empowering us to increase efficiency and accuracy, while freeing up individuals to focus on the higher-value tasks that only people can do.
+												    </td>
+												    <td class="action-spacer"></td> <!--space-->
+    											    <td class="action-content">
+    											        <strong>Lorem Ipsum</strong>
+    											        is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+												    </td>
+												    <td class="action-spacer"></td> <!--space-->
+    											    <td class="action-content">
+    											        <strong>Lorem Ipsum</strong>
+    											        is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+												    </td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+								</table>
+                            </td>
+                        </tr>
+                	</table>
+                </td>
+            </tr>
+        </table>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

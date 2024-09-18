@@ -1,0 +1,15 @@
+﻿{
+  "Name": "TMWMain",
+  "Type": "Screen",
+  "Id": "KIivtsH74EujIxeBSN5JVA",
+  "Reference": "AniWOyIB2EmcyKwwtqRJzg/KIivtsH74EujIxeBSN5JVA",
+  "ParentRef": "AniWOyIB2EmcyKwwtqRJzg/x3pEIUxbQkCj7E7j9Z_aUg",
+  "Created": "2024-08-14T21:04:32.6036211Z",
+  "Updated": "2024-08-15T20:26:14.0426377Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

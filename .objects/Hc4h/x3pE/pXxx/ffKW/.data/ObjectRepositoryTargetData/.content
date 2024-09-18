@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="gsflPl5BgEOdpg_pjt-qzA" Reference="AniWOyIB2EmcyKwwtqRJzg/ffKW-GPS-U-7K0hN0CgH6A" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="979, 489, 55, 13" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;wnd cls='pbdw???' /&gt;&lt;ctrl name='compute_1' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd cls='FNWND*' title='Find Drivers' /&gt;&lt;wnd cls='pbdw110' /&gt;&lt;ctrl name='compute_1' role='text' automationid='' /&gt;" Guid="02e53164-e834-4193-ac10-40670b864af2" ImageBase64="" ScopeSelectorArgument="&lt;wnd app='tts_flm.exe' cls='FNWND*' title='File Maintenance' /&gt;&lt;wnd cls='FNWND*' title='Find Drivers' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="22456f033a9d8064bcfcbea2e5031c55.png" xmlns="">05LUTD3wuk0epn8w_OhJ1fA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

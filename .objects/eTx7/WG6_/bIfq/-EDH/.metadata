@@ -1,0 +1,17 @@
+﻿{
+  "Name": "Login_WelcomeText",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "-EDH58_hdkaGpk4x7j8pVA",
+  "Reference": "AniWOyIB2EmcyKwwtqRJzg/-EDH58_hdkaGpk4x7j8pVA",
+  "ParentRef": "AniWOyIB2EmcyKwwtqRJzg/bIfqYAE0kEiNnNxGgOkrbQ",
+  "Created": "2024-08-21T18:55:23.2984931Z",
+  "Updated": "2024-08-21T18:56:45.1719705Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

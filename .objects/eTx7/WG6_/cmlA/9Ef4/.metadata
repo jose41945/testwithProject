@@ -1,0 +1,17 @@
+﻿{
+  "Name": "Certificates_Table",
+  "Type": "Element",
+  "TaxonomyType": "Table",
+  "Id": "9Ef4JJlyyEKA78bRwLysCg",
+  "Reference": "AniWOyIB2EmcyKwwtqRJzg/9Ef4JJlyyEKA78bRwLysCg",
+  "ParentRef": "AniWOyIB2EmcyKwwtqRJzg/cmlAl9OuiE-_vzRhBU290w",
+  "Created": "2024-09-04T21:12:53.4975463Z",
+  "Updated": "2024-09-11T18:00:15.8915832Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

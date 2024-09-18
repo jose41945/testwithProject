@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="_mPGRpwaAUuqr-7e2-JVUA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="1841, 218, 68, 23" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd aaname='Profile' cls='Button' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Profile' cls='Button' title='P&amp;amp;rofile' check:text='unchecked' /&gt;" Guid="e0f53238-d493-45e2-89df-58d771625115" ImageBase64="" ScopeSelectorArgument="&lt;wnd app='tts_flm.exe' cls='FNWND*' title='File Maintenance' /&gt;&lt;wnd cls='FNWND*' title='Find Drivers' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="01938bf36dd8ac2ea90c945c48d1cb9d.png" xmlns="">0l50RyBJYTUCsaZDco0r18Q</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

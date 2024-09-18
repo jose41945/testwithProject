@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="dF2F7BvXCEO6aQuNQUZGig" Reference="AniWOyIB2EmcyKwwtqRJzg/qfuF4zXCA0qt3ugX0_855Q" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="https://www.carriersedge.com/ce/carrier_administrator_home.html" CVScreenId="bd4cb055-9382-4191-8537-d2d11153ae6f" CvTextArea="283, 576, 69, 13" CvTextArgument="Unselect All" CvType="Text" DesignTimeRectangle="284, 575, 68, 16" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='A' aaname='Unselect All' /&gt;" FuzzyAccuracy="0.99" FuzzySelectorArgument="&lt;webctrl tag='A' aaname='Unselect All' type='' class='unselectAll' check:text='Unselect All' /&gt;" Guid="9757df5d-515b-4b4b-b4c5-b965ea596d5a" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Impact - * - CarriersEdge' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Visible" WaitForReadyArgument="Complete">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target DesignTimeRectangle="224, 371, 367, 16" ElementType="Text" FullSelectorArgument="&lt;webctrl class='moduleGroup' tag='DIV' innertext='Required Programs' /&gt;" FuzzySelectorArgument="&lt;webctrl class='moduleGroup' tag='DIV' innertext='Required Programs' type='' aaname='Required Programs' check:text='Required Programs' /&gt;" Guid="975b3483-915d-46c3-8b91-577ad9c72c92" SearchSteps="Selector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="4a0456b032406d4d6a2f9ec6c1151c9b.png" xmlns="">0TJ5PHGlFd0y1qPA1lpeXaQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

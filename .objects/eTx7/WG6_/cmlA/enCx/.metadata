@@ -1,0 +1,17 @@
+﻿{
+  "Name": "Cancel_Certificate",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "enCxgh3pgEyU1zhSeIkm3Q",
+  "Reference": "AniWOyIB2EmcyKwwtqRJzg/enCxgh3pgEyU1zhSeIkm3Q",
+  "ParentRef": "AniWOyIB2EmcyKwwtqRJzg/cmlAl9OuiE-_vzRhBU290w",
+  "Created": "2024-08-21T20:45:00.1076009Z",
+  "Updated": "2024-09-04T21:26:19.1700029Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,17 @@
+﻿{
+  "Name": "Program_UnselectAll",
+  "Type": "Element",
+  "TaxonomyType": "Link",
+  "Id": "qfuF4zXCA0qt3ugX0_855Q",
+  "Reference": "AniWOyIB2EmcyKwwtqRJzg/qfuF4zXCA0qt3ugX0_855Q",
+  "ParentRef": "AniWOyIB2EmcyKwwtqRJzg/cmlAl9OuiE-_vzRhBU290w",
+  "Created": "2024-08-21T19:07:45.8035012Z",
+  "Updated": "2024-08-21T19:12:43.5251483Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

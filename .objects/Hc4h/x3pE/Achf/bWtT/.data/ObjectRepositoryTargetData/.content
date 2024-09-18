@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="wlzKzFNUJkq-FRJSPA4CjQ" Reference="AniWOyIB2EmcyKwwtqRJzg/bWtT8BD6S0G2fnu9jFzKtg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="94, 182, 116, 15" DesignTimeScaleFactor="1" ElementType="ListItem" FullSelectorArgument="&lt;wnd cls='pbdw110' /&gt;&lt;ctrl name='drv_id' role='drop down' /&gt;" FuzzySelectorArgument="&lt;wnd cls='FNWND*' title='Driver File Maintenance' /&gt;&lt;wnd cls='pbdw110' /&gt;&lt;ctrl name='drv_id' role='drop down' automationid='' /&gt;" Guid="3cebf5f7-a8d8-4b8a-85d7-98e2deb5719f" ScopeSelectorArgument="&lt;wnd app='tts_flm.exe' cls='FNWND*' title='File Maintenance' /&gt;&lt;wnd cls='FNWND*' title='*Driver File Maintenance*' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="5c8d792b3c96be1f55a1fbee032c2fe8.png" xmlns="">0jcyqCtO0F0OPgaTDoseEIA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

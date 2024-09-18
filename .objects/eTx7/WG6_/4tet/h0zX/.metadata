@@ -1,0 +1,16 @@
+﻿{
+  "Name": "DownloadPDF_Print",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "h0zXpp42yUaWBQadpze5_Q",
+  "Reference": "AniWOyIB2EmcyKwwtqRJzg/h0zXpp42yUaWBQadpze5_Q",
+  "ParentRef": "AniWOyIB2EmcyKwwtqRJzg/4tetOCRoS0aJ4WFdD9rZSA",
+  "Created": "2024-08-21T20:39:59.9215995Z",
+  "Updated": "2024-09-02T04:56:18.259812Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

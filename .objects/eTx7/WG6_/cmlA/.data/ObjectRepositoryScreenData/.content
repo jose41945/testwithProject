@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryScreenData ContentHash="ijETMRGrsEWEiZQRUXnKTw" Reference="AniWOyIB2EmcyKwwtqRJzg/cmlAl9OuiE-_vzRhBU290w" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryScreenData.Data>
+    <TargetApp x:Key="TargetApp" Area="0, 0, 0, 0" BrowserType="Chrome" ContentHash="697geY70jUWgXsxPAVNAIw" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFvSURBVDhPldC9SwJxGAdwE4oQC7IlXOqIBu9OvdKQyCGJXmgLRLyjsGgKWlyCliA6HKMpevEl6MW9TYhehoig/oCIcAkiHEocfEmw788ewSOHX1/4wPk8Pl/0TK1SiksNnSCAB0ZgACxQ3/9JYwE2WIILeIUcfMALZCAEbUCXCPtAwwm4LSekyndSLFaT4hfk8VyuJKQadsw7+MFw3A4RuC7GpcTdlk+PRaYOosG59EZ49uxwNZB61EfT+X3nPcoKKDvH9zqaj2dgGfo/d71mq32lR3AsjDmcWlRyaRnIyW7tze8LXW0vTp9kd4ZT1ZQosGMRhqAPDP/LragNVpiHJ5ei1mSXVvJ6wg+T48EAK1gD9obrv6ZVmooG4RJqDMpi7MgMxjfaIlTAKJBlBXBEa75QAaNTwTGt+EMFfijAHo35QwV2eIZNGvOHCrrhBsI05g8VdMEpyDTmDxX0wjpYaMwfKrCBzJ7/HSow/1JNP/f82S1lQ3MTAAAAAElFTkSuQmCC" Reference="AniWOyIB2EmcyKwwtqRJzg/cmlAl9OuiE-_vzRhBU290w" Selector="&lt;html app='chrome.exe' title='Impact - * - CarriersEdge' /&gt;" Title="Impact - KAG Food Products, LLC - CarriersEdge" Url="https://www.carriersedge.com/ce/*">
+      <imageRef attrName="InformativeScreenshot" originalValue="c96d67736efd2f4a34f4d0a9e7705529.jpg" xmlns="">0PD6xmjFGm0qI5t5pyR7hwA</imageRef>
+    </TargetApp>
+  </ObjectRepositoryScreenData.Data>
+</ObjectRepositoryScreenData>

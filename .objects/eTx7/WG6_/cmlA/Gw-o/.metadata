@@ -1,0 +1,17 @@
+﻿{
+  "Name": "Period_Week",
+  "Type": "Element",
+  "TaxonomyType": "Link",
+  "Id": "Gw-o5Li3Y0qx65NzdnH5UQ",
+  "Reference": "AniWOyIB2EmcyKwwtqRJzg/Gw-o5Li3Y0qx65NzdnH5UQ",
+  "ParentRef": "AniWOyIB2EmcyKwwtqRJzg/cmlAl9OuiE-_vzRhBU290w",
+  "Created": "2024-08-21T19:08:14.0422513Z",
+  "Updated": "2024-08-21T19:13:43.5909362Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

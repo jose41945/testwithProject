@@ -1,0 +1,93 @@
+{
+  "version": "2.0",
+  "resources": [
+    {
+      "resource": "asset",
+      "value": {
+        "name": {
+          "defaultValue": "CarriersEdge_URL",
+          "isExpression": false
+        }
+      },
+      "metadata": {}
+    },
+    {
+      "resource": "asset",
+      "value": {
+        "folderPath": {
+          "defaultValue": "Shared",
+          "isExpression": false
+        }
+      },
+      "metadata": {}
+    },
+    {
+      "resource": "asset",
+      "value": {
+        "name": {
+          "defaultValue": "Mail_SharedMailbox",
+          "isExpression": false
+        }
+      },
+      "metadata": {}
+    },
+    {
+      "resource": "Connection",
+      "key": "5dfc7488-fc65-497e-9360-47247a0345de",
+      "value": {
+        "ConnectionId": {
+          "defaultValue": "5dfc7488-fc65-497e-9360-47247a0345de",
+          "isExpression": false,
+          "displayName": "Connection",
+          "description": "The connection to be used"
+        }
+      },
+      "metadata": {
+        "BindingsVersion": "2.1",
+        "Connector": "uipath-microsoft-outlook365",
+        "UseConnectionService": "True"
+      }
+    },
+    {
+      "resource": "asset",
+      "value": {
+        "name": {
+          "defaultValue": "Framework_LogDB_ConnStr",
+          "isExpression": false
+        }
+      },
+      "metadata": {}
+    },
+    {
+      "resource": "asset",
+      "value": {
+        "name": {
+          "defaultValue": "Framework_LogDB_Provider",
+          "isExpression": false
+        }
+      },
+      "metadata": {}
+    },
+    {
+      "resource": "asset",
+      "value": {
+        "name": {
+          "defaultValue": "Framework_Environment",
+          "isExpression": false
+        }
+      },
+      "metadata": {}
+    },
+    {
+      "resource": "queue",
+      "value": {
+        "folderPath": {
+          "defaultValue": "Shared/Safety",
+          "isExpression": false,
+          "displayName": "Folder Path"
+        }
+      },
+      "metadata": {}
+    }
+  ]
+}

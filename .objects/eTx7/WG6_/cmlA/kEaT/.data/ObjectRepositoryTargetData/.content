@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="elfUW519w0Cn68Wzm8qvYw" Reference="AniWOyIB2EmcyKwwtqRJzg/kEaTiml9JkW_1M7NRl72dw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="https://www.carriersedge.com/ce/carrier_administrator_home.html" CVScreenId="da14f1d7-1750-429d-9950-be5554c4806d" CvElementArea="681, 683, 82, 31" CvTextArea="690, 691, 63, 13" CvTextArgument="Download" CvType="Button" DesignTimeRectangle="682, 684, 80, 29" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='Download' parentid='*' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Download' parentid='*' tag='BUTTON' type='' class='btnDownload' check:text='Download' /&gt;" Guid="d0bc275d-3228-4b07-9035-d8c487096bd0" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Impact - *' /&gt;" SearchSteps="Selector, CV" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="69128f3c12663da51359b26d95d950b7.png" xmlns="">0MzeMTLRMCECaAhgEcOKYVw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

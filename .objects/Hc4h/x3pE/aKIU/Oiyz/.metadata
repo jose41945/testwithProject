@@ -1,0 +1,16 @@
+﻿{
+  "Name": "DynamicExpiration_Selected",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Id": "OiyzfDd7OES8VVKuBmOT5w",
+  "Reference": "AniWOyIB2EmcyKwwtqRJzg/OiyzfDd7OES8VVKuBmOT5w",
+  "ParentRef": "AniWOyIB2EmcyKwwtqRJzg/aKIUbm_0l0ySLUPtx6LoKQ",
+  "Created": "2024-08-15T21:31:33.7311717Z",
+  "Updated": "2024-08-16T02:42:38.7449806Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

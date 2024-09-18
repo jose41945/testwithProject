@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="uCfAJkRTxkiQjYGLjnX86Q" Reference="AniWOyIB2EmcyKwwtqRJzg/h0zXpp42yUaWBQadpze5_Q" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="https://www.carriersedge.com/ce/rest_api/certificates/download?id=11420577&amp;wallet=false&amp;walletWithSignature=false" DesignTimeRectangle="1254, 107, 32, 32" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;ctrl name='download' role='document' /&gt;&lt;ctrl name='Download' role='push button' /&gt;&lt;ctrl role='grouping' /&gt;" FuzzySelectorArgument="&lt;ctrl name='download' role='document' /&gt;&lt;ctrl name='Download' role='push button' /&gt;&lt;ctrl role='grouping' automationid='' /&gt;" Guid="559cc272-36f2-4606-ba3b-da3e46a7a065" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='download - Google Chrome' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="a7ebc192dedd919e605a612ef98ab50e.png" xmlns="">0XVz1-nGwz0CIHUWP5pNKFw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="PSYsZRCfKEWReo06R6MOEw" Reference="AniWOyIB2EmcyKwwtqRJzg/awcS2OODc0Kn9QtpvynCIw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="1841, 169, 68, 23" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd aaname='Retrieve' cls='Button' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Retrieve' cls='Button' title='Re&amp;amp;trieve' check:text='unchecked' /&gt;" Guid="2d4f3057-e1a9-4efd-a433-2b623a0a2dd1" ImageBase64="" ScopeSelectorArgument="&lt;wnd app='tts_flm.exe' cls='FNWND*' title='File Maintenance' /&gt;&lt;wnd cls='FNWND*' title='Find Drivers' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="4124b82576acd43aa06d35589835c7e1.png" xmlns="">0mi3qI_kKykmrbqHvak1WdA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

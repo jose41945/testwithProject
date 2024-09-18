@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="vVvbkZRYr0SnZaVp_9g3cA" Reference="AniWOyIB2EmcyKwwtqRJzg/syoh9b0eykCVDyBRx5jaHA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="https://www.carriersedge.com/login/" CVScreenId="d193de75-b8cc-4982-917a-eb31d09e5611" CvElementArea="463, 329, 212, 34" CvType="InputBox" DesignTimeRectangle="741, 330, 210, 31" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='j_username' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='j_username' tag='INPUT' type='text' class='' placeholder='Username' aaname='' /&gt;" Guid="8ecb1656-2c42-4197-9460-c1473ef83623" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CarriersEdge Login - CarriersEdge' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="3ca78518242b4155745e324e24d2d48e.png" xmlns="">0W1YdqFZGW0axS7bwZFxcJA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

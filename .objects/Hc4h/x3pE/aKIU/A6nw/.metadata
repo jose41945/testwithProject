@@ -1,0 +1,16 @@
+﻿{
+  "Name": "DynamicExpirationDateAlt",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Id": "A6nw_Ss0R0qTQtm4qjtKXA",
+  "Reference": "AniWOyIB2EmcyKwwtqRJzg/A6nw_Ss0R0qTQtm4qjtKXA",
+  "ParentRef": "AniWOyIB2EmcyKwwtqRJzg/aKIUbm_0l0ySLUPtx6LoKQ",
+  "Created": "2024-08-19T20:54:06.3708294Z",
+  "Updated": "2024-08-19T20:55:02.3292953Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

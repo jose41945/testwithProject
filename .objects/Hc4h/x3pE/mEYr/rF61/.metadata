@@ -1,0 +1,16 @@
+﻿{
+  "Name": "DriverProfile_Close",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Id": "rF61_7T9C0SagYNjIlqDbQ",
+  "Reference": "AniWOyIB2EmcyKwwtqRJzg/rF61_7T9C0SagYNjIlqDbQ",
+  "ParentRef": "AniWOyIB2EmcyKwwtqRJzg/mEYrwYwvvUOS8e_MDRpRbA",
+  "Created": "2024-08-15T19:17:37.6779882Z",
+  "Updated": "2024-08-15T19:18:03.2729254Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

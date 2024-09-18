@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="W_ETBPfI9Uuf4pSdn6a3Lw" Reference="AniWOyIB2EmcyKwwtqRJzg/dIlv1dEdF0K_xGgjtrbukw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="https://www.carriersedge.com/ce/carrier_administrator_home.html" CVScreenId="dcc44975-e2a1-4c4f-a426-d26e3ba9084b" CvElementArea="590, 379, 16, 16" CvType="CheckBox" DesignTimeRectangle="874, 380, 13, 13" DesignTimeScaleFactor="1" ElementType="CheckBox" FullSelectorArgument="&lt;webctrl id='showUsernames' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='showUsernames' tag='INPUT' type='checkbox' class='' aaname='Include usernames as well' /&gt;" Guid="f77e4a41-11ad-4e85-8e3f-c51cd9936ad5" ImageBase64="" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Impact - * - CarriersEdge' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="9f592564e3a0d9a1de9637329311ad01.png" xmlns="">0ekBSNz8TNU64vzt-CgMbyw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="FtT_5OFUC0-B399uEPCB5Q" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" CVScreenId="4db83cb9-9598-41e7-b085-d16414e275e5" CvElementArea="466, 166, 34, 20" CvType="MinimizeButton" DesignTimeRectangle="467, 167, 32, 18" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd cls='FNWND*' title='Find Drivers' /&gt;&lt;ctrl name='Minimize' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd cls='FNWND*' title='Find Drivers' /&gt;&lt;ctrl name='Minimize' role='push button' automationid='' check:text='Minimize' /&gt;" Guid="7b208291-8946-483c-9cce-7e11f878eed4" ScopeSelectorArgument="&lt;wnd app='tts_flm.exe' cls='FNWND*' title='File Maintenance' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="104d10118b8f25b985ef6d9511593431.png" xmlns="">0SkATJHfTxE-s75hbVOdyzA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

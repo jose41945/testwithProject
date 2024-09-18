@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="jwx6my_v6kmpVgSzCmH0Xw" Reference="AniWOyIB2EmcyKwwtqRJzg/35BnsiNX30GjFyKJMhtEhg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="43, 94, 53, 35" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd aaname='Yes' cls='Button' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Yes' cls='Button' check:text='unchecked' /&gt;" Guid="68e61a68-9d6b-42a9-874d-fc0d8f2e595e" ImageBase64="" ScopeSelectorArgument="&lt;wnd app='tts_flm.exe' cls='FNWNS*' title='TMW SPG*' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="c1e76ace20608455c00791bf5506c098.png" xmlns="">0ezW9bkRd0EuLzF8zJsHZsg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

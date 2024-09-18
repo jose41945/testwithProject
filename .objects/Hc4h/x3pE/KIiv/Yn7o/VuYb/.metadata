@@ -1,0 +1,16 @@
+﻿{
+  "Name": "Menu_Edit_Drivers",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Id": "VuYbWeEJxkGutCYnLlZDxQ",
+  "Reference": "AniWOyIB2EmcyKwwtqRJzg/VuYbWeEJxkGutCYnLlZDxQ",
+  "ParentRef": "AniWOyIB2EmcyKwwtqRJzg/Yn7oy00vpEqrS7fdYLcFhw",
+  "Created": "2024-08-14T21:09:19.2984625Z",
+  "Updated": "2024-08-15T20:26:14.0952479Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

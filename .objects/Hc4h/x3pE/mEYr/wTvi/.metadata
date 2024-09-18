@@ -1,0 +1,16 @@
+﻿{
+  "Name": "DriverProfile_DriverID",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Id": "wTvi-R5HvUauXIe7iYRTHA",
+  "Reference": "AniWOyIB2EmcyKwwtqRJzg/wTvi-R5HvUauXIe7iYRTHA",
+  "ParentRef": "AniWOyIB2EmcyKwwtqRJzg/mEYrwYwvvUOS8e_MDRpRbA",
+  "Created": "2024-08-15T19:16:03.6890341Z",
+  "Updated": "2024-08-15T19:18:11.2096729Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

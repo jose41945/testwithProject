@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="nMI4j1b5gEmQz9gavT3V7g" Reference="AniWOyIB2EmcyKwwtqRJzg/5vpNll2iaUe2tiwagkhxhw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" ContentHash="P6NwW6E6h0iN2o6fWfrHzQ" DesignTimeRectangle="144, 485, 659, 15" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="[string.Format(&quot;&lt;wnd cls='pbdw???' /&gt;&lt;ctrl idx='{0}' name='exp_description' role='editable text' /&gt;&quot;, int_CurrentIndex)]" FuzzySelectorArgument="&lt;wnd cls='pbdw110' /&gt;&lt;ctrl automationid='' name='exp_description' role='editable text' /&gt;" Guid="1a7ee59b-1b17-47d9-87f1-c84624d9640f" ImageBase64="" Reference="AniWOyIB2EmcyKwwtqRJzg/5vpNll2iaUe2tiwagkhxhw" ScopeSelectorArgument="&lt;wnd app='tts_flm.exe' cls='FNWNS*' title='Driver/Equipment Status' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="446f6317f5ddde4b4fa4652d4f034928.png" xmlns="">0NaenwImRdUKzkK4o_RpHZA</imageRef>
+    </TargetAnchorable>
+    <scg:List x:TypeArguments="ObjectRepositoryVariableData" x:Key="Variables" Capacity="1">
+      <ObjectRepositoryVariableData DefaultValue="5" Name="int_CurrentIndex" />
+    </scg:List>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

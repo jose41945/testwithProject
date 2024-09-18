@@ -1,0 +1,100 @@
+{
+  "name": "Driver Qualifications Training",
+  "projectId": "33410a5c-aa66-4a52-a9ae-2574243a8347",
+  "description": "Using PRO Framework",
+  "main": "Driver_Qualifications_Training-Performer.xaml",
+  "dependencies": {
+    "UiPath.Database.Activities": "[1.7.0]",
+    "UiPath.Excel.Activities": "[2.23.5]",
+    "UiPath.Mail.Activities": "[1.23.11]",
+    "UiPath.MicrosoftOffice365.Activities": "[2.6.25]",
+    "UiPath.System.Activities.Runtime": "[24.10.4]",
+    "UiPath.UIAutomation.Activities.Runtime": "[24.10.3]",
+    "UiPath.WebAPI.Activities.Runtime": "[1.21.0]"
+  },
+  "webServices": [],
+  "entitiesStores": [],
+  "schemaVersion": "4.0",
+  "studioVersion": "22.10.4.0",
+  "projectVersion": "1.2.0",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "netFrameworkLazyLoading": false,
+    "isPausable": true,
+    "isAttended": false,
+    "requiresUserInteraction": true,
+    "supportsPersistence": false,
+    "workflowSerialization": "DataContract",
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow",
+    "readyForPiP": false,
+    "startsInPiP": false,
+    "mustRestoreAllDependencies": true,
+    "pipType": "ChildSession"
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Process",
+    "libraryOptions": {
+      "includeOriginalXaml": false,
+      "privateWorkflows": []
+    },
+    "processOptions": {
+      "ignoredFiles": [
+        "Utilities/BK_Workbench.xaml",
+        "Sandbox/BK_Sandbox.xaml",
+        "Sandbox/Workbench.xaml",
+        "Workbench/Workbench.xaml"
+      ]
+    },
+    "fileInfoCollection": [],
+    "saveToCloud": false
+  },
+  "arguments": {
+    "input": [],
+    "output": []
+  },
+  "expressionLanguage": "VisualBasic",
+  "entryPoints": [
+    {
+      "filePath": "PRO_Performer_Legacy.xaml",
+      "uniqueId": "1bae8e95-7cd7-4f74-93ec-d350c8ae5307",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "Driver_Qualifications_Training-Dispatcher.xaml",
+      "uniqueId": "5455c932-6efa-41fe-b62c-6d7fa2217c7f",
+      "input": [
+        {
+          "name": "in_SiteOverrides",
+          "displayName": "in_SiteOverrides",
+          "type": "System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+          "required": false,
+          "hasDefault": false
+        },
+        {
+          "name": "in_ProgramOverrides",
+          "displayName": "in_ProgramOverrides",
+          "type": "System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+          "required": false,
+          "hasDefault": false
+        }
+      ],
+      "output": []
+    },
+    {
+      "filePath": "Driver_Qualifications_Training-Performer.xaml",
+      "uniqueId": "b1bed331-a9ee-41f3-a728-b1de278472c4",
+      "input": [],
+      "output": []
+    }
+  ],
+  "isTemplate": false,
+  "templateProjectData": {},
+  "publishData": {},
+  "targetFramework": "Windows"
+}

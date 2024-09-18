@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="7rSyoNHI7EmljLZtuvpaXg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="https://www.carriersedge.com/ce/login.jsp?error=true" CVScreenId="1d3460b7-0cb8-4996-aa0b-6079d18e72d8" CvTextArea="463, 280, 292, 15" CvTextArgument="Invalid username and/or password, please try again." CvType="Text" DesignTimeRectangle="464, 280, 455, 15" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Invalid username and/or password, please try again.' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Invalid username and/or password, please try again.' tag='P' type='' class='' check:text='Invalid username and/or password, please try again.' /&gt;" Guid="28e2dfe4-c958-458e-a6c3-5b4b2a185455" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CarriersEdge Login *' /&gt;" SearchSteps="Selector, CV" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="bcfb74ead80029e17d98745746eb4553.png" xmlns="">0aCBVFkp5RU28BnAjvTeTtA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

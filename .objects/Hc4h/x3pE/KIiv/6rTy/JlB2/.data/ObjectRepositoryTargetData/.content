@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="mEKq2z33fUWxJahNu-xXmA" Reference="AniWOyIB2EmcyKwwtqRJzg/JlB2N9vIgEe_QtL6sWdYzQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" CVScreenId="f4d668c1-0928-49b0-a7b2-df8daf36670c" CvTextArea="34, 117, 38, 12" CvTextArgument="Drivers" CvType="Text" DesignTimeRectangle="3, 113, 237, 22" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;ctrl name='Window' role='popup menu' /&gt;&lt;ctrl role='menu item' text='Tile' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Edit' role='popup menu' /&gt;&lt;ctrl automationid='10028' role='menu item' check:text='Drivers' /&gt;" Guid="5d74c29b-eeb3-4d36-83ba-62475f803d22" ImageBase64="" ScopeSelectorArgument="&lt;wnd app='tts_flm.exe' cls='#32768' idx='*' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="7c1ac506fbe148e71f91ff1bf3bb7546.png" xmlns="">08argMc6mHUydx5U5A6rOVw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

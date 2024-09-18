@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryScreenData ContentHash="MzEcdSOwaUONqesEnXnsww" Reference="AniWOyIB2EmcyKwwtqRJzg/aKIUbm_0l0ySLUPtx6LoKQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryScreenData.Data>
+    <TargetApp x:Key="TargetApp" Area="0, 0, 0, 0" ContentHash="mp3-4XWukEuPxi3gKkAqqw" FilePath="tts_flm.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADrSURBVFhH7U9BDsMwCMvT87T+rAsJFoaQqd1pByxZJWAb2gqFQuEvcF3X/YZqO/p07ObaSnut9z4e95H7HMg1CJee9QHWK/YFnnFuf5BrLNz60YMjHVhgIfuBMUwYD5C5fNHHG5rlD+DQJQZskTCGCXkZv/kQnmuwR3bA3rNvVgvFw2SNeRLsy3yPa2iwBJTeiT4nwRr4A9iIN2hB7PF1PAq95Qs4HSCEiTXoIRhafrPHZl8gAjGAMGEZ96ZhIOq4zubTlIGFJ8Ywnj2lrtvBgeM5Getns1Xr306G7By//tFb6rpCoVAoDLT2AZ9NJMPDaZ0bAAAAAElFTkSuQmCC" Reference="AniWOyIB2EmcyKwwtqRJzg/aKIUbm_0l0ySLUPtx6LoKQ" Selector="&lt;wnd app='tts_flm.exe' cls='FNWNS*' title='Driver/Equipment Status' /&gt;" Title="Driver/Equipment Status">
+      <imageRef attrName="InformativeScreenshot" originalValue="c5ac1d0e8ab045637b5a68dfbf5d89ea.png" xmlns="">0rk2ZdSOaTEq2bvK4EySpAw</imageRef>
+    </TargetApp>
+  </ObjectRepositoryScreenData.Data>
+</ObjectRepositoryScreenData>

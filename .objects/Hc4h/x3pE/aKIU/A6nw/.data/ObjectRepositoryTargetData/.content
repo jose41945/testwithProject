@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="Ozfumt4Pj0i0lFlv7Hre7A" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="272, 351, 76, 14" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd cls='PBEDIT???' aastate='focused, focusable' /&gt;" FuzzySelectorArgument="&lt;wnd cls='PBEDIT???' aastate='focused, focusable' /&gt;" Guid="010cf3eb-257c-464e-9dbd-fec5a9102dad" ScopeSelectorArgument="&lt;wnd app='tts_flm.exe' cls='FNWNS*' title='Driver/Equipment Status' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="4b107a43343f796a85f9d943a322da94.png" xmlns="">01FDQg0TQDUWv6yckB_w1Uw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

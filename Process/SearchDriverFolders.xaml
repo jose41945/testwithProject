@@ -1,0 +1,532 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="SearchDriverFolders" this:SearchDriverFolders.in_RootPath="\\fileserver.san.thekag.com\ITAppShare\RPA\NonProd\Safety\Driver Qualifications Training\_Development\Test Driver Files" this:SearchDriverFolders.in_SitePaths_List="[&quot;SPG - KAG Specialty Products Group LLC&quot;.Split(&quot;,&quot;).ToList]" this:SearchDriverFolders.in_Subfolders_List="[&quot;Active,Active Paper Files,Pending&quot;.Split(&quot;,&quot;).ToList]" this:SearchDriverFolders.in_DriverFirstName="Jermond" this:SearchDriverFolders.in_DriverLastName="Golliday" this:SearchDriverFolders.in_DriverID="39236" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:uasa="clr-namespace:UiPath.Activities.System.Arrays;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_RootPath" Type="InArgument(x:String)" />
+    <x:Property Name="in_SitePaths_List" Type="InArgument(scg:List(x:String))" />
+    <x:Property Name="in_Subfolders_List" Type="InArgument(scg:List(x:String))" />
+    <x:Property Name="out_FoundPath" Type="OutArgument(x:String)" />
+    <x:Property Name="in_DriverFirstName" Type="InArgument(x:String)" />
+    <x:Property Name="in_DriverLastName" Type="InArgument(x:String)" />
+    <x:Property Name="in_DriverID" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1110,6736</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>SearchDriverFiles_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>UiPath.Activities.System.Arrays</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="- Manually add RegEx search patterns to DriverFolderPatterns&#xA;- Loop through combination of subfolders (Active, Active Paper) and site folders looking for driver folders either with driver name or driver ID&#xA;- Return either the appropriate folder path in out_FoundPath or throw a BusinessException with a running exception message" DisplayName="SearchDriverFolders" sap:VirtualizedContainerService.HintSize="976,6671" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="scg:List(x:String)" Default="[New List(Of String)]" Name="str_DriverFolderPatterns_List" />
+      <Variable x:TypeArguments="x:String" Name="str_RunningException">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String" Value="" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:Int32" Name="int_SubfolderIndex" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="914,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;Start: Search Driver Folders&quot;]" />
+    <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List" sap:VirtualizedContainerService.HintSize="914,165" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_1" ItemToAppend="[$&quot;{in_DriverLastName}, {in_DriverFirstName}.[^\\]*$&quot;]" List="[str_DriverFolderPatterns_List]" />
+    <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List" sap:VirtualizedContainerService.HintSize="914,165" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_2" ItemToAppend="[$&quot; (?:60)?{in_DriverID}[^\\]*$&quot;]" List="[str_DriverFolderPatterns_List]" />
+    <ui:ForEach x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="- For Each Subfolders (ie: Active,Active Paper Files)&#xA;-- For Each DriverFolderPattern (ie: Driver Name Regex, Driver ID Regex)&#xA;--- If only found 1, then good and return&#xA;--- If found 0 or more than 1, then add exception to running exception&#xA;- If never found exactly 1, then throw BusinessException with running exception" CurrentIndex="[int_SubfolderIndex]" DisplayName="For Each Subfolders - Search for Driver Folder Using Pattern and Return Path or Throw" sap:VirtualizedContainerService.HintSize="914,5264" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[in_Subfolders_List]">
+      <ui:ForEach.Body>
+        <ActivityAction x:TypeArguments="x:String">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:String" Name="curSubfolder" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Subfolder - For Each" sap:VirtualizedContainerService.HintSize="880,5031" sap2010:WorkflowViewState.IdRef="Sequence_26">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Int32" Name="int_FoundPathCount" />
+              <Variable x:TypeArguments="scg:List(x:String)" Name="str_FoundPaths_List" />
+              <Variable x:TypeArguments="x:Int32" Name="int_PatternIndex" />
+              <Variable x:TypeArguments="x:String" Name="str_CurrentException">
+                <Variable.Default>
+                  <Literal x:TypeArguments="x:String" Value="" />
+                </Variable.Default>
+              </Variable>
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="[int_PatternIndex]" DisplayName="For Each DriverFolderPattern" sap:VirtualizedContainerService.HintSize="818,4394" sap2010:WorkflowViewState.IdRef="ForEach`1_6" Values="[str_DriverFolderPatterns_List]">
+              <ui:ForEach.Body>
+                <ActivityAction x:TypeArguments="x:String">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:String" Name="curPattern" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="DriverFolderPattern - For Each" sap:VirtualizedContainerService.HintSize="784,4248" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Assign sap:VirtualizedContainerService.HintSize="722,114" sap2010:WorkflowViewState.IdRef="Assign_20">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="scg:List(x:String)">[str_FoundPaths_List]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="scg:List(x:String)">[New List(Of String)]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each curSitePath" sap:VirtualizedContainerService.HintSize="722,2104" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[in_SitePaths_List]">
+                      <ui:ForEach.Body>
+                        <ActivityAction x:TypeArguments="x:String">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="x:String" Name="curSitePath" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="688,1958" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                            <Sequence.Variables>
+                              <Variable x:TypeArguments="scg:List(x:String)" Name="str_TempPaths_List" />
+                              <Variable x:TypeArguments="x:Boolean" Name="bln_SitePathExists" />
+                              <Variable x:TypeArguments="x:Boolean" Name="bln_SubfolderPathExists" />
+                            </Sequence.Variables>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:FolderExistsX DisplayName="Folder Exists" Exists="[bln_SitePathExists]" sap:VirtualizedContainerService.HintSize="626,165" sap2010:WorkflowViewState.IdRef="FolderExistsX_3" Path="[Path.Combine(in_RootPath,curSubfolder,curSitePath)]" />
+                            <ui:FolderExistsX DisplayName="Folder Exists" Exists="[bln_SubfolderPathExists]" sap:VirtualizedContainerService.HintSize="626,165" sap2010:WorkflowViewState.IdRef="FolderExistsX_4" Path="[Path.Combine(in_RootPath,curSubfolder)]" />
+                            <If Condition="[bln_SitePathExists]" DisplayName="If path exists THEN Attempt to Find Driver Folders ELSE Skip" sap:VirtualizedContainerService.HintSize="626,1540" sap2010:WorkflowViewState.IdRef="If_9">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <If.Then>
+                                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,418" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <Assign sap2010:Annotation.AnnotationText="- For Each SitePath&#xA;-- Get All Driver Directories in RootPath &amp; curSubfolder &amp; Site&#xA;-- Search All Driver Directories for the curDriverFolderPattern RegEx" DisplayName="Find Paths LINQ and RegEx" sap:VirtualizedContainerService.HintSize="434,171" sap2010:WorkflowViewState.IdRef="Assign_21">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="scg:List(x:String)">[str_TempPaths_List]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="scg:List(x:String)">[Directory.GetDirectories(Path.Combine(in_RootPath,curSubfolder,curSitePath), "*", SearchOption.TopDirectoryOnly).Cast(Of String).AsEnumerable().Where(Function(y) System.Text.RegularExpressions.Regex.IsMatch(y, curPattern, RegexOptions.IgnoreCase)).ToList]</InArgument>
+                                    </Assign.Value>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </Assign>
+                                  <InvokeMethod DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="434,159" sap2010:WorkflowViewState.IdRef="InvokeMethod_3" MethodName="AddRange">
+                                    <InvokeMethod.TargetObject>
+                                      <InArgument x:TypeArguments="scg:List(x:String)">[str_FoundPaths_List]</InArgument>
+                                    </InvokeMethod.TargetObject>
+                                    <InArgument x:TypeArguments="scg:List(x:String)">[str_TempPaths_List]</InArgument>
+                                  </InvokeMethod>
+                                </Sequence>
+                              </If.Then>
+                              <If.Else>
+                                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="592,961" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <If Condition="[bln_SubfolderPathExists And curSubfolder = &quot;Pending&quot;]" DisplayName="If a root level path like &quot;Pending&quot; THEN Search There ELSE Path DNE" sap:VirtualizedContainerService.HintSize="530,873" sap2010:WorkflowViewState.IdRef="If_8">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <If.Then>
+                                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,460" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <Assign sap2010:Annotation.AnnotationText="- For Each SitePath (Pending)&#xA;-- Search All Driver Directories for the curDriverFolderPattern RegEx" DisplayName="Find Paths LINQ and RegEx" sap:VirtualizedContainerService.HintSize="434,156" sap2010:WorkflowViewState.IdRef="Assign_22">
+                                          <Assign.To>
+                                            <OutArgument x:TypeArguments="scg:List(x:String)">[str_TempPaths_List]</OutArgument>
+                                          </Assign.To>
+                                          <Assign.Value>
+                                            <InArgument x:TypeArguments="scg:List(x:String)">[Directory.GetDirectories(Path.Combine(in_RootPath,curSubfolder), "*", SearchOption.AllDirectories).Cast(Of String).AsEnumerable().Where(Function(y) System.Text.RegularExpressions.Regex.IsMatch(y, curPattern, RegexOptions.IgnoreCase)).ToList]</InArgument>
+                                          </Assign.Value>
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </Assign>
+                                        <InvokeMethod DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="434,168" sap2010:WorkflowViewState.IdRef="InvokeMethod_4" MethodName="AddRange">
+                                          <InvokeMethod.TargetObject>
+                                            <InArgument x:TypeArguments="scg:List(x:String)">[str_FoundPaths_List]</InArgument>
+                                          </InvokeMethod.TargetObject>
+                                          <InArgument x:TypeArguments="scg:List(x:String)">[str_TempPaths_List]</InArgument>
+                                        </InvokeMethod>
+                                        <ui:Break sap:VirtualizedContainerService.HintSize="434,48" sap2010:WorkflowViewState.IdRef="Break_6" />
+                                      </Sequence>
+                                    </If.Then>
+                                    <If.Else>
+                                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,252" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,164" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[&quot;High level path does not exist, skipping.  Path: &quot; &amp; Path.Combine(in_RootPath,curSitePath)]" />
+                                      </Sequence>
+                                    </If.Else>
+                                  </If>
+                                </Sequence>
+                              </If.Else>
+                            </If>
+                          </Sequence>
+                        </ActivityAction>
+                      </ui:ForEach.Body>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:ForEach>
+                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="722,57" sap2010:WorkflowViewState.IdRef="CommentOut_5">
+                      <ui:CommentOut.Body>
+                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="496,250" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign sap2010:Annotation.AnnotationText="- For Each SitePath&#xA;-- Get All Driver Directories in RootPath &amp; curSubfolder &amp; Site&#xA;-- Search All Driver Directories for the curDriverFolderPattern RegEx" DisplayName="Find Paths LINQ and RegEx" sap:VirtualizedContainerService.HintSize="434,162" sap2010:WorkflowViewState.IdRef="Assign_23">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="scg:List(x:String)">[str_FoundPaths_List]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="scg:List(x:String)">[in_SitePaths_List.SelectMany(Function(x) Directory.GetDirectories(Path.Combine(in_RootPath,curSubfolder,x), "*", SearchOption.TopDirectoryOnly)).Cast(Of String).AsEnumerable().Where(Function(y) System.Text.RegularExpressions.Regex.IsMatch(y, curPattern, RegexOptions.IgnoreCase)).ToList]</InArgument>
+                            </Assign.Value>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </Assign>
+                        </Sequence>
+                      </ui:CommentOut.Body>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:CommentOut>
+                    <Assign DisplayName="Count Paths" sap:VirtualizedContainerService.HintSize="722,114" sap2010:WorkflowViewState.IdRef="Assign_24">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Int32">[int_FoundPathCount]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:Int32">[str_FoundPaths_List.Count]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <ui:IfElseIfV2 Condition="[int_FoundPathCount = 1]" DisplayName="If - Check for 1 and only 1 Driver Folder Found" sap:VirtualizedContainerService.HintSize="722,1771" sap2010:WorkflowViewState.IdRef="IfElseIfV2_4">
+                      <ui:IfElseIfV2.Else>
+                        <Sequence DisplayName="Too Many - Duplicate Driver Folders Found" sap:VirtualizedContainerService.HintSize="496,481" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_26">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[str_CurrentException]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String" xml:space="preserve">["Found " &amp; str_FoundPaths_List.Count &amp; " folders in " &amp; curSubfolder &amp; " using pattern """ &amp; _
+curPattern &amp; """.  Paths=" &amp; String.Join(",", str_FoundPaths_List)]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_27">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[str_RunningException]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">[String.Join("; ", {str_RunningException, str_CurrentException})]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,164" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Info" Message="[str_CurrentException]" />
+                        </Sequence>
+                      </ui:IfElseIfV2.Else>
+                      <ui:IfElseIfV2.ElseIfs>
+                        <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+                          <ui:IfElseIfBlock BlockType="ElseIf" Condition="[int_FoundPathCount &gt; 1]" DisplayName="If else if block" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_1">
+                            <ui:IfElseIfBlock.Then>
+                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="496,603" sap2010:WorkflowViewState.IdRef="Sequence_41">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Assign sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_28">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:String">[str_CurrentException]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:String" xml:space="preserve">["Found " &amp; str_FoundPaths_List.Count &amp; " folders in " &amp; curSubfolder &amp; " using pattern """ &amp; _
+curPattern &amp; """.  Paths=" &amp; String.Join(",", str_FoundPaths_List)]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_29">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:String">[str_RunningException]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:String">[String.Join("; ", {str_RunningException, str_CurrentException})]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,173" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="Info" Message="[str_CurrentException]" />
+                                <Throw Exception="[New BusinessRuleException(&quot;Found &quot; &amp; str_FoundPaths_List.Count &amp; &quot; folders in &quot; &amp; curSubfolder &amp; &quot; using pattern &quot;&quot;&quot; &amp; _&#xA;curPattern &amp; &quot;&quot;&quot;.  Paths=&quot; &amp; String.Join(&quot;,&quot;, str_FoundPaths_List))]" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="Throw_9" />
+                              </Sequence>
+                            </ui:IfElseIfBlock.Then>
+                          </ui:IfElseIfBlock>
+                        </sc:BindingList>
+                      </ui:IfElseIfV2.ElseIfs>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:IfElseIfV2.Then>
+                        <Sequence DisplayName="Happy Path - 1 Path Found" sap:VirtualizedContainerService.HintSize="496,423" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_25">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[out_FoundPath]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">[Directory.GetDirectories(str_FoundPaths_List(0),"*",SearchOption.AllDirectories).Where(Function(x) System.Text.RegularExpressions.Regex.IsMatch(x, ".*Training", RegexOptions.IgnoreCase))(0)]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,173" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Info" Message="[&quot;Found a single folder for driver &quot; &amp; in_DriverFirstName &amp; _&#xA;&quot; &quot; &amp; in_DriverLastName &amp; &quot;(&quot; &amp; in_DriverID &amp; &quot;) in the subfolder &quot; &amp; curSubfolder &amp; _&#xA;&quot; using pattern &quot;&quot;&quot; &amp; curPattern &amp; &quot;&quot;&quot;.  Path = &quot; &amp; out_FoundPath]" />
+                          <ui:Break sap:VirtualizedContainerService.HintSize="434,48" sap2010:WorkflowViewState.IdRef="Break_4" />
+                        </Sequence>
+                      </ui:IfElseIfV2.Then>
+                    </ui:IfElseIfV2>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEach.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ForEach>
+            <If Condition="[String.IsNullOrEmpty(out_FoundPath) = False]" DisplayName="If a path was found THEN Break Subfolder For Each" sap:VirtualizedContainerService.HintSize="626,549" sap2010:WorkflowViewState.IdRef="If_10">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,136" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:Break sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="Break_5" />
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,252" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,164" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="Info" Message="[&quot;Attempting next subfolder...&quot;]" />
+                </Sequence>
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEach.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ForEach>
+    <If Condition="[String.IsNullOrEmpty(out_FoundPath) = False]" DisplayName="If a path was found THEN Happy Path ELSE Throw" sap:VirtualizedContainerService.HintSize="722,595" sap2010:WorkflowViewState.IdRef="If_7">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,167" sap2010:WorkflowViewState.IdRef="Sequence_38">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:Comment sap:VirtualizedContainerService.HintSize="354,79" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// Happy Path - No Action" />
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,258" sap2010:WorkflowViewState.IdRef="Sequence_40">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Throw Exception="[New BusinessRuleException(&quot;Unable to find a unique folder for driver &quot; &amp; in_DriverFirstName &amp; _&#xA;&quot; &quot; &amp; in_DriverLastName &amp; &quot; (&quot; &amp; in_DriverID &amp; &quot;)&quot;)]" sap:VirtualizedContainerService.HintSize="354,122" sap2010:WorkflowViewState.IdRef="Throw_7" />
+          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="CommentOut_6">
+            <ui:CommentOut.Body>
+              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,201" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Throw Exception="[New BusinessRuleException(Strings.Replace(&quot;Unable to find a unique folder for driver &quot; &amp; in_DriverFirstName &amp; _&#xA;&quot; &quot; &amp; in_DriverLastName &amp; &quot;(&quot; &amp; in_DriverID &amp; &quot;): &quot; &amp; str_RunningException, in_RootPath, &quot;&quot;))]" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="Throw_8" />
+              </Sequence>
+            </ui:CommentOut.Body>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:CommentOut>
+        </Sequence>
+      </If.Else>
+    </If>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="722,164" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;End: Search Driver Folders&quot;]" />
+  </Sequence>
+</Activity>

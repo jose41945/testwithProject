@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="UdUydjX4xUG7-uYIALx0rQ" Reference="AniWOyIB2EmcyKwwtqRJzg/M2tU1VeAkE-dEtNQy96qqg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="https://www.carriersedge.com/ce/carrier_administrator_home.html" CVScreenId="4993302a-be95-484c-a169-f6800e0df836" CvElementArea="1085, 394, 22, 20" CvType="Icon" DesignTimeRectangle="1132, 398, 18, 14" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="[string.Format(&quot;&lt;webctrl aaname='View Certificate' tableRow='{0}' tag='A' colName='View Certificate' /&gt;&quot;, in_RowNum)]" FuzzySelectorArgument="&lt;webctrl aaname='View Certificate' type='' tag='A' colName='View Certificate' class='actionCert popUp wrapClass-fullPopup smallipop-initialized smallipop933' check:text='View Certificate' /&gt;" Guid="5af053d2-df7a-48af-97fc-49c622d13546" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Impact - * - CarriersEdge' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="48500527956deb7b4a16f694c606df6a.png" xmlns="">0bNCEe7sgxk-6ZuO5k4iKcw</imageRef>
+    </TargetAnchorable>
+    <scg:List x:TypeArguments="ObjectRepositoryVariableData" x:Key="Variables" Capacity="1">
+      <ObjectRepositoryVariableData IsString="False" IsVariable="False" Name="in_RowNum" />
+    </scg:List>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

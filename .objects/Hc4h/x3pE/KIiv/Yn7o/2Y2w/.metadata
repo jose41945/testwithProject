@@ -1,0 +1,16 @@
+﻿{
+  "Name": "Menu_Edit_Expiration",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Id": "2Y2wts2pgEu1-2shxENwQw",
+  "Reference": "AniWOyIB2EmcyKwwtqRJzg/2Y2wts2pgEu1-2shxENwQw",
+  "ParentRef": "AniWOyIB2EmcyKwwtqRJzg/Yn7oy00vpEqrS7fdYLcFhw",
+  "Created": "2024-08-15T20:26:21.4912761Z",
+  "Updated": "2024-08-15T20:26:34.2103223Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="15QTAHr8L0-6KKGz8UL-rg" Reference="AniWOyIB2EmcyKwwtqRJzg/enCxgh3pgEyU1zhSeIkm3Q" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="https://www.carriersedge.com/ce/carrier_administrator_home.html" DesignTimeRectangle="589, 684, 80, 29" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl tag='BUTTON' aaname='Cancel' innertext='Cancel' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' aaname='Cancel' innertext='Cancel' type='' class='btnClose' check:text='Cancel' /&gt;" Guid="89905d6b-a6b5-4e0c-827e-15955f57c158" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Impact - * - CarriersEdge' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="749433e62908946b988d4bb5d0de42bd.png" xmlns="">0WuxEU38UXEuSjmTj-H0Q5Q</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

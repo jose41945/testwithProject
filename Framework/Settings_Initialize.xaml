@@ -1,0 +1,1167 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Settings_Initialize" this:Settings_Initialize.in_FrameworkOrchFolder="Shared" this:Settings_Initialize.in_ConfigLocationType="Folder" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mg="clr-namespace:Microsoft.Graph;assembly=Microsoft.Graph" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uma="clr-namespace:UiPath.MicrosoftOffice365.Activities;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umaf="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umafe="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files.Enums;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_ConfigPathAsset" Type="InArgument(x:String)" />
+    <x:Property Name="in_ConfigPathOverride" Type="InArgument(x:String)" />
+    <x:Property Name="in_Action" Type="InArgument(x:String)">
+      <x:Property.Attributes>
+        <RequiredArgumentAttribute />
+      </x:Property.Attributes>
+    </x:Property>
+    <x:Property sap2010:Annotation.AnnotationText="4 options for PerformerType:&#xA;QI&#xA;NONQI&#xA;ITERATION&#xA;PRELOAD" Name="in_PerformerType" Type="InArgument(x:String)" />
+    <x:Property Name="out_Config" Type="OutArgument(scg:Dictionary(x:String, x:String))">
+      <x:Property.Attributes>
+        <RequiredArgumentAttribute />
+      </x:Property.Attributes>
+    </x:Property>
+    <x:Property sap2010:Annotation.AnnotationText="If an empty string, folder context of the running automation is used" Name="in_FrameworkOrchFolder" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="Allowed values: Folder,Office 365" Name="in_ConfigLocationType" Type="InArgument(x:String)" />
+    <x:Property Name="in_CredentialAsset" Type="InArgument(x:String)" />
+    <x:Property Name="in_URLAsset" Type="InArgument(x:String)" />
+    <x:Property Name="in_TenantAsset" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1220,10258</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>GetAllSettings_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="82">
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.Database</x:String>
+      <x:String>UiPath.Database.Activities</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Windows.Forms</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>Microsoft.Graph</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Enums</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Files.Contracts</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities</x:String>
+      <x:String>UiPath.Shared.Activities.ConnectionService.Contracts</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Files</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Contracts</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Excel</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Files.Enums</x:String>
+      <x:String>UiPath.Shared.Activities.Utils</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Files.Models</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Enums</x:String>
+      <x:String>UiPath.Excel.Model</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="132">
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>Microsoft.Graph</AssemblyReference>
+      <AssemblyReference>Microsoft.Graph.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms.Primitives</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Database</AssemblyReference>
+      <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Create Config by reading all Excel files in the provided folder paths. Config Files which are named with action of the currently running process gain precedence for anytime the same field is defined in multiple different files.  The database connection for DB Log is also created and output." DisplayName="Settings_Initialize" sap:VirtualizedContainerService.HintSize="1230,10193" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="s:String[]" Name="str_ConfigSheets_List" />
+      <Variable x:TypeArguments="s:String[]" Name="str_ConfigPath_List" />
+      <Variable x:TypeArguments="x:Boolean" Default="False" Name="bln_ConfigConsumed" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1168,173" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Trace" Message="[&quot;Start: Settings_Initialize&quot;]" />
+    <Sequence DisplayName="Initialize Variables" sap:VirtualizedContainerService.HintSize="1168,57" sap2010:WorkflowViewState.IdRef="Sequence_30">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Switch x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Determines if a valid Config Location Type was selected so we know how to retrieve the config files- Getting the Config Location from Multiple Assign" DisplayName="Switch - Config Location Type" Expression="[in_ConfigLocationType.ToUpper]" sap:VirtualizedContainerService.HintSize="626,445" sap2010:WorkflowViewState.IdRef="Switch`1_2">
+        <Switch.Default>
+          <Sequence DisplayName="Invalid Config Location Type" sap:VirtualizedContainerService.HintSize="416,25" sap2010:WorkflowViewState.IdRef="Sequence_40">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,173" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[&quot;Invalid Config Location Type provided: &quot; &amp; in_ConfigLocationType &amp; &quot;. The allowed values are: Folder, Office 365&quot;]" />
+            <Throw Exception="[New SystemException(&quot;Invalid Config Location Type provided: &quot; &amp; in_ConfigLocationType &amp; &quot;. The allowed values are: Folder, Office 365&quot;)]" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="Throw_1" />
+          </Sequence>
+        </Switch.Default>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <Sequence x:Key="OFFICE 365" DisplayName="Office 365 Location Type" sap:VirtualizedContainerService.HintSize="416,466" sap2010:WorkflowViewState.IdRef="Sequence_59">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,173" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Valid Config Location Type provided: &quot; &amp; in_ConfigLocationType]" />
+          <If Condition="[(in_ConfigPathAsset &lt;&gt; &quot;&quot; Or in_ConfigPathOverride &lt;&gt; &quot;&quot;) And in_CredentialAsset &lt;&gt; &quot;&quot; And in_URLAsset &lt;&gt; &quot;&quot; And in_TenantAsset &lt;&gt; &quot;&quot;]" DisplayName="If everything provided THEN log ok ELSE Throw" sap:VirtualizedContainerService.HintSize="354,205" sap2010:WorkflowViewState.IdRef="If_15">
+            <If.Then>
+              <Sequence sap:VirtualizedContainerService.HintSize="376,229" sap2010:WorkflowViewState.IdRef="Sequence_57">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="LogMessage_21" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;All necessary information provided for &quot; &amp; in_ConfigLocationType]" />
+              </Sequence>
+            </If.Then>
+            <If.Else>
+              <Sequence sap:VirtualizedContainerService.HintSize="376,359" sap2010:WorkflowViewState.IdRef="Sequence_58">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="LogMessage_20" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[&quot;Not all necessary information provided for &quot; &amp; in_ConfigLocationType &amp; &quot;.  Required information is: &quot; &amp; &quot;(in_ConfigPathAsset &lt;&gt; &quot;&quot;&quot;&quot; Or in_ConfigPathOverride &lt;&gt; &quot;&quot;&quot;&quot;) And in_CredentialAsset &lt;&gt; &quot;&quot;&quot;&quot; And in_URLAsset &lt;&gt; &quot;&quot;&quot;&quot; And in_TenantAsset &lt;&gt; &quot;&quot;&quot;&quot;&quot;]" />
+                <Throw Exception="[New SystemException(&quot;Not all necessary information provided for &quot; &amp; in_ConfigLocationType &amp; &quot;.  Required information is: &quot; &amp; &quot;(in_ConfigPathAsset &lt;&gt; &quot;&quot;&quot;&quot; Or in_ConfigPathOverride &lt;&gt; &quot;&quot;&quot;&quot;) And in_CredentialAsset &lt;&gt; &quot;&quot;&quot;&quot; And in_URLAsset &lt;&gt; &quot;&quot;&quot;&quot; And in_TenantAsset &lt;&gt; &quot;&quot;&quot;&quot;&quot;)]" sap:VirtualizedContainerService.HintSize="334,90" sap2010:WorkflowViewState.IdRef="Throw_2" />
+              </Sequence>
+            </If.Else>
+          </If>
+        </Sequence>
+        <ui:LogMessage x:Key="FOLDER" DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Valid Config Location Type provided: &quot; &amp; in_ConfigLocationType]" />
+        <Sequence x:Key="" DisplayName="No Location Type Provided" sap:VirtualizedContainerService.HintSize="416,25" sap2010:WorkflowViewState.IdRef="Sequence_56">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;No Config Location Type provided, assuming Folder.&quot;]" />
+          <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_36">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[in_ConfigLocationType]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">Folder</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </Switch>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="626,173" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Screen Resolution: &quot; &amp; System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Width &amp; &quot; x &quot; &amp; System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Height]" />
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Utilities\EventLog_Recent.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="626,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Framework\EventLog_GetRecent.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="x:String" x:Key="in_EventLog">Application</InArgument>
+          <InArgument x:TypeArguments="x:Int32" x:Key="in_PastMinutes">1</InArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
+      <Assign sap:VirtualizedContainerService.HintSize="626,114" sap2010:WorkflowViewState.IdRef="Assign_30">
+        <Assign.To>
+          <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[out_Config]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[New Dictionary(Of String, String)]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:MultipleAssign sap2010:Annotation.AnnotationText="Config-&gt;Action&gt;PerformerType&#xA;Config-&gt;FrameworkOrchFolder&gt;Orchestrator Folder" DisplayName="Multiple Assign - Action and Framework Orch Folder" sap:VirtualizedContainerService.HintSize="626,221" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+        <ui:MultipleAssign.AssignOperations>
+          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+            <ui:AssignOperation sap:VirtualizedContainerService.HintSize="334,25" sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[out_Config("Action")]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">[in_Action]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[out_Config("FrameworkOrchFolder")]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">[in_FrameworkOrchFolder]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+          </scg:List>
+        </ui:MultipleAssign.AssignOperations>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:MultipleAssign>
+      <ui:GetRobotAsset AssetName="Framework_Environment" CacheStrategy="None" DisplayName="Get Asset - Environment" FolderPath="[out_Config(&quot;FrameworkOrchFolder&quot;).ToString]" sap:VirtualizedContainerService.HintSize="626,175" sap2010:WorkflowViewState.IdRef="GetRobotAsset_10">
+        <ui:GetRobotAsset.TimeoutMS>
+          <InArgument x:TypeArguments="x:Int32" />
+        </ui:GetRobotAsset.TimeoutMS>
+        <ui:GetRobotAsset.Value>
+          <OutArgument x:TypeArguments="x:String">[out_Config("Framework_Environment")]</OutArgument>
+        </ui:GetRobotAsset.Value>
+      </ui:GetRobotAsset>
+      <If Condition="[String.IsNullOrEmpty(in_PerformerType) = False]" DisplayName="If PerformerType provided THEN Add Performer Type" sap:VirtualizedContainerService.HintSize="626,57" sap2010:WorkflowViewState.IdRef="If_7">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <If.Then>
+          <Sequence DisplayName="Add Performer Type" sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_31">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign DisplayName="Assign - Performer Type" sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_25">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[out_Config("PerformerType")]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[in_PerformerType]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_33">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Sequence>
+        </If.Else>
+      </If>
+      <Assign DisplayName="Assign - Clear NonTransactionSE" sap:VirtualizedContainerService.HintSize="626,114" sap2010:WorkflowViewState.IdRef="Assign_26">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[out_Config("NonTransactionSE")]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">
+            <Literal x:TypeArguments="x:String" Value="" />
+          </InArgument>
+        </Assign.Value>
+      </Assign>
+      <If Condition="[in_ConfigPathOverride &lt;&gt; &quot;&quot;]" DisplayName="If ConfigOverride provided THEN Use Override ELSE Use Asset" sap:VirtualizedContainerService.HintSize="626,891" sap2010:WorkflowViewState.IdRef="If_6">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <If.Then>
+          <Sequence DisplayName="Use Override" sap:VirtualizedContainerService.HintSize="416,25" sap2010:WorkflowViewState.IdRef="Sequence_27">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,164" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Config File Path Override provided. Value: &quot; &amp; in_ConfigPathOverride]" />
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <Sequence DisplayName="Use Asset" sap:VirtualizedContainerService.HintSize="592,696" sap2010:WorkflowViewState.IdRef="Sequence_28">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <If Condition="[in_ConfigPathAsset &lt;&gt; &quot;&quot;]" DisplayName="If config asset provided THEN Override ELESE default" sap:VirtualizedContainerService.HintSize="530,608" sap2010:WorkflowViewState.IdRef="If_9">
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,254" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:GetRobotAsset AssetName="[in_ConfigPathAsset]" CacheStrategy="None" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="354,166" sap2010:WorkflowViewState.IdRef="GetRobotAsset_7">
+                    <ui:GetRobotAsset.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:GetRobotAsset.TimeoutMS>
+                    <ui:GetRobotAsset.Value>
+                      <OutArgument x:TypeArguments="x:String">[in_ConfigPathOverride]</OutArgument>
+                    </ui:GetRobotAsset.Value>
+                  </ui:GetRobotAsset>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_29">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[in_ConfigPathOverride]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">DriverQualificationsTraining_ConfigPaths</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Else>
+            </If>
+          </Sequence>
+        </If.Else>
+      </If>
+      <Assign sap:VirtualizedContainerService.HintSize="626,114" sap2010:WorkflowViewState.IdRef="Assign_23">
+        <Assign.To>
+          <OutArgument x:TypeArguments="s:String[]">[str_ConfigPath_List]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="s:String[]">[in_ConfigPathOverride.Split(","c)]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign sap:VirtualizedContainerService.HintSize="626,114" sap2010:WorkflowViewState.IdRef="Assign_28">
+        <Assign.To>
+          <OutArgument x:TypeArguments="s:String[]">[str_ConfigSheets_List]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="s:String[]">[{"Framework","Custom"}]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="GetJobInfo.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="626,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Framework\Job_GetCurrent.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <OutArgument x:TypeArguments="x:String" x:Key="out_MachineName">[out_Config("MachineName")]</OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="out_User">[out_Config("RobotUser")]</OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="out_JobID">[out_Config("JobID")]</OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="out_OrchURL">[out_Config("OrchURL")]</OutArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
+      <Assign sap:VirtualizedContainerService.HintSize="626,105" sap2010:WorkflowViewState.IdRef="Assign_40">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[out_Config("JobLogURL")]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[out_Config("OrchURL") &amp; "jobs/" &amp; out_Config("JobID") &amp; "/logs"]</InArgument>
+        </Assign.Value>
+      </Assign>
+    </Sequence>
+    <ueab:SequenceX DisplayName="Single Excel Process Scope" sap:VirtualizedContainerService.HintSize="1168,9498" sap2010:WorkflowViewState.IdRef="SequenceX_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Sequence DisplayName="Read Configs" sap:VirtualizedContainerService.HintSize="1106,9378" sap2010:WorkflowViewState.IdRef="Sequence_69">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each Config Path" sap:VirtualizedContainerService.HintSize="1044,9219" sap2010:WorkflowViewState.IdRef="ForEach`1_8" Values="[str_ConfigPath_List]">
+          <ui:ForEach.Body>
+            <ActivityAction x:TypeArguments="x:String">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="x:String" Name="configPath" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Traverse Config Paths" sap:VirtualizedContainerService.HintSize="1010,9073" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="x:String" Default="Data\Temp\Config\" Name="str_DownloadPath" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:ForEachFileX sap2010:Annotation.AnnotationText="Delete any old temp config files" DisplayName="For Each File in Folder - Temp" Filter="*.xlsx" Folder="[str_DownloadPath]" sap:VirtualizedContainerService.HintSize="948,514" sap2010:WorkflowViewState.IdRef="ForEachFileX_2" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
+                  <ui:ForEachFileX.Body>
+                    <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
+                      <ActivityAction.Argument1>
+                        <DelegateInArgument x:TypeArguments="si:FileInfo" Name="tempConfig" />
+                      </ActivityAction.Argument1>
+                      <ActivityAction.Argument2>
+                        <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
+                      </ActivityAction.Argument2>
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,191" sap2010:WorkflowViewState.IdRef="Sequence_62">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="354,103" sap2010:WorkflowViewState.IdRef="DeleteFileX_2" Path="[tempConfig.Name]" />
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:ForEachFileX.Body>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:ForEachFileX>
+                <If Condition="[in_ConfigLocationType.ToUpper = &quot;OFFICE 365&quot;]" DisplayName="If SharePoint THEN download to temp first" sap:VirtualizedContainerService.HintSize="948,3077" sap2010:WorkflowViewState.IdRef="If_10">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If.Then>
+                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="784,2804" sap2010:WorkflowViewState.IdRef="Sequence_41">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="x:String" Name="str_Username" />
+                        <Variable x:TypeArguments="ss:SecureString" Name="sstr_Password" />
+                        <Variable x:TypeArguments="x:String" Name="str_URL" />
+                        <Variable x:TypeArguments="x:String" Name="str_Tenant" />
+                      </Sequence.Variables>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_CredentialAsset]" CacheStrategy="None" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="722,175" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[sstr_Password]" Username="[str_Username]" />
+                      <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="[in_URLAsset]" CacheStrategy="None" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="722,175" sap2010:WorkflowViewState.IdRef="GetRobotAsset_11">
+                        <ui:GetRobotAsset.Value>
+                          <OutArgument x:TypeArguments="x:String">[str_URL]</OutArgument>
+                        </ui:GetRobotAsset.Value>
+                      </ui:GetRobotAsset>
+                      <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="[in_TenantAsset]" CacheStrategy="None" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="722,175" sap2010:WorkflowViewState.IdRef="GetRobotAsset_12">
+                        <ui:GetRobotAsset.Value>
+                          <OutArgument x:TypeArguments="x:String">[str_URL]</OutArgument>
+                        </ui:GetRobotAsset.Value>
+                      </ui:GetRobotAsset>
+                      <uma:Office365ApplicationScope ApplicationSecret="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemFullPath="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserRuntimeItemFriendlyName="{x:Null}" BrowserRuntimeItemFullPath="{x:Null}" BrowserRuntimeItemId="{x:Null}" BrowserRuntimeParentItemId="{x:Null}" CertificateAsBase64="{x:Null}" CertificatePassword="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Connector="{x:Null}" ContinueOnError="{x:Null}" ImpersonatedUserEmailAddress="{x:Null}" ManualRuntimeItemFullPath="{x:Null}" Password="{x:Null}" SecurePassword="{x:Null}" Timeout="{x:Null}" Username="{x:Null}" Account="Please select an account." ApplicationId="[str_Username]" AuthenticationType="ApplicationIdAndSecret" ConfigLocation="PropertiesPanel" DisplayName="Microsoft Office 365 Scope" Environment="Global" sap:VirtualizedContainerService.HintSize="722,2191" sap2010:WorkflowViewState.IdRef="Office365ApplicationScope_1" OAuthApplication="UiPath" RuntimeItemInputMode="Browse" SecureApplicationSecret="[sstr_Password]" TenantId="[str_Tenant]" UseConnectionService="False">
+                        <uma:Office365ApplicationScope.AuthenticationScopes>
+                          <scg:List x:TypeArguments="InArgument(x:String)" Capacity="1">
+                            <InArgument x:TypeArguments="x:String">https://graph.microsoft.com/.default</InArgument>
+                          </scg:List>
+                        </uma:Office365ApplicationScope.AuthenticationScopes>
+                        <uma:Office365ApplicationScope.Body>
+                          <ActivityAction x:TypeArguments="x:Object">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="x:Object" Name="ParentScope" />
+                            </ActivityAction.Argument>
+                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="688,1954" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                              <Sequence.Variables>
+                                <Variable x:TypeArguments="mg:DriveItem[]" Name="di_Results_List" />
+                                <Variable x:TypeArguments="x:Boolean" Name="bln_FileDownloaded" />
+                              </Sequence.Variables>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <umaf:FindFilesAndFolders ContinueOnError="{x:Null}" DriveMetadata="{x:Null}" DriveName="{x:Null}" First="{x:Null}" Query="{x:Null}" AuthScopesInvalid="False" DisplayName="Find Files And Folders" sap:VirtualizedContainerService.HintSize="626,117" sap2010:WorkflowViewState.IdRef="FindFilesAndFolders_1" Results="[di_Results_List]" SiteUrl="[str_URL]" Subfolder="[configPath]" />
+                              <ui:ForEach x:TypeArguments="mg:DriveItem" CurrentIndex="{x:Null}" DisplayName="For Each - Drive Item that contains Config_ and is an XLSX" sap:VirtualizedContainerService.HintSize="626,1176" sap2010:WorkflowViewState.IdRef="ForEach`1_9" Values="[di_Results_List.Where(function(f) f.Name.Contains(&quot;Config_&quot;) and f.Name.EndsWith(&quot;.xlsx&quot;))]">
+                                <ui:ForEach.Body>
+                                  <ActivityAction x:TypeArguments="mg:DriveItem">
+                                    <ActivityAction.Argument>
+                                      <DelegateInArgument x:TypeArguments="mg:DriveItem" Name="di_Config" />
+                                    </ActivityAction.Argument>
+                                    <Sequence DisplayName="For Each File Body" sap:VirtualizedContainerService.HintSize="592,1030" sap2010:WorkflowViewState.IdRef="Sequence_55">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <If Condition="[di_Config.Name.Contains(&quot;~&quot;) Or (di_Config.Name.Contains(&quot;_All&quot;) Or di_Config.Name.Contains(&quot;_&quot; &amp; out_Config(&quot;Action&quot;).ToString)) = False]" DisplayName="If FileName contains ~ Or Is not action THEN Skip" sap:VirtualizedContainerService.HintSize="530,942" sap2010:WorkflowViewState.IdRef="If_11">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <If.Then>
+                                          <Sequence DisplayName="Skip Placeholder File" sap:VirtualizedContainerService.HintSize="416,309" sap2010:WorkflowViewState.IdRef="Sequence_45">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,173" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Skipping non-config file: &quot; &amp; di_Config.Name]" />
+                                            <ui:Continue sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="Continue_3" />
+                                          </Sequence>
+                                        </If.Then>
+                                        <If.Else>
+                                          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="496,472" sap2010:WorkflowViewState.IdRef="Sequence_46">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <umaf:DownloadFile ContinueOnError="{x:Null}" DriveMetadata="{x:Null}" AuthScopesInvalid="False" DisplayName="Download File" File="[di_Config]" sap:VirtualizedContainerService.HintSize="434,165" sap2010:WorkflowViewState.IdRef="DownloadFile_1" LocalFilePath="[str_DownloadPath]" />
+                                            <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_35">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="x:String">[configPath]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="x:String">[Path.GetDirectoryName(str_DownloadPath)]</InArgument>
+                                              </Assign.Value>
+                                            </Assign>
+                                            <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_37">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="x:Boolean">[bln_FileDownloaded]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                              </Assign.Value>
+                                            </Assign>
+                                          </Sequence>
+                                        </If.Else>
+                                      </If>
+                                    </Sequence>
+                                  </ActivityAction>
+                                </ui:ForEach.Body>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </ui:ForEach>
+                              <If Condition="[bln_FileDownloaded = False]" DisplayName="If files not found and downloaded THEN Next Config Path" sap:VirtualizedContainerService.HintSize="626,573" sap2010:WorkflowViewState.IdRef="If_16">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <If.Then>
+                                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,309" sap2010:WorkflowViewState.IdRef="Sequence_60">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,173" sap2010:WorkflowViewState.IdRef="LogMessage_23" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[&quot;No files found at SharePoint location: &quot; &amp; str_URL &amp; configPath]" />
+                                    <ui:Continue sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="Continue_4" />
+                                  </Sequence>
+                                </If.Then>
+                                <If.Else>
+                                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_61">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </Sequence>
+                                </If.Else>
+                              </If>
+                            </Sequence>
+                          </ActivityAction>
+                        </uma:Office365ApplicationScope.Body>
+                        <uma:Office365ApplicationScope.EmailAddress>
+                          <InArgument x:TypeArguments="x:String" />
+                        </uma:Office365ApplicationScope.EmailAddress>
+                        <uma:Office365ApplicationScope.RuntimeItemFullPathBackup>
+                          <usau:BackupSlot x:TypeArguments="umafe:EDriveItemMode" StoredValue="{x:Null}">
+                            <usau:BackupSlot.BackupValues>
+                              <scg:Dictionary x:TypeArguments="umafe:EDriveItemMode, scg:List(x:Object)" />
+                            </usau:BackupSlot.BackupValues>
+                          </usau:BackupSlot>
+                        </uma:Office365ApplicationScope.RuntimeItemFullPathBackup>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uma:Office365ApplicationScope>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_42">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Else>
+                </If>
+                <ui:ForEachFileX DisplayName="For Each File in Folder" Filter="*Config.xlsx" Folder="[configPath]" sap:VirtualizedContainerService.HintSize="948,5394" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
+                  <ui:ForEachFileX.Body>
+                    <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
+                      <ActivityAction.Argument1>
+                        <DelegateInArgument x:TypeArguments="si:FileInfo" Name="configFile" />
+                      </ActivityAction.Argument1>
+                      <ActivityAction.Argument2>
+                        <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
+                      </ActivityAction.Argument2>
+                      <Sequence DisplayName="For Each File Body" sap:VirtualizedContainerService.HintSize="914,5111" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <If Condition="[(configFile.Name = &quot;SystemConfig.xlsx&quot; Or configFile.Name = &quot;BusinessConfig.xlsx&quot;) = False]" DisplayName="If FileName contains ~ Or Is not action THEN Skip Placeholder File" sap:VirtualizedContainerService.HintSize="852,731" sap2010:WorkflowViewState.IdRef="If_3">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <If.Then>
+                            <Sequence DisplayName="Skip Placeholder File" sap:VirtualizedContainerService.HintSize="416,309" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,173" sap2010:WorkflowViewState.IdRef="LogMessage_22" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Skipping &quot; &amp; configFile.Name &amp; &quot; config files must be named either SystemConfig.xlsx or BusinessConfig.xlsx&quot;]" />
+                              <ui:Continue sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="Continue_1" />
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,252" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,164" sap2010:WorkflowViewState.IdRef="LogMessage_27" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Consuming config file: &quot; &amp; configFile.Name]" />
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                        <ueab:ExcelApplicationCard Password="{x:Null}" AutoSave="False" CreateNewFile="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="852,4292" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ReadFormatting="DisplayValue" ReadOnly="True" ResizeWindow="None" WorkbookPath="[configFile.FullName]">
+                          <ueab:ExcelApplicationCard.Body>
+                            <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="xl" />
+                              </ActivityAction.Argument>
+                              <Sequence DisplayName="Read Each Excel Config File" sap:VirtualizedContainerService.HintSize="818,4000" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each Sheet" sap:VirtualizedContainerService.HintSize="756,3912" sap2010:WorkflowViewState.IdRef="ForEach`1_7" Values="[str_ConfigSheets_List]">
+                                  <ui:ForEach.Body>
+                                    <ActivityAction x:TypeArguments="x:String">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="x:String" Name="Sheet" />
+                                      </ActivityAction.Argument>
+                                      <Sequence sap2010:Annotation.AnnotationText="Read settings and constants from the configuration file and add them to the Config dictionary." DisplayName="For Each Sheet - Get Vars" sap:VirtualizedContainerService.HintSize="722,3775" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                        <Sequence.Variables>
+                                          <Variable x:TypeArguments="sd:DataTable" Name="dt_ConfigAllowed" />
+                                          <Variable x:TypeArguments="x:String" Name="str_Column" />
+                                          <Variable x:TypeArguments="x:String" Name="str_Name" />
+                                          <Variable x:TypeArguments="sd:DataTable" Name="dt_Config" />
+                                        </Sequence.Variables>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <TryCatch DisplayName="Try Catch Read Sheet" sap:VirtualizedContainerService.HintSize="660,1077" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                                          <TryCatch.Try>
+                                            <Sequence DisplayName="Try Read Sheet" sap:VirtualizedContainerService.HintSize="529,817" sap2010:WorkflowViewState.IdRef="Sequence_72">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <ueab:ReadRangeX DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="467,201" sap2010:WorkflowViewState.IdRef="ReadRangeX_2" Range="[xl.Sheet(Sheet)]" ReadFormatting="RawValue" SaveTo="[dt_Config]" VisibleOnly="False" />
+                                              <ui:IfElseIf DisplayName="If sheet has no headers or no rows THEN Throw" sap:VirtualizedContainerService.HintSize="467,528" sap2010:WorkflowViewState.IdRef="IfElseIf_4">
+                                                <ui:IfElseIf.ConditionBlocks>
+                                                  <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+                                                    <ui:IfElseIfBlock BlockType="If" Condition="[dt_Config Is Nothing OrElse dt_Config.RowCount = 0]" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_1">
+                                                      <ui:IfElseIfBlock.Then>
+                                                        <Sequence DisplayName="Throw Empty Sheet" sap:VirtualizedContainerService.HintSize="416,309" sap2010:WorkflowViewState.IdRef="Sequence_73">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,173" sap2010:WorkflowViewState.IdRef="LogMessage_28" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;No data for sheet: &quot; &amp; Sheet]" />
+                                                          <ui:Continue sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="Continue_5" />
+                                                        </Sequence>
+                                                      </ui:IfElseIfBlock.Then>
+                                                    </ui:IfElseIfBlock>
+                                                  </sc:BindingList>
+                                                </ui:IfElseIf.ConditionBlocks>
+                                              </ui:IfElseIf>
+                                            </Sequence>
+                                          </TryCatch.Try>
+                                          <TryCatch.Catches>
+                                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="533,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <ActivityAction x:TypeArguments="s:Exception">
+                                                <ActivityAction.Argument>
+                                                  <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                                </ActivityAction.Argument>
+                                                <Sequence DisplayName="Log and Skip" sap:VirtualizedContainerService.HintSize="450,309" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,173" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[&quot;Error reading sheet &quot; &amp; Sheet &amp; &quot;. Skipping...&quot;]" />
+                                                  <ui:Continue sap:VirtualizedContainerService.HintSize="388,48" sap2010:WorkflowViewState.IdRef="Continue_2" />
+                                                </Sequence>
+                                              </ActivityAction>
+                                            </Catch>
+                                          </TryCatch.Catches>
+                                        </TryCatch>
+                                        <ui:FilterDataTable DataTable="[dt_Config]" DisplayName="Filter Data Table - Only All or This Action" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="660,193" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dt_ConfigAllowed]" SelectColumnsMode="Remove">
+                                          <ui:FilterDataTable.Filters>
+                                            <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                                              <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                                                <ui:FilterOperationArgument.Column>
+                                                  <InArgument x:TypeArguments="x:String">["Action"]</InArgument>
+                                                </ui:FilterOperationArgument.Column>
+                                                <ui:FilterOperationArgument.Operand>
+                                                  <InArgument x:TypeArguments="x:String">["All"]</InArgument>
+                                                </ui:FilterOperationArgument.Operand>
+                                              </ui:FilterOperationArgument>
+                                              <ui:FilterOperationArgument BooleanOperator="Or" Operator="EQ">
+                                                <ui:FilterOperationArgument.Column>
+                                                  <InArgument x:TypeArguments="x:String">["Action"]</InArgument>
+                                                </ui:FilterOperationArgument.Column>
+                                                <ui:FilterOperationArgument.Operand>
+                                                  <InArgument x:TypeArguments="x:String">[out_Config("Action")]</InArgument>
+                                                </ui:FilterOperationArgument.Operand>
+                                              </ui:FilterOperationArgument>
+                                            </scg:List>
+                                          </ui:FilterDataTable.Filters>
+                                          <ui:FilterDataTable.SelectColumns>
+                                            <scg:List x:TypeArguments="InArgument" Capacity="4">
+                                              <x:Null />
+                                            </scg:List>
+                                          </ui:FilterDataTable.SelectColumns>
+                                        </ui:FilterDataTable>
+                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="660,173" sap2010:WorkflowViewState.IdRef="LogMessage_26" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[dt_ConfigAllowed.RowCount &amp; &quot; config values to be written for:&quot; &amp; configFile.Name &amp; &quot;-&gt;&quot; &amp; Sheet]" />
+                                        <Assign sap:VirtualizedContainerService.HintSize="660,114" sap2010:WorkflowViewState.IdRef="Assign_16">
+                                          <Assign.To>
+                                            <OutArgument x:TypeArguments="x:String">[str_Column]</OutArgument>
+                                          </Assign.To>
+                                          <Assign.Value>
+                                            <InArgument x:TypeArguments="x:String">[out_Config("Framework_Environment").ToString]</InArgument>
+                                          </Assign.Value>
+                                        </Assign>
+                                        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_ConfigAllowed]" DisplayName="For each allowed configuration row" sap:VirtualizedContainerService.HintSize="660,1412" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
+                                          <ui:ForEachRow.Body>
+                                            <ActivityAction x:TypeArguments="sd:DataRow">
+                                              <ActivityAction.Argument>
+                                                <DelegateInArgument x:TypeArguments="sd:DataRow" Name="Row" />
+                                              </ActivityAction.Argument>
+                                              <If sap2010:Annotation.AnnotationText="Read non-empty rows in the sheet." Condition="[Not String.IsNullOrWhiteSpace(row(&quot;Name&quot;).ToString.Trim)]" DisplayName="If configuration row is not empty" sap:VirtualizedContainerService.HintSize="626,1194" sap2010:WorkflowViewState.IdRef="If_2">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <If.Then>
+                                                  <Sequence DisplayName="Attempt to Write Config Value" sap:VirtualizedContainerService.HintSize="592,922" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <Assign sap:VirtualizedContainerService.HintSize="530,114" sap2010:WorkflowViewState.IdRef="Assign_19">
+                                                      <Assign.To>
+                                                        <OutArgument x:TypeArguments="x:String">[str_Name]</OutArgument>
+                                                      </Assign.To>
+                                                      <Assign.Value>
+                                                        <InArgument x:TypeArguments="x:String">[Row("Name").ToString.Trim]</InArgument>
+                                                      </Assign.Value>
+                                                    </Assign>
+                                                    <If Condition="[out_Config.ContainsKey(str_Name) And Row(&quot;Action&quot;).ToString &lt;&gt; out_Config(&quot;Action&quot;).ToString]" DisplayName="If config value already exists and configFile is not action specific" sap:VirtualizedContainerService.HintSize="530,720" sap2010:WorkflowViewState.IdRef="If_4">
+                                                      <If.Then>
+                                                        <Sequence DisplayName="Value Cannot Be Overwritten" sap:VirtualizedContainerService.HintSize="416,252" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,164" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[&quot;Config value with key &quot; &amp; str_Name &amp; &quot; was not written from row with Action &quot; &amp; Row(&quot;Action&quot;).ToString &amp; &quot; because the key has already been populated. Conflicting config keys can only be overwritten by Action specific config rows.&quot;]" />
+                                                        </Sequence>
+                                                      </If.Then>
+                                                      <If.Else>
+                                                        <Sequence DisplayName="Can Write Value - New or Overwrite" sap:VirtualizedContainerService.HintSize="496,307" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                          <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_39">
+                                                            <Assign.To>
+                                                              <OutArgument x:TypeArguments="x:String">[out_Config(str_Name)]</OutArgument>
+                                                            </Assign.To>
+                                                            <Assign.Value>
+                                                              <InArgument x:TypeArguments="x:String">[Row(str_Column).ToString]</InArgument>
+                                                            </Assign.Value>
+                                                          </Assign>
+                                                          <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_38">
+                                                            <Assign.To>
+                                                              <OutArgument x:TypeArguments="x:Boolean">[bln_ConfigConsumed]</OutArgument>
+                                                            </Assign.To>
+                                                            <Assign.Value>
+                                                              <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                                            </Assign.Value>
+                                                          </Assign>
+                                                        </Sequence>
+                                                      </If.Else>
+                                                    </If>
+                                                  </Sequence>
+                                                </If.Then>
+                                                <If.Else>
+                                                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                  </Sequence>
+                                                </If.Else>
+                                              </If>
+                                            </ActivityAction>
+                                          </ui:ForEachRow.Body>
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </ui:ForEachRow>
+                                        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_Config]" DisplayName="For each row make sure the key exists" sap:VirtualizedContainerService.HintSize="660,687" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
+                                          <ui:ForEachRow.Body>
+                                            <ActivityAction x:TypeArguments="sd:DataRow">
+                                              <ActivityAction.Argument>
+                                                <DelegateInArgument x:TypeArguments="sd:DataRow" Name="Row" />
+                                              </ActivityAction.Argument>
+                                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="609,500" sap2010:WorkflowViewState.IdRef="Sequence_67">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <ui:IfElseIf DisplayName="If key does not exist THEN Make Key with Blank Value" sap:VirtualizedContainerService.HintSize="547,412" sap2010:WorkflowViewState.IdRef="IfElseIf_2">
+                                                  <ui:IfElseIf.ConditionBlocks>
+                                                    <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+                                                      <ui:IfElseIfBlock BlockType="If" Condition="[out_Config.ContainsKey(Row(str_Column).ToString) = False]" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_2">
+                                                        <ui:IfElseIfBlock.Then>
+                                                          <Sequence DisplayName="Make Key with Blank Value" sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_68">
+                                                            <sap:WorkflowViewStateService.ViewState>
+                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                              </scg:Dictionary>
+                                                            </sap:WorkflowViewStateService.ViewState>
+                                                            <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_43">
+                                                              <Assign.To>
+                                                                <OutArgument x:TypeArguments="x:String">[out_Config(Row(str_Column).ToString)]</OutArgument>
+                                                              </Assign.To>
+                                                              <Assign.Value>
+                                                                <InArgument x:TypeArguments="x:String">
+                                                                  <Literal x:TypeArguments="x:String" Value="" />
+                                                                </InArgument>
+                                                              </Assign.Value>
+                                                            </Assign>
+                                                          </Sequence>
+                                                        </ui:IfElseIfBlock.Then>
+                                                      </ui:IfElseIfBlock>
+                                                    </sc:BindingList>
+                                                  </ui:IfElseIf.ConditionBlocks>
+                                                </ui:IfElseIf>
+                                              </Sequence>
+                                            </ActivityAction>
+                                          </ui:ForEachRow.Body>
+                                        </ui:ForEachRow>
+                                      </Sequence>
+                                    </ActivityAction>
+                                  </ui:ForEach.Body>
+                                </ui:ForEach>
+                              </Sequence>
+                            </ActivityAction>
+                          </ueab:ExcelApplicationCard.Body>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ueab:ExcelApplicationCard>
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:ForEachFileX.Body>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:ForEachFileX>
+              </Sequence>
+            </ActivityAction>
+          </ui:ForEach.Body>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ui:ForEach>
+        <If Condition="[bln_ConfigConsumed = False]" DisplayName="If no configs were consumed THEN throw" sap:VirtualizedContainerService.HintSize="1044,48" sap2010:WorkflowViewState.IdRef="If_17">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <If.Then>
+            <Sequence sap:VirtualizedContainerService.HintSize="376,359" sap2010:WorkflowViewState.IdRef="Sequence_63">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="LogMessage_24" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[&quot;No config files were consumed in InitAllSettings.  Terminating...&quot;]" />
+              <Throw Exception="[New SystemException(&quot;No config files were consumed in InitAllSettings&quot;)]" sap:VirtualizedContainerService.HintSize="334,90" sap2010:WorkflowViewState.IdRef="Throw_3" />
+            </Sequence>
+          </If.Then>
+          <If.Else>
+            <Sequence sap2010:WorkflowViewState.IdRef="Sequence_64" />
+          </If.Else>
+        </If>
+      </Sequence>
+    </ueab:SequenceX>
+    <Sequence DisplayName="Browser Settings" sap:VirtualizedContainerService.HintSize="1168,57" sap2010:WorkflowViewState.IdRef="Sequence_70">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:IfElseIf DisplayName="If any value is set for any Browser setting THEN Update Browser Settings" sap:VirtualizedContainerService.HintSize="501,420" sap2010:WorkflowViewState.IdRef="IfElseIf_3">
+        <ui:IfElseIf.ConditionBlocks>
+          <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+            <ui:IfElseIfBlock BlockType="If" Condition="[out_Config(&quot;Browser_PromptForDownload&quot;) &lt;&gt; &quot;&quot; Or out_Config(&quot;Browser_ExtensionIncognito&quot;) &lt;&gt; &quot;&quot;]" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_3">
+              <ui:IfElseIfBlock.Then>
+                <Sequence DisplayName="Update Browser Settings" sap:VirtualizedContainerService.HintSize="450,224" sap2010:WorkflowViewState.IdRef="Sequence_71">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Framework\Browser_UpdateSettings.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Framework\Browser_UpdateSettings.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="x:Boolean" x:Key="in_PromptForDownload">[CBool(out_Config("Browser_PromptForDownload"))]</InArgument>
+                      <InArgument x:TypeArguments="x:Boolean" x:Key="in_ExtensionIncognito">[CBool(out_Config("Browser_ExtensionIncognito"))]</InArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                </Sequence>
+              </ui:IfElseIfBlock.Then>
+            </ui:IfElseIfBlock>
+          </sc:BindingList>
+        </ui:IfElseIf.ConditionBlocks>
+      </ui:IfElseIf>
+    </Sequence>
+    <ui:IfElseIf DisplayName="If SendQueueStats is true THEN Create QueueStats_Chunk for Recap" sap:VirtualizedContainerService.HintSize="1168,57" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
+      <ui:IfElseIf.ConditionBlocks>
+        <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+          <ui:IfElseIfBlock BlockType="If" Condition="[out_Config.ContainsKey(&quot;Recap_SendQueueStats&quot;) AndAlso CBool(out_Config(&quot;Recap_SendQueueStats&quot;)) = True]" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_4">
+            <ui:IfElseIfBlock.Then>
+              <Sequence DisplayName="Create QueueStats_Chunk for Recap" sap:VirtualizedContainerService.HintSize="496,194" sap2010:WorkflowViewState.IdRef="Sequence_65">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="Assign_41">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[out_Config("QueueStats_Chunk")]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String" xml:space="preserve">["&lt;tr&gt;
+	&lt;td style=""text-align:right""&gt;&lt;strong&gt;Left In Queue (Running):&amp;nbsp;&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;{{QueueStats_InProgress}}&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+	&lt;td style=""text-align:right""&gt;&lt;strong&gt;Left In Queue (Pending):&amp;nbsp;&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;{{QueueStats_New}}&lt;/td&gt;
+&lt;/tr&gt;"]</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </Sequence>
+            </ui:IfElseIfBlock.Then>
+          </ui:IfElseIfBlock>
+          <ui:IfElseIfBlock BlockType="Else" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_5">
+            <ui:IfElseIfBlock.Then>
+              <Sequence DisplayName="Set QueueStats_Chunk to Blank" sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_66">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_42">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[out_Config("QueueStats_Chunk")]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">
+                      <Literal x:TypeArguments="x:String" Value="" />
+                    </InArgument>
+                  </Assign.Value>
+                </Assign>
+              </Sequence>
+            </ui:IfElseIfBlock.Then>
+          </ui:IfElseIfBlock>
+        </sc:BindingList>
+      </ui:IfElseIf.ConditionBlocks>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:IfElseIf>
+    <Sequence DisplayName="Rule Checks" sap:VirtualizedContainerService.HintSize="1168,57" sap2010:WorkflowViewState.IdRef="Sequence_74">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:IfElseIf DisplayName="Switch - Rules" sap:VirtualizedContainerService.HintSize="501,420" sap2010:WorkflowViewState.IdRef="IfElseIf_5">
+        <ui:IfElseIf.ConditionBlocks>
+          <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+            <ui:IfElseIfBlock BlockType="If" Condition="[out_Config.ContainsKey(&quot;Recap_KeepColumns&quot;) AndAlso out_Config.ContainsKey(&quot;Recap_ColumnNames&quot;) AndAlso out_Config(&quot;Recap_ColumnNames&quot;) &lt;&gt; &quot;&quot; AndAlso out_Config(&quot;Recap_KeepColumns&quot;).Split(&quot;,&quot;).Count &lt;&gt; out_Config(&quot;Recap_ColumnNames&quot;).Split(&quot;,&quot;).Count]" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_6">
+              <ui:IfElseIfBlock.Then>
+                <Sequence DisplayName="Keep Columns Count &lt;&gt; Column Names Count" sap:VirtualizedContainerService.HintSize="416,201" sap2010:WorkflowViewState.IdRef="Sequence_75">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Throw Exception="[New SystemException(&quot;Settings Rule Check Failed: Recap_ColumnNames is set but does not have the same number of columns listed as Recap_KeepColumns&quot;)]" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="Throw_4" />
+                </Sequence>
+              </ui:IfElseIfBlock.Then>
+            </ui:IfElseIfBlock>
+          </sc:BindingList>
+        </ui:IfElseIf.ConditionBlocks>
+      </ui:IfElseIf>
+    </Sequence>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1168,164" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Trace" Message="[&quot;End: Settings_Initialize&quot;]" />
+  </Sequence>
+</Activity>

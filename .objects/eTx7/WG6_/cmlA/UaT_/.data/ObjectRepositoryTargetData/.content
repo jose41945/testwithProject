@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="NfyumnHX5Eubf_bYwNj0kQ" Reference="AniWOyIB2EmcyKwwtqRJzg/UaT_A-WqUU2Wj9sZW9NgBA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="https://www.carriersedge.com/ce/carrier_administrator_home.html" DesignTimeRectangle="1184, 135, 225, 77" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='A' aaname='Progress*' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='A' aaname='Progress*' type='' class='' check:text='Progress Report on activities &amp;amp; results' /&gt;" Guid="417b856c-daee-490e-962b-61f6efb37363" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Impact - * - CarriersEdge' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="82174afc2bff1c82e96acba52cf89c14.png" xmlns="">0ZHcRv3gCxEKqn_yzb44yAg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

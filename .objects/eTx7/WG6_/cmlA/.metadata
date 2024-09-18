@@ -1,0 +1,16 @@
+﻿{
+  "Name": "MainScreen",
+  "Type": "Screen",
+  "Id": "cmlAl9OuiE-_vzRhBU290w",
+  "Reference": "AniWOyIB2EmcyKwwtqRJzg/cmlAl9OuiE-_vzRhBU290w",
+  "ParentRef": "AniWOyIB2EmcyKwwtqRJzg/WG6_1vs1nE6_bkKaQ8g10w",
+  "Created": "2024-08-21T19:00:29.1200023Z",
+  "Updated": "2024-09-02T05:03:14.6277247Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

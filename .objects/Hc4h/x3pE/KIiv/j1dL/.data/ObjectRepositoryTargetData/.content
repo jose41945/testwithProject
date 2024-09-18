@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="01fDlVKLn06q_r3z6nyGbg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="3, 26, 320, 114" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;ctrl name='Error connecting to TMDatabase.cDatabaseSettings' role='client' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Error connecting to TMDatabase.cDatabaseSettings' role='client' automationid='' check:text='Error connecting to TMDatabase.cDatabaseSettings' /&gt;" Guid="6fc53b46-e4c4-46f2-a728-cee1fadd500f" ImageBase64="" ScopeSelectorArgument="&lt;wnd app='tts_flm.exe' cls='FNWNS*' title='Error connecting to TMDatabase.cDatabaseSettings' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="5e475f28eb9847143459d2867d43a1fe.png" xmlns="">0N8hbSvqRpE2At2KK4UVeIg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

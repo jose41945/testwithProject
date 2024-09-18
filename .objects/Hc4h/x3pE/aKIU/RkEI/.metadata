@@ -1,0 +1,16 @@
+﻿{
+  "Name": "DynamicDescriptionAlt",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Id": "RkEIHie97U6uNdvUqFFsRQ",
+  "Reference": "AniWOyIB2EmcyKwwtqRJzg/RkEIHie97U6uNdvUqFFsRQ",
+  "ParentRef": "AniWOyIB2EmcyKwwtqRJzg/aKIUbm_0l0ySLUPtx6LoKQ",
+  "Created": "2024-08-19T20:17:43.0767027Z",
+  "Updated": "2024-08-19T20:21:10.8570705Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

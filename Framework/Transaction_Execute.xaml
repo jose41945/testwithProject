@@ -1,0 +1,1245 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Transaction_Execute" this:Transaction_Execute.in_TIndex="0" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:uasa="clr-namespace:UiPath.Activities.System.Arrays;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_ExceptionScreenshot" Type="OutArgument(ui:Image)" />
+    <x:Property Name="out_Exception" Type="OutArgument(s:Exception)" />
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:String))" />
+    <x:Property Name="io_Report" Type="InOutArgument(sd:DataTable)" />
+    <x:Property Name="in_TIndex" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_QueueItem" Type="InArgument(ui:QueueItem)" />
+    <x:Property Name="out_ReportDetails" Type="OutArgument(sd:DataTable)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1110,12752</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="64">
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Windows.Forms</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.Database</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Model</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.Activities.System.Arrays</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Database.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="108">
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Database</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence sap2010:Annotation.AnnotationText="Execute a single Transaction and updates the Transaction throughout and at the end.  The only variables passed in should be the Config, the dt_Report, and the index where the Transaction exists in dt_Report.  There is a sequence at the beginning of this workflow to create dummy values for these variables to quickly debug and recreate Production scenarios in lower environments.&#xA;&#xA;Transaction CanRetry variable should be updated the moment after an action is completed that renders the item unable to be retried. This is usually after an update or save in an application that can only be done once." DisplayName="Transaction_Execute" sap:VirtualizedContainerService.HintSize="1112,12687" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataRow" Name="dr_Transaction" />
+      <Variable x:TypeArguments="x:Boolean" Name="bln_HasSystemException" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1050,173" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[&quot;Start: Transaction_Execute&quot;]" />
+    <TryCatch DisplayName="Try Catch Process Transaction" sap:VirtualizedContainerService.HintSize="1050,12175" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Variables>
+        <Variable x:TypeArguments="scg:List(x:String)" Default="[New List(Of String)]" Name="str_Exception_List" />
+      </TryCatch.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <Sequence DisplayName="Try Process Transaction" sap:VirtualizedContainerService.HintSize="1012,11915" sap2010:WorkflowViewState.IdRef="Sequence_7">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence DisplayName="Custom - Init Vars and Get Assets" sap:VirtualizedContainerService.HintSize="950,1824" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <If sap2010:Annotation.AnnotationText="This is safe because there is no way for execution to reach this far without io_Transaction being set. This will only be true when doing isolated debugging." Condition="[io_Report Is Nothing And in_Config Is Nothing]" DisplayName="Custom - Create a Transaction for Isolated Debug" sap:VirtualizedContainerService.HintSize="575,1507" sap2010:WorkflowViewState.IdRef="If_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence DisplayName="Create Test Transaction and Populate Config" sap:VirtualizedContainerService.HintSize="541,1043" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:String" Name="str_Action" />
+                    <Variable x:TypeArguments="x:String" Name="str_PerformerType" />
+                    <Variable x:TypeArguments="x:String" Name="str_FrameworkOrchFolder" />
+                    <Variable x:TypeArguments="x:String" Name="str_ConfigAssetOverride" />
+                    <Variable x:TypeArguments="x:String" Name="str_ConfigPathOverride" />
+                    <Variable x:TypeArguments="x:String" Name="str_ConfigLocationType" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="479,173" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;No Report provided, using debug data.&quot;]" />
+                  <ui:MultipleAssign sap2010:Annotation.AnnotationText="Setup Required&#xA;&#xA;Action: Performer, Dispatcher, Cleanup, or Custom&#xA;PerformerType: QI, NonQI, Iteration, PreLoad&#xA;FrameworkOrchFolder: blank string for context of running job or Studio, or Orch folder path using \ as directory separator&#xA;ConfigAssetOverride: if provided, states the name of the asset that has the paths (comma delimited) to the config folders&#xA;ConfigPathOverride: if provided, states the paths (comma delimited) to the config folders&#xA;ConfigLocationType: Folder or SharePoint (if SharePoint then more arguments need to be provided to InitAllSettings)" DisplayName="Multiple Assign - Non-Config Values" sap:VirtualizedContainerService.HintSize="479,495" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
+                    <ui:MultipleAssign.AssignOperations>
+                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">[str_Action]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">Performer-Debug</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">[str_PerformerType]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">Debug</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">[str_FrameworkOrchFolder]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">
+                              <Literal x:TypeArguments="x:String" Value="" />
+                            </InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">[str_ConfigAssetOverride]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">
+                              <Literal x:TypeArguments="x:String" Value="" />
+                            </InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">[str_ConfigPathOverride]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">Data\Config\</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">[str_ConfigLocationType]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">Folder</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                      </scg:List>
+                    </ui:MultipleAssign.AssignOperations>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:MultipleAssign>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke InitAllSettings" sap:VirtualizedContainerService.HintSize="479,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Framework\Settings_Initialize.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_ConfigPathAsset">[str_ConfigAssetOverride]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_ConfigPathOverride">[str_ConfigPathOverride]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_Action">[str_Action]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_PerformerType">[str_PerformerType]</InArgument>
+                      <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="out_Config">[in_Config]</OutArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_FrameworkOrchFolder">[str_FrameworkOrchFolder]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_ConfigLocationType">[str_ConfigLocationType]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_CredentialAsset" />
+                      <InArgument x:TypeArguments="x:String" x:Key="in_URLAsset" />
+                      <InArgument x:TypeArguments="x:String" x:Key="in_TenantAsset" />
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                  <ui:BuildDataTable DataTable="[io_Report]" DisplayName="Custom - Build io_Report with Data" sap:VirtualizedContainerService.HintSize="479,83" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;WIID&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Description&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Type&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Date&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;U_Status&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;U_Comments&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;LastMilestone&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;TMWInstance&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;WIID&gt;1234&lt;/WIID&gt;&#xA;    &lt;Description&gt;Testing&lt;/Description&gt;&#xA;    &lt;Type&gt;Test&lt;/Type&gt;&#xA;    &lt;Date&gt;01/01/2023&lt;/Date&gt;&#xA;    &lt;U_Status&gt;Testing&lt;/U_Status&gt;&#xA;    &lt;U_Comments&gt;Test&lt;/U_Comments&gt;&#xA;    &lt;LastMilestone&gt;Init&lt;/LastMilestone&gt;&#xA;    &lt;TMWInstance&gt;&quot;SPG&quot;&lt;/TMWInstance&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;" />
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,252" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,164" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Trace" Message="[&quot;Transaction provided, not using debug data.&quot;]" />
+                </Sequence>
+              </If.Else>
+            </If>
+            <Assign DisplayName="Assign - in_TIndex row of io_Report" sap:VirtualizedContainerService.HintSize="575,114" sap2010:WorkflowViewState.IdRef="Assign_7">
+              <Assign.To>
+                <OutArgument x:TypeArguments="sd:DataRow">[dr_Transaction]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="sd:DataRow">[io_Report.Rows(in_TIndex)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:BuildDataTable DataTable="[out_ReportDetails]" DisplayName="Build Data Table - out_ReportDetails" sap:VirtualizedContainerService.HintSize="575,83" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;T_Key&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; /&gt;&#xA;                &lt;xs:element name=&quot;RowNum&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; /&gt;&#xA;                &lt;xs:element name=&quot;DriverFirstName&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; /&gt;&#xA;                &lt;xs:element name=&quot;DriverLastName&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; /&gt;&#xA;                &lt;xs:element name=&quot;DriverID&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ProgramKey&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; /&gt;&#xA;                &lt;xs:element name=&quot;CEProgramName&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;TMWProgramCode&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;DriverFolderFound&quot; msdata:Caption=&quot;&quot; type=&quot;xs:boolean&quot; default=&quot;false&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;TMWDriverFound&quot; msdata:Caption=&quot;&quot; type=&quot;xs:boolean&quot; default=&quot;false&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;CertificatePath&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;CertificateFileName&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;EndDate&quot; msdata:Caption=&quot;&quot; type=&quot;xs:dateTime&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;NewExpireDate&quot; msdata:Caption=&quot;&quot; type=&quot;xs:dateTime&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;D_Success&quot; msdata:Caption=&quot;&quot; type=&quot;xs:boolean&quot; default=&quot;false&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;D_ExceptionType&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;D_ExceptionMessage&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;D_LastMilestone&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; default=&quot;Not Started&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+          </Sequence>
+          <Sequence DisplayName="Custom - Execute Single Transaction" sap:VirtualizedContainerService.HintSize="950,9955" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="s:String[]" Name="str_Program_List" />
+              <Variable x:TypeArguments="sd:DataTable" Name="dt_Programs" />
+              <Variable x:TypeArguments="ui:UiElement" Name="ui_TMW" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="888,57" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,283" sap2010:WorkflowViewState.IdRef="Sequence_58">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="TMW_Initialize - Invoke Workflow File (Apps\TMW\TMW_Initialize.xaml)" sap:VirtualizedContainerService.HintSize="354,195" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_22" UnSafe="False" WorkflowFileName="Apps\TMW\TMW_Initialize.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_Instance">[dr_Transaction("TMWInstance").ToString]</InArgument>
+                      <OutArgument x:TypeArguments="ui:UiElement" x:Key="out_TMW">[ui_TMW]</OutArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CarriersEdge_Login - Invoke Workflow File (Apps\CarriersEdge\CarriersEdge_Login.xaml)" sap:VirtualizedContainerService.HintSize="888,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="Apps\CarriersEdge\CarriersEdge_Login.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="in_Site">[dr_Transaction("SiteKey").ToString]</InArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Milestone_Update - Invoke Workflow File (Framework\Milestone_Update.xaml)" sap:VirtualizedContainerService.HintSize="888,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_29" UnSafe="False" WorkflowFileName="Framework\Milestone_Update.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="in_Milestone">CarriersEdge Logged In</InArgument>
+                <OutArgument x:TypeArguments="x:Object" x:Key="out_Milestone">[dr_Transaction("T_LastMilestone")]</OutArgument>
+                <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_QueueItem" />
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="MasterData_Read - Invoke Workflow File (Process\MasterData_Read.xaml)" sap:VirtualizedContainerService.HintSize="888,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Process\MasterData_Read.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SiteOverrides" />
+                <InArgument x:TypeArguments="x:String" x:Key="in_ProgramOverrides">[dr_Transaction("Programs").ToString]</InArgument>
+                <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_Sites" />
+                <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_Programs">[dt_Programs]</OutArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_MasterDataPath">[in_Config("MasterDataPath")]</InArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <Assign sap:VirtualizedContainerService.HintSize="888,114" sap2010:WorkflowViewState.IdRef="Assign_8">
+              <Assign.To>
+                <OutArgument x:TypeArguments="s:String[]">[str_Program_List]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="s:String[]">[dr_Transaction("Programs").ToString.Split(",")]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="- Find Program&#xA;- Create [DQTDD] Records in Bulk&#xA;- Iterate Certificates / Drivers" DisplayName="For Each Program" sap:VirtualizedContainerService.HintSize="888,9052" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[str_Program_List]">
+              <ui:ForEach.Body>
+                <ActivityAction x:TypeArguments="x:String">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:String" Name="currentProgram" />
+                  </ActivityAction.Argument>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Sequence DisplayName="Iterate Programs - Body" sap:VirtualizedContainerService.HintSize="854,8858" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="sd:DataTable" Name="dt_ProgramsFiltered" />
+                      <Variable x:TypeArguments="x:String" Name="str_LocalCertificatePath" />
+                      <Variable x:TypeArguments="x:String" Name="str_FinalCertificatePath" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <TryCatch DisplayName="Try Catch - Single Program" sap:VirtualizedContainerService.HintSize="792,4463" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <TryCatch.Try>
+                        <Sequence DisplayName="Try - Single Program" sap:VirtualizedContainerService.HintSize="754,4203" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                          <Sequence.Variables>
+                            <Variable x:TypeArguments="x:String" Name="str_CEProgram" />
+                            <Variable x:TypeArguments="x:Int32" Name="int_ExpiryMonths" />
+                            <Variable x:TypeArguments="x:String" Name="str_TMWProgram" />
+                            <Variable x:TypeArguments="sd:DataTable" Name="dt_RecentSuccess" />
+                          </Sequence.Variables>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Milestone_Update - Invoke Workflow File (Framework\Milestone_Update.xaml)" sap:VirtualizedContainerService.HintSize="692,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_31" UnSafe="False" WorkflowFileName="Framework\Milestone_Update.xaml">
+                            <ui:InvokeWorkflowFile.Arguments>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_Milestone">Inside Program Loop</InArgument>
+                              <OutArgument x:TypeArguments="x:Object" x:Key="out_Milestone">[dr_Transaction("T_LastMilestone")]</OutArgument>
+                              <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_QueueItem" />
+                            </ui:InvokeWorkflowFile.Arguments>
+                          </ui:InvokeWorkflowFile>
+                          <ui:FilterDataTable DataTable="[dt_Programs]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="692,193" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dt_ProgramsFiltered]" SelectColumnsMode="Remove">
+                            <ui:FilterDataTable.Filters>
+                              <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                                <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                                  <ui:FilterOperationArgument.Column>
+                                    <InArgument x:TypeArguments="x:String">["ProgramKey"]</InArgument>
+                                  </ui:FilterOperationArgument.Column>
+                                  <ui:FilterOperationArgument.Operand>
+                                    <InArgument x:TypeArguments="x:String">[currentProgram]</InArgument>
+                                  </ui:FilterOperationArgument.Operand>
+                                </ui:FilterOperationArgument>
+                              </scg:List>
+                            </ui:FilterDataTable.Filters>
+                            <ui:FilterDataTable.SelectColumns>
+                              <scg:List x:TypeArguments="InArgument" Capacity="4">
+                                <x:Null />
+                              </scg:List>
+                            </ui:FilterDataTable.SelectColumns>
+                          </ui:FilterDataTable>
+                          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="692,210" sap2010:WorkflowViewState.IdRef="MultipleAssign_6">
+                            <ui:MultipleAssign.AssignOperations>
+                              <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_13">
+                                  <ui:AssignOperation.To>
+                                    <OutArgument x:TypeArguments="x:String">[str_TMWProgram]</OutArgument>
+                                  </ui:AssignOperation.To>
+                                  <ui:AssignOperation.Value>
+                                    <InArgument x:TypeArguments="x:String">[dt_ProgramsFiltered.Rows(0).Item("TMW_Code").ToString]</InArgument>
+                                  </ui:AssignOperation.Value>
+                                </ui:AssignOperation>
+                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_14">
+                                  <ui:AssignOperation.To>
+                                    <OutArgument x:TypeArguments="x:String">[str_CEProgram]</OutArgument>
+                                  </ui:AssignOperation.To>
+                                  <ui:AssignOperation.Value>
+                                    <InArgument x:TypeArguments="x:String">[dt_ProgramsFiltered.Rows(0).Item("CE_Name").ToString]</InArgument>
+                                  </ui:AssignOperation.Value>
+                                </ui:AssignOperation>
+                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_15">
+                                  <ui:AssignOperation.To>
+                                    <OutArgument x:TypeArguments="x:Int32">[int_ExpiryMonths]</OutArgument>
+                                  </ui:AssignOperation.To>
+                                  <ui:AssignOperation.Value>
+                                    <InArgument x:TypeArguments="x:Int32">[CInt(dt_ProgramsFiltered.Rows(0).Item("ExpiryMonths"))]</InArgument>
+                                  </ui:AssignOperation.Value>
+                                </ui:AssignOperation>
+                              </scg:List>
+                            </ui:MultipleAssign.AssignOperations>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:MultipleAssign>
+                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CarriersEdge_FindProgram - Invoke Workflow File (Apps\CarriersEdge\CarriersEdge_FindProgram.xaml)" sap:VirtualizedContainerService.HintSize="692,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Apps\CarriersEdge\CarriersEdge_FindProgram.xaml">
+                            <ui:InvokeWorkflowFile.Arguments>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_ProgramName">[str_CEProgram]</InArgument>
+                            </ui:InvokeWorkflowFile.Arguments>
+                          </ui:InvokeWorkflowFile>
+                          <Sequence sap2010:Annotation.AnnotationText="- Get datatable of passed certs on page&#xA;- Create details records for all certs" DisplayName="Create [DQTDD] Records" sap:VirtualizedContainerService.HintSize="692,3214" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                            <Sequence.Variables>
+                              <Variable x:TypeArguments="sd:DataTable" Name="dt_Certificates" />
+                            </Sequence.Variables>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CarriersEdge_GetProgramCertificates - Invoke Workflow File (Apps\CarriersEdge\CarriersEdge_GetProgramCertificates.xaml)" sap:VirtualizedContainerService.HintSize="630,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="Apps\CarriersEdge\CarriersEdge_GetProgramCertificates.xaml">
+                              <ui:InvokeWorkflowFile.Arguments>
+                                <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_Certificates">[dt_Certificates]</OutArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_ProgramName">[str_CEProgram]</InArgument>
+                              </ui:InvokeWorkflowFile.Arguments>
+                            </ui:InvokeWorkflowFile>
+                            <If Condition="[IsNothing(dt_Certificates) OrElse dt_Certificates.RowCount=0]" DisplayName="If no passed certifications THEN next program ELSE get recent success" sap:VirtualizedContainerService.HintSize="630,1452" sap2010:WorkflowViewState.IdRef="If_5">
+                              <If.Then>
+                                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,252" sap2010:WorkflowViewState.IdRef="Sequence_48">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,164" sap2010:WorkflowViewState.IdRef="LogMessage_20" Level="Info" Message="[&quot;No Passed Certifications for this Program: &quot; &amp; currentProgram]" />
+                                </Sequence>
+                              </If.Then>
+                              <If.Else>
+                                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="596,1030" sap2010:WorkflowViewState.IdRef="Sequence_49">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <TryCatch DisplayName="Try Catch - Get Recent Success" sap:VirtualizedContainerService.HintSize="534,942" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <TryCatch.Try>
+                                      <Sequence DisplayName="Query LogDB for Recent Success" sap:VirtualizedContainerService.HintSize="496,691" sap2010:WorkflowViewState.IdRef="Sequence_44">
+                                        <Sequence.Variables>
+                                          <Variable x:TypeArguments="x:Int64" Name="int_SuccessCount" />
+                                          <Variable x:TypeArguments="ui:DatabaseConnection" Name="db_Conn" />
+                                        </Sequence.Variables>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Utilities\GetDBConn.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_26" UnSafe="False" WorkflowFileName="Framework\LogDB_Connect.xaml">
+                                          <ui:InvokeWorkflowFile.Arguments>
+                                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="in_Config">[in_Config]</InArgument>
+                                            <OutArgument x:TypeArguments="ui:DatabaseConnection" x:Key="out_Conn">[db_Conn]</OutArgument>
+                                          </ui:InvokeWorkflowFile.Arguments>
+                                        </ui:InvokeWorkflowFile>
+                                        <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[dt_RecentSuccess]" DisplayName="Run query - Get Recent Success" ExistingDbConnection="[db_Conn]" sap:VirtualizedContainerService.HintSize="434,121" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="[&quot;SELECT SourceReference, Reference, RunDateTime, SiteKey, TMWInstance, DriverID, DriverFirstName, DriverLastName, ProgramKey, DriverFolderFound, TMWDriverFound, CompleteTsp&quot; &amp; _&#xD;&#xA;&quot; FROM v_DriverQualificationsTraining&quot; &amp; _&#xD;&#xA;&quot; WHERE DateAdd(DAY, 8, CompleteTsp) &gt; GETDATE()&quot; &amp; _&#xD;&#xA;&quot; AND ProgramKey = @ProgramKey AND Success = 1&quot;]">
+                                          <ui:ExecuteQuery.Parameters>
+                                            <InArgument x:TypeArguments="x:String" x:Key="ProgramKey">
+                                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="currentProgram" />
+                                            </InArgument>
+                                          </ui:ExecuteQuery.Parameters>
+                                        </ui:ExecuteQuery>
+                                        <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_52">
+                                          <Assign.To>
+                                            <OutArgument x:TypeArguments="x:Int64">[int_SuccessCount]</OutArgument>
+                                          </Assign.To>
+                                          <Assign.Value>
+                                            <InArgument x:TypeArguments="x:Int64">[dt_RecentSuccess.RowCount]</InArgument>
+                                          </Assign.Value>
+                                        </Assign>
+                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,164" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Info" Message="[int_SuccessCount &amp; &quot; items successfully processed recently, filtering from current list...&quot;]" />
+                                      </Sequence>
+                                    </TryCatch.Try>
+                                    <TryCatch.Catches>
+                                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="500,22" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <ActivityAction x:TypeArguments="s:Exception">
+                                          <ActivityAction.Argument>
+                                            <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                          </ActivityAction.Argument>
+                                          <Sequence DisplayName="Catch Query DB" sap:VirtualizedContainerService.HintSize="416,252" sap2010:WorkflowViewState.IdRef="Sequence_45">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,164" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="Error" Message="[&quot;Failed to insert dt_Report records into Log DB, will attempt to output dt_Report to Orchestrator logs.  Error Message: &quot; &amp; exception.Message]" />
+                                          </Sequence>
+                                        </ActivityAction>
+                                      </Catch>
+                                    </TryCatch.Catches>
+                                  </TryCatch>
+                                </Sequence>
+                              </If.Else>
+                            </If>
+                            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_Certificates]" DisplayName="For Each Cert - Add to [DQTDD]" sap:VirtualizedContainerService.HintSize="630,1396" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                              <ui:ForEachRow.Body>
+                                <ActivityAction x:TypeArguments="sd:DataRow">
+                                  <ActivityAction.Argument>
+                                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="cert" />
+                                  </ActivityAction.Argument>
+                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="512,1209" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                                    <Sequence.Variables>
+                                      <Variable x:TypeArguments="sd:DataTable" Name="dt_DuplicateCerts" />
+                                    </Sequence.Variables>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:FilterDataTable DataTable="[dt_RecentSuccess]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="450,193" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[dt_DuplicateCerts]" SelectColumnsMode="Remove">
+                                      <ui:FilterDataTable.Filters>
+                                        <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                                          <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                                            <ui:FilterOperationArgument.Column>
+                                              <InArgument x:TypeArguments="x:String">["DriverFirstName"]</InArgument>
+                                            </ui:FilterOperationArgument.Column>
+                                            <ui:FilterOperationArgument.Operand>
+                                              <InArgument x:TypeArguments="x:String">[cert("DriverFirstName").ToString]</InArgument>
+                                            </ui:FilterOperationArgument.Operand>
+                                          </ui:FilterOperationArgument>
+                                          <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                                            <ui:FilterOperationArgument.Column>
+                                              <InArgument x:TypeArguments="x:String">["DriverLastName"]</InArgument>
+                                            </ui:FilterOperationArgument.Column>
+                                            <ui:FilterOperationArgument.Operand>
+                                              <InArgument x:TypeArguments="x:String">[cert("DriverLastName").ToString]</InArgument>
+                                            </ui:FilterOperationArgument.Operand>
+                                          </ui:FilterOperationArgument>
+                                          <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                                            <ui:FilterOperationArgument.Column>
+                                              <InArgument x:TypeArguments="x:String">["DriverID"]</InArgument>
+                                            </ui:FilterOperationArgument.Column>
+                                            <ui:FilterOperationArgument.Operand>
+                                              <InArgument x:TypeArguments="x:String">[cert("DriverID").ToString]</InArgument>
+                                            </ui:FilterOperationArgument.Operand>
+                                          </ui:FilterOperationArgument>
+                                        </scg:List>
+                                      </ui:FilterDataTable.Filters>
+                                      <ui:FilterDataTable.SelectColumns>
+                                        <scg:List x:TypeArguments="InArgument" Capacity="4">
+                                          <x:Null />
+                                        </scg:List>
+                                      </ui:FilterDataTable.SelectColumns>
+                                    </ui:FilterDataTable>
+                                    <If Condition="[dt_DuplicateCerts.RowCount &gt; 0]" DisplayName="If is a duplicate THEN Skip ELSE Add to ReportDetails" sap:VirtualizedContainerService.HintSize="450,928" sap2010:WorkflowViewState.IdRef="If_4">
+                                      <If.Then>
+                                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,470" sap2010:WorkflowViewState.IdRef="Sequence_46">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,173" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="Info" Message="[&quot;Skipping the following certification due to it recently being successfully completed: &quot; &amp; String.Join(&quot;;&quot;,{dr_Transaction(&quot;T_Key&quot;), cert(&quot;RowNumber&quot;), cert(&quot;DriverFirstName&quot;), cert(&quot;DriverLastName&quot;), cert(&quot;DriverID&quot;), currentProgram, str_CEProgram, str_TMWProgram, False, False, &quot;&quot;, &quot;&quot;, cert(&quot;EndDate&quot;), CDate(cert(&quot;EndDate&quot;)).AddMonths(int_ExpiryMonths), False, &quot;&quot;, &quot;&quot;})]" />
+                                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{dr_Transaction(&quot;T_Key&quot;), cert(&quot;RowNumber&quot;), cert(&quot;DriverFirstName&quot;), cert(&quot;DriverLastName&quot;), cert(&quot;DriverID&quot;), currentProgram, str_CEProgram, str_TMWProgram, False, False, &quot;&quot;, &quot;&quot;, cert(&quot;EndDate&quot;), CDate(cert(&quot;EndDate&quot;)).AddMonths(int_ExpiryMonths), True, &quot;&quot;, &quot;&quot;, &quot;Duplicate&quot;}]" DataTable="[out_ReportDetails]" DisplayName="Add Data Row - Duplicate success" sap:VirtualizedContainerService.HintSize="354,209" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
+                                        </Sequence>
+                                      </If.Then>
+                                      <If.Else>
+                                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,297" sap2010:WorkflowViewState.IdRef="Sequence_47">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{dr_Transaction(&quot;T_Key&quot;), cert(&quot;RowNumber&quot;), cert(&quot;DriverFirstName&quot;), cert(&quot;DriverLastName&quot;), cert(&quot;DriverID&quot;), currentProgram, str_CEProgram, str_TMWProgram, False, False, &quot;&quot;, &quot;&quot;, cert(&quot;EndDate&quot;), CDate(cert(&quot;EndDate&quot;)).AddMonths(int_ExpiryMonths), False, &quot;&quot;, &quot;&quot;}]" DataTable="[out_ReportDetails]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="354,209" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                                        </Sequence>
+                                      </If.Else>
+                                    </If>
+                                  </Sequence>
+                                </ActivityAction>
+                              </ui:ForEachRow.Body>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:ForEachRow>
+                          </Sequence>
+                          <Sequence sap2010:Annotation.AnnotationText="Feel free to drag this entire sequence to the appropriate spot in Transaction_Execute." DisplayName="Update CanRetry to False" sap:VirtualizedContainerService.HintSize="692,90" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,173" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Updating CanRetry to False...&quot;]" />
+                            <Assign sap2010:Annotation.AnnotationText="T_CanRetry should be updated the moment after an action is completed that renders the item unable to be retried. This is usually after an update or save in an application that can only be done once." sap:VirtualizedContainerService.HintSize="434,162" sap2010:WorkflowViewState.IdRef="Assign_17">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:Object">[dr_Transaction("T_CanRetry")]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:Object">[False]</InArgument>
+                              </Assign.Value>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Assign>
+                          </Sequence>
+                        </Sequence>
+                      </TryCatch.Try>
+                      <TryCatch.Catches>
+                        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="758,22" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ActivityAction x:TypeArguments="s:Exception">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                            </ActivityAction.Argument>
+                            <Sequence DisplayName="Catch - Single Program" sap:VirtualizedContainerService.HintSize="416,25" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="530,173" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Error" Message="[dr_Transaction(&quot;T_Reference&quot;).ToString &amp; &quot; has experienced an exception for program &quot; &amp; currentProgram &amp; &quot; (Performer Program Catch)(&quot; &amp; exception.GetType.AsText &amp; &quot;): &quot; &amp; exception.Message]" />
+                              <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List" sap:VirtualizedContainerService.HintSize="530,165" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_1" ItemToAppend="[currentProgram &amp; &quot; (Performer Program Catch)(&quot; &amp; exception.GetType.AsText &amp; &quot;): &quot; &amp; exception.Message]" List="[str_Exception_List]" />
+                              <If Condition="[exception.GetType.AsText.Contains(&quot;Business&quot;) = False]" DisplayName="If not a business exception THEN flip system exception flag" sap:VirtualizedContainerService.HintSize="530,466" sap2010:WorkflowViewState.IdRef="If_7">
+                                <If.Then>
+                                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_42">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:Boolean">[bln_HasSystemException]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </Sequence>
+                                </If.Then>
+                                <If.Else>
+                                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_53">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </Sequence>
+                                </If.Else>
+                              </If>
+                              <ui:Continue sap:VirtualizedContainerService.HintSize="530,48" sap2010:WorkflowViewState.IdRef="Continue_1" />
+                            </Sequence>
+                          </ActivityAction>
+                        </Catch>
+                      </TryCatch.Catches>
+                    </TryCatch>
+                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="- Loop through certs&#xA;-- Check for driver folders&#xA;-- Move cert to training folder&#xA;-- Find driver in TMW&#xA;-- Update expiration and description in TMW" DataTable="[out_ReportDetails]" DisplayName="For Each Certificate" sap:VirtualizedContainerService.HintSize="792,4307" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                      <ui:ForEachRow.Body>
+                        <ActivityAction x:TypeArguments="sd:DataRow">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="curCertificate" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Iterate Certificates - Body" sap:VirtualizedContainerService.HintSize="596,4033" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                            <Sequence.Variables>
+                              <Variable x:TypeArguments="x:String" Name="str_DriverID" />
+                            </Sequence.Variables>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <If Condition="[curCertificate(&quot;D_LastMilestone&quot;).ToString &lt;&gt; &quot;Not Started&quot;]" DisplayName="If D_LastMilestone says cert has been tried THEN Continue to Next Cert" sap:VirtualizedContainerService.HintSize="534,409" sap2010:WorkflowViewState.IdRef="If_3">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <If.Then>
+                                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,136" sap2010:WorkflowViewState.IdRef="Sequence_42">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:Continue sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="Continue_2" />
+                                </Sequence>
+                              </If.Then>
+                              <If.Else>
+                                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </Sequence>
+                              </If.Else>
+                            </If>
+                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Milestone_Update - Invoke Workflow File (Framework\Milestone_Update.xaml)" sap:VirtualizedContainerService.HintSize="534,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_33" UnSafe="False" WorkflowFileName="Framework\Milestone_Update.xaml">
+                              <ui:InvokeWorkflowFile.Arguments>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_Milestone">Inside Certificate Loop</InArgument>
+                                <OutArgument x:TypeArguments="x:Object" x:Key="out_Milestone">[dr_Transaction("T_LastMilestone")]</OutArgument>
+                                <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_QueueItem" />
+                              </ui:InvokeWorkflowFile.Arguments>
+                            </ui:InvokeWorkflowFile>
+                            <TryCatch DisplayName="Try Catch - Single Driver Certificate" sap:VirtualizedContainerService.HintSize="534,3332" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <TryCatch.Try>
+                                <Sequence DisplayName="Try - Single Driver Certificate" sap:VirtualizedContainerService.HintSize="496,3081" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                  <Sequence.Variables>
+                                    <Variable x:TypeArguments="x:String" Name="str_FileName" />
+                                  </Sequence.Variables>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_40">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:String">[str_DriverID]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:String">[curCertificate("DriverID").ToString]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_31">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:Object">[curCertificate("D_LastMilestone")]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:Object">["Started"]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_27">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:String">[str_LocalCertificatePath]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:String">[in_Config("LocalFolder")]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_28">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:String">[str_FileName]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:String">[String.Concat(dr_Transaction("SiteKey").ToString,"_",curCertificate("DriverLastName").ToString,", ",curCertificate("DriverFirstName").ToString,"_",currentProgram,"_",CDate(curCertificate("EndDate")).ToString("MM.dd.yyyy"),".pdf")]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CarriersEdge_SaveCertificatePDF - Invoke Workflow File (Apps\CarriersEdge\CarriersEdge_SaveCertificatePDF.xaml)" sap:VirtualizedContainerService.HintSize="434,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_25" UnSafe="False" WorkflowFileName="Apps\CarriersEdge\CarriersEdge_SaveCertificatePDF.xaml">
+                                    <ui:InvokeWorkflowFile.Arguments>
+                                      <InArgument x:TypeArguments="x:Int32" x:Key="in_RowNum">[CInt(curCertificate("RowNum"))]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_FilePath">[Path.Combine(str_LocalCertificatePath,str_FileName)]</InArgument>
+                                    </ui:InvokeWorkflowFile.Arguments>
+                                  </ui:InvokeWorkflowFile>
+                                  <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_50">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:Object">[curCertificate("D_LastMilestone")]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:Object">["Certificate downloaded locally"]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_29">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:Object">[curCertificate("CertificatePath")]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:Object">[str_LocalCertificatePath]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_30">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:Object">[curCertificate("CertificateFileName")]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:String">[str_FileName]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_32">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:Object">[curCertificate("D_LastMilestone")]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:Object">["Certificate Saved Locally"]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SearchDriverFiles - Invoke Workflow File (Process\SearchDriverFiles.xaml)" sap:VirtualizedContainerService.HintSize="434,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_23" UnSafe="False" WorkflowFileName="Process\SearchDriverFolders.xaml">
+                                    <ui:InvokeWorkflowFile.Arguments>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_RootPath">[in_Config("CertificateRootPath")]</InArgument>
+                                      <InArgument x:TypeArguments="scg:List(x:String)" x:Key="in_SitePaths_List">[dr_Transaction("DirectoryNames").ToString.Split(",").ToList]</InArgument>
+                                      <InArgument x:TypeArguments="scg:List(x:String)" x:Key="in_Subfolders_List">[in_Config("CertificateSubfolders").Split(",").ToList]</InArgument>
+                                      <OutArgument x:TypeArguments="x:String" x:Key="out_FoundPath">[str_FinalCertificatePath]</OutArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_DriverFirstName">[curCertificate("DriverFirstName").ToString]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_DriverLastName">[curCertificate("DriverLastName").ToString]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_DriverID">[curCertificate("DriverID").ToString]</InArgument>
+                                    </ui:InvokeWorkflowFile.Arguments>
+                                  </ui:InvokeWorkflowFile>
+                                  <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_26">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:Object">[curCertificate("DriverFolderFound")]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:Object">[True]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" sap2010:Annotation.AnnotationText="- Move file from current temporary location on C Drive&#xA;- Move to training folder within found path&#xA;- Assumes found path will have exactly 1 training folder" Destination="[str_FinalCertificatePath]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="434,248" sap2010:WorkflowViewState.IdRef="MoveFile_5" Overwrite="True" Path="[Path.Combine(curCertificate(&quot;CertificatePath&quot;).ToString,curCertificate(&quot;CertificateFileName&quot;).ToString)]">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:MoveFile>
+                                  <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_51">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:Object">[curCertificate("D_LastMilestone")]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:Object">["Certificate moved to driver folder"]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_24">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:Object">[curCertificate("CertificatePath")]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:Object">[str_FinalCertificatePath]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_33">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:Object">[curCertificate("D_LastMilestone")]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:Object">["Certificate Saved in Driver Files"]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="TMW_FindDriver_SQL - Invoke Workflow File (Apps\TMW\TMW_FindDriver_SQL.xaml)" sap:VirtualizedContainerService.HintSize="434,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_28" UnSafe="False" WorkflowFileName="Apps\TMW\TMW_FindDriver_SQL.xaml">
+                                    <ui:InvokeWorkflowFile.Arguments>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_FirstName">[curCertificate("DriverFirstName").ToString]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_LastName">[curCertificate("DriverLastName").ToString]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_DriverID">[str_DriverID]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_Instance">[dr_Transaction("TMWInstance").ToString]</InArgument>
+                                      <OutArgument x:TypeArguments="x:String" x:Key="out_DriverID">[str_DriverID]</OutArgument>
+                                    </ui:InvokeWorkflowFile.Arguments>
+                                  </ui:InvokeWorkflowFile>
+                                  <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_41">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:Object">[curCertificate("DriverID")]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:Object">[str_DriverID]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_13">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:Object">[curCertificate("TMWDriverFound")]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:Object">[True]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_34">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:Object">[curCertificate("D_LastMilestone")]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:Object">["Driver Found in TMW"]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="TMW_UpdateExpiration_SQL - Invoke Workflow File (Apps\TMW\TMW_UpdateExpiration_SQL.xaml)" sap:VirtualizedContainerService.HintSize="434,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_27" UnSafe="False" WorkflowFileName="Apps\TMW\TMW_UpdateExpiration_SQL.xaml">
+                                    <ui:InvokeWorkflowFile.Arguments>
+                                      <InArgument x:TypeArguments="s:DateTime" x:Key="in_NewExpireDate">[CDate(curCertificate("NewExpireDate"))]</InArgument>
+                                      <InArgument x:TypeArguments="s:DateTime" x:Key="in_OnlineCompletionDate">[CDate(curCertificate("EndDate"))]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_Instance">[dr_Transaction("TMWInstance").ToString]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_DriverID">[curCertificate("DriverID").ToString]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_ExpirationCode">[curCertificate("TMWProgramCode").ToString]</InArgument>
+                                    </ui:InvokeWorkflowFile.Arguments>
+                                  </ui:InvokeWorkflowFile>
+                                  <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_35">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:Object">[curCertificate("D_LastMilestone")]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:Object">["Expiration Updated in TMW"]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_36">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:Object">[curCertificate("D_Success")]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:Object">[True]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                </Sequence>
+                              </TryCatch.Try>
+                              <TryCatch.Catches>
+                                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="500,22" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ActivityAction x:TypeArguments="s:Exception">
+                                    <ActivityAction.Argument>
+                                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                    </ActivityAction.Argument>
+                                    <Sequence DisplayName="Catch - Single Driver Certificate" sap:VirtualizedContainerService.HintSize="592,1899" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="530,173" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Error" Message="[dr_Transaction(&quot;T_Reference&quot;).ToString &amp; &quot; has experienced an exception for driver &quot; &amp; curCertificate(&quot;DriverFirstName&quot;).ToString &amp; &quot; &quot; &amp; curCertificate(&quot;DriverLastName&quot;).ToString &amp; &quot; (Performer Driver Catch)(&quot; &amp; exception.GetType.AsText &amp; &quot;): &quot; &amp; exception.Message]" />
+                                      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="530,179" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+                                        <ui:MultipleAssign.AssignOperations>
+                                          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
+                                              <ui:AssignOperation.To>
+                                                <OutArgument x:TypeArguments="x:Object">[curCertificate("D_ExceptionType")]</OutArgument>
+                                              </ui:AssignOperation.To>
+                                              <ui:AssignOperation.Value>
+                                                <InArgument x:TypeArguments="x:Object">[iif(exception.GetType.AsText.Contains("Business"),"BusinessException","SystemException")]</InArgument>
+                                              </ui:AssignOperation.Value>
+                                            </ui:AssignOperation>
+                                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
+                                              <ui:AssignOperation.To>
+                                                <OutArgument x:TypeArguments="x:Object">[curCertificate("D_ExceptionMessage")]</OutArgument>
+                                              </ui:AssignOperation.To>
+                                              <ui:AssignOperation.Value>
+                                                <InArgument x:TypeArguments="x:Object">[exception.Message]</InArgument>
+                                              </ui:AssignOperation.Value>
+                                            </ui:AssignOperation>
+                                          </scg:List>
+                                        </ui:MultipleAssign.AssignOperations>
+                                      </ui:MultipleAssign>
+                                      <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List" sap:VirtualizedContainerService.HintSize="530,165" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_2" ItemToAppend="[&quot;(Performer Driver Catch)(&quot; &amp; exception.GetType.AsText &amp; &quot;): &quot; &amp; exception.Message]" List="[str_Exception_List]" />
+                                      <If Condition="[curCertificate(&quot;CertificatePath&quot;).ToString &lt;&gt; &quot;&quot;]" DisplayName="If cert PDF has been saved somewhere by now THEN move to exception path" sap:VirtualizedContainerService.HintSize="530,837" sap2010:WorkflowViewState.IdRef="If_11">
+                                        <If.Then>
+                                          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,415" sap2010:WorkflowViewState.IdRef="Sequence_61">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" sap2010:Annotation.AnnotationText="- Move from current location to Exception Path" Destination="[in_Config(&quot;CertificateExceptionPath&quot;).ToString]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="434,222" sap2010:WorkflowViewState.IdRef="MoveFile_4" Overwrite="True" Path="[Path.Combine(curCertificate(&quot;CertificatePath&quot;).ToString,curCertificate(&quot;CertificateFileName&quot;).ToString)]">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                            </ui:MoveFile>
+                                            <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_14">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="x:Object">[curCertificate("CertificatePath")]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="x:Object">[in_Config("CertificateExceptionPath").ToString]</InArgument>
+                                              </Assign.Value>
+                                            </Assign>
+                                          </Sequence>
+                                        </If.Then>
+                                        <If.Else>
+                                          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,252" sap2010:WorkflowViewState.IdRef="Sequence_62">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,164" sap2010:WorkflowViewState.IdRef="LogMessage_21" Level="Info" Message="[&quot;No certificate saved for this driver and program yet, so nothing to move to exception folder&quot;]" />
+                                          </Sequence>
+                                        </If.Else>
+                                      </If>
+                                      <If Condition="[exception.GetType.AsText.Contains(&quot;Business&quot;) = False]" DisplayName="If not a business exception THEN flip system exception flag" sap:VirtualizedContainerService.HintSize="530,457" sap2010:WorkflowViewState.IdRef="If_8">
+                                        <If.Then>
+                                          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_54">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_43">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="x:Boolean">[bln_HasSystemException]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                              </Assign.Value>
+                                            </Assign>
+                                          </Sequence>
+                                        </If.Then>
+                                        <If.Else>
+                                          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_55">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                          </Sequence>
+                                        </If.Else>
+                                      </If>
+                                    </Sequence>
+                                  </ActivityAction>
+                                </Catch>
+                              </TryCatch.Catches>
+                            </TryCatch>
+                          </Sequence>
+                        </ActivityAction>
+                      </ui:ForEachRow.Body>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:ForEachRow>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEach.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ForEach>
+          </Sequence>
+          <Sequence DisplayName="Custom - Make Final Updates to Transaction" sap:VirtualizedContainerService.HintSize="946,48" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="546,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Finalizing updates to Transaction...&quot;]" />
+            <ui:IfElseIfV2 Condition="[str_Exception_List.Count &gt; 0]" DisplayName="If any Program or Certificate exceptions THEN Throw at Site Level" sap:VirtualizedContainerService.HintSize="546,1112" sap2010:WorkflowViewState.IdRef="IfElseIfV2_4">
+              <ui:IfElseIfV2.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,252" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,164" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;Site &quot; &amp; dr_Transaction(&quot;SiteKey&quot;).ToString &amp; &quot; finished &quot; &amp; out_ReportDetails.RowCount &amp; &quot; records with no exceptions.&quot;]" />
+                </Sequence>
+              </ui:IfElseIfV2.Else>
+              <ui:IfElseIfV2.ElseIfs>
+                <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True" />
+              </ui:IfElseIfV2.ElseIfs>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:IfElseIfV2.Then>
+                <Sequence DisplayName="Throw at Site Level" sap:VirtualizedContainerService.HintSize="512,651" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If Condition="[bln_HasSystemException]" DisplayName="If any system exceptions THEN throw SE ELSE throw BE" sap:VirtualizedContainerService.HintSize="450,563" sap2010:WorkflowViewState.IdRef="If_9">
+                    <If.Then>
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,201" sap2010:WorkflowViewState.IdRef="Sequence_56">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Throw Exception="[New SystemException(&quot;(&quot; &amp; str_Exception_List.Count &amp; &quot; errors): &quot; &amp; String.Join(&quot;;&quot;, str_Exception_List))]" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="Throw_5" />
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,201" sap2010:WorkflowViewState.IdRef="Sequence_57">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Throw Exception="[New BusinessRuleException(&quot;(&quot; &amp; str_Exception_List.Count &amp; &quot; errors): &quot; &amp; String.Join(&quot;;&quot;, str_Exception_List))]" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="Throw_7" />
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </ui:IfElseIfV2.Then>
+            </ui:IfElseIfV2>
+          </Sequence>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1012,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Catch Process Transaction" sap:VirtualizedContainerService.HintSize="496,366" sap2010:WorkflowViewState.IdRef="Sequence_8">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,173" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[&quot;Transaction_Execute workflow failed after reaching milestone &quot; &amp; dr_Transaction(&quot;T_LastMilestone&quot;).ToString &amp; &quot;. Error: &quot; &amp; exception.Message]" />
+              <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_6">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="s:Exception">[out_Exception]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="s:Exception">[exception]</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1046,164" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Trace" Message="[&quot;End: Transaction_Execute&quot;]" />
+  </Sequence>
+</Activity>

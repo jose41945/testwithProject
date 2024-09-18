@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="Xp4A6tEBo0KyMgd_4DFoLQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="981, 194, 0, 0" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd cls='FNUDO*' title='Quick Find' /&gt;&lt;wnd cls='Edit' idx='6' /&gt;" FuzzySelectorArgument="&lt;wnd cls='FNUDO*' title='Quick Find' /&gt;&lt;wnd cls='Edit' /&gt;" Guid="f4015e17-f6bf-485b-9f48-1af588cbbfb2" ImageBase64="" ScopeSelectorArgument="&lt;wnd app='tts_flm.exe' cls='FNWND*' title='File Maintenance' /&gt;&lt;wnd cls='FNWND*' title='Find Drivers' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="a2eec214a92d6a5f879822a108026152.png" xmlns="">0gpEo9skmUE6witiVNXyh_A</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

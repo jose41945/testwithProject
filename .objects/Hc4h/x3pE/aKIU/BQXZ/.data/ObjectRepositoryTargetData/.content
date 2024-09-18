@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="hCaTV0jbnUKWNOWeuU15AA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="726, 38, 50, 35" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd aaname='Close' cls='Button' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Close' cls='Button' title='&amp;amp;Close' check:text='unchecked' /&gt;" Guid="a968c744-56be-4e9f-b090-e17ad9703e21" ImageBase64="" ScopeSelectorArgument="&lt;wnd app='tts_flm.exe' cls='FNWNS*' title='Driver/Equipment Status' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="833f091bf401216e0660c5be8b9e6747.png" xmlns="">0oixQxsNDNEKhWezr6yq2tg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="sbMLu1K5A0ygIi3isyVdjg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" CvTextArgument="Drivers" DesignTimeRectangle="3, 736, 244, 22" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;ctrl name='Edit' role='popup menu' /&gt;&lt;ctrl role='menu item' text='Expiration' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Edit' role='popup menu' /&gt;&lt;ctrl automationid='10336' role='menu item' check:text='Expiration' /&gt;" Guid="f216202d-3cb0-431d-bef8-076e0f9c9335" ScopeSelectorArgument="&lt;wnd app='tts_flm.exe' cls='#32768' idx='*' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="f31adcfee0662e324811a6b8c118197e.png" xmlns="">0WJ2odgm8YUmMRMyhdO8a8A</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

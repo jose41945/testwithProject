@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="U7OoSPBSYk-PY0_l2VsJ0g" Reference="AniWOyIB2EmcyKwwtqRJzg/JqEm-Fn6L0qKeCSl2Bn7nQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="https://www.carriersedge.com/ce/carrier_administrator_home.html" CVScreenId="bb41c4e9-472e-4c26-a55a-b97835992e9a" CvTextArea="248, 470, 291, 13" CvType="Text" DesignTimeRectangle="224, 455, 367, 20" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="[string.Format(&quot;&lt;webctrl tag='DIV' aaname='{0}' /&gt;&quot;, in_ProgramName)]" FuzzyMatches="10000" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl tag='DIV' aaname='{0}' type='' class='module icn group6 ui-selectee' check:text='Avoiding Heat Stress' /&gt;&quot;, in_ProgramName)]" Guid="496f0516-25bb-48b6-b7bd-049e4f960762" ImageBase64="" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Impact - * - CarriersEdge' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="ec3da1f19d47356021aded0dc9b82fb3.png" xmlns="">0A8fRFycj7UqX2nBH1DWWwA</imageRef>
+    </TargetAnchorable>
+    <scg:List x:TypeArguments="ObjectRepositoryVariableData" x:Key="Variables" Capacity="1">
+      <ObjectRepositoryVariableData DefaultValue="Avoiding Heat Stress" Name="in_ProgramName" />
+    </scg:List>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

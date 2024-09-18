@@ -1,0 +1,17 @@
+﻿{
+  "Name": "Programs_List",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Id": "LCqkRiRvmkWvqKpwCraovw",
+  "Reference": "AniWOyIB2EmcyKwwtqRJzg/LCqkRiRvmkWvqKpwCraovw",
+  "ParentRef": "AniWOyIB2EmcyKwwtqRJzg/cmlAl9OuiE-_vzRhBU290w",
+  "Created": "2024-09-02T04:49:56.713393Z",
+  "Updated": "2024-09-04T21:20:11.0931429Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

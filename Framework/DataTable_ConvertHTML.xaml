@@ -1,0 +1,168 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Datatable_ConvertHTML" this:Datatable_ConvertHTML.in_Datatable="[New DataTable()]" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property sap2010:Annotation.AnnotationText="HTML code representing in_Datatable" Name="out_HTML" Type="OutArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="Datatable to be turned into an HTML table" Name="in_Datatable" Type="InArgument(sd:DataTable)">
+      <x:Property.Attributes>
+        <RequiredArgumentAttribute />
+      </x:Property.Attributes>
+    </x:Property>
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1204,1761</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>DatatableToHTML_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="68">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Converts a datatable into an HTML table.  If a null datatable is provided then a blank string is returned.  Applies classes based off the Row_Class column.  Applies icons off the Icon column." DisplayName="Datatable_ConvertHTML" sap:VirtualizedContainerService.HintSize="624,1696" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="562,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;Start: Datatable_ConvertHTML&quot;]" />
+    <If Condition="[in_Datatable Is Nothing]" DisplayName="If empty datatable THEN Warn ELSE Invoke Code" sap:VirtualizedContainerService.HintSize="562,1181" sap2010:WorkflowViewState.IdRef="If_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence DisplayName="Empty Datatable Provided" sap:VirtualizedContainerService.HintSize="476,351" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[out_HTML]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">
+                <Literal x:TypeArguments="x:String" Value="" />
+              </InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn" Message="[&quot;Empty datatable provided to DatatableToHTML&quot;]" />
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Datatable Provided" sap:VirtualizedContainerService.HintSize="528,648" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim i As Integer&#xA;Dim j As Integer&#xA;&#xA;html = &quot;&lt;table bgcolor=&quot;&quot;#5b9bd5&quot;&quot; width=&quot;&quot;100%&quot;&quot; border=&quot;&quot;0&quot;&quot; cellpadding=&quot;&quot;0&quot;&quot; cellspacing=&quot;&quot;0&quot;&quot;  style=&quot;&quot;font-family:Lato,sans-serif; font-size:9pt; text-align: right; border: 1px solid #000000;&quot;&quot;&gt;&quot;&#xA;html = html &amp; &quot;&lt;tr class=&quot;&quot;row-header&quot;&quot;&gt;&quot;&#xA;For i = 0 To dt.Columns.Count-1&#xA;&#x9;If dt.Columns(i).ColumnName &lt;&gt; &quot;Row_Class&quot; Then&#xA;    &#x9;html = html &amp; &quot;&lt;th class=&quot;&quot;datacell-header&quot;&quot;&gt;&quot; &amp; dt.Columns(i).ColumnName &amp; &quot;&lt;/th&gt;&quot;&#xA;&#x9;End If&#xA;Next&#xA;html = html &amp; &quot;&lt;/tr&gt;&quot;&#xA;&#xA;For i = 0 To dt.Rows.Count-1&#xA;    html = html &amp; &quot;&lt;tr class=&quot;&quot;&quot; &amp; dt.Rows(i).Item(&quot;Row_Class&quot;).ToString &amp; &quot;&quot;&quot;&gt;&quot;&#xA;    For j = 0 To dt.Columns.Count-1&#xA;&#x9;&#x9;If dt.Columns(j).ColumnName = &quot;Icon&quot; Then&#xA;        &#x9;html = html &amp; &quot;&lt;td class=&quot;&quot;datacell-icon&quot;&quot;&gt;&quot; &amp; dt.Rows(i)(j).ToString &amp; &quot;&lt;/td&gt;&quot;'&#xA;&#x9;&#x9;ElseIf dt.Columns(j).ColumnName = &quot;Row_Class&quot; Then&#xA;&#x9;&#x9;&#x9;'Do Nothing&#xA;&#x9;&#x9;Else&#xA;&#x9;&#x9;&#x9;html = html &amp; &quot;&lt;td class=&quot;&quot;datacell-row&quot;&quot;&gt;&quot; &amp; dt.Rows(i)(j).ToString &amp; &quot;&lt;/td&gt;&quot;'&#xA;&#x9;&#x9;End If&#xA;&#x9;Next&#xA;    html = html &amp; &quot;&lt;/tr&gt;&quot;&#xA;Next&#xA;html = html &amp; &quot;&lt;/table&gt;&quot;" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="486,165" sap2010:WorkflowViewState.IdRef="InvokeCode_2">
+            <ui:InvokeCode.Arguments>
+              <InArgument x:TypeArguments="sd:DataTable" x:Key="dt">[in_Datatable]</InArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="html">[out_HTML]</OutArgument>
+            </ui:InvokeCode.Arguments>
+          </ui:InvokeCode>
+          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,355" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+            <ui:CommentOut.Body>
+              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,276" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim i As Integer&#xA;Dim j As Integer&#xA;&#xA;html = &quot;&lt;table border='1px solid black'&gt;&quot;&#xA;html = html &amp; &quot;&lt;tr&gt;&quot;&#xA;For i = 0 To dt.Columns.Count-1&#xA;    html = html &amp; &quot;&lt;th&gt;&quot; &amp; dt.Columns(i).ColumnName &amp; &quot;&lt;/th&gt;&quot;&#xA;Next&#xA;html = html &amp; &quot;&lt;/tr&gt;&quot;&#xA;&#xA;For i = 0 To dt.Rows.Count-1&#xA;    html = html &amp; &quot;&lt;tr&gt;&quot;&#xA;    For j = 0 To dt.Columns.Count-1&#xA;        html = html &amp; &quot;&lt;td&gt;&quot; &amp; dt.Rows(i)(j).ToString() &amp; &quot;&lt;/td&gt;&quot;'&#xA;&#x9;Next&#xA;    html = html &amp; &quot;&lt;/tr&gt;&quot;&#xA;Next&#xA;html = html &amp; &quot;&lt;/table&gt;&quot;" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="388,165" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+                  <ui:InvokeCode.Arguments>
+                    <InArgument x:TypeArguments="sd:DataTable" x:Key="dt">[in_Datatable]</InArgument>
+                    <OutArgument x:TypeArguments="x:String" x:Key="html">[out_HTML]</OutArgument>
+                  </ui:InvokeCode.Arguments>
+                </ui:InvokeCode>
+              </Sequence>
+            </ui:CommentOut.Body>
+          </ui:CommentOut>
+        </Sequence>
+      </If.Else>
+    </If>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="562,141" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;End: Datatable_ConvertHTML&quot;]" />
+  </Sequence>
+</Activity>

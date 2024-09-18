@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="gtbn_oIJP0qhHu4qpCksCQ" Reference="AniWOyIB2EmcyKwwtqRJzg/j2bjxiLiv02ypSfbNvoWFg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" ContentHash="5bsPf7MdEkG4i-13G7G74A" DesignTimeRectangle="181, 352, 87, 15" DesignTimeScaleFactor="1" ElementType="ListItem" FullSelectorArgument="[string.Format(&quot;&lt;wnd cls='pbdw???' /&gt;&lt;ctrl idx='{0}' name='drv_code' role='drop down' /&gt;&lt;ctrl name='*' role='list item' /&gt;&quot;, int_NextIndex)]" FuzzySelectorArgument="&lt;wnd cls='pbdw110' /&gt;&lt;ctrl name='drv_code' role='drop down' /&gt;&lt;ctrl name='126 Security' role='list item' automationid='' check:text='126 Security' /&gt;" Guid="6461d156-393d-4378-9f71-5d5b09e52d8d" ImageBase64="" Reference="AniWOyIB2EmcyKwwtqRJzg/j2bjxiLiv02ypSfbNvoWFg" ScopeSelectorArgument="&lt;wnd app='tts_flm.exe' cls='FNWNS*' title='Driver/Equipment Status' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="e5d5fba7a40ee15b18694479efc4378e.png" xmlns="">0X1LinPJyIkSnmiz2UIe2Hg</imageRef>
+    </TargetAnchorable>
+    <scg:List x:TypeArguments="ObjectRepositoryVariableData" x:Key="Variables" Capacity="1">
+      <ObjectRepositoryVariableData DefaultValue="2" Name="int_NextIndex" />
+    </scg:List>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="4nXWpHGZeEe15j7uQlOjtQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="182, 314, 68, 13" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;wnd aaname='*' cls='pbdwst???' aastate='focused, focusable' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='*' cls='pbdwst???' aastate='focused, focusable' check:text='New Hire Training' /&gt;" Guid="542d095e-8e85-4826-a1bb-7dd2bca198ed" ImageBase64="" ScopeSelectorArgument="&lt;wnd app='tts_flm.exe' cls='FNWNS*' title='Driver/Equipment Status' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="d19328e8121ea56cef30d503985bee16.png" xmlns="">0s81vMJfzs0iHoj8eDPvnnw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

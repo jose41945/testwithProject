@@ -1,0 +1,16 @@
+﻿{
+  "Name": "Popup_OK",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Id": "OPPP7_9ymECie2M0i2qwyw",
+  "Reference": "AniWOyIB2EmcyKwwtqRJzg/OPPP7_9ymECie2M0i2qwyw",
+  "ParentRef": "AniWOyIB2EmcyKwwtqRJzg/KIivtsH74EujIxeBSN5JVA",
+  "Created": "2024-08-14T21:23:03.505091Z",
+  "Updated": "2024-08-14T21:23:17.4871935Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

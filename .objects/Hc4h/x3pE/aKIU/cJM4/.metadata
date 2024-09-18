@@ -1,0 +1,16 @@
+﻿{
+  "Name": "DynamicExpirationDate",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Id": "cJM4QApCDE2oWxlDMEM0Aw",
+  "Reference": "AniWOyIB2EmcyKwwtqRJzg/cJM4QApCDE2oWxlDMEM0Aw",
+  "ParentRef": "AniWOyIB2EmcyKwwtqRJzg/aKIUbm_0l0ySLUPtx6LoKQ",
+  "Created": "2024-08-16T20:22:58.7154059Z",
+  "Updated": "2024-08-16T20:24:18.7677839Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

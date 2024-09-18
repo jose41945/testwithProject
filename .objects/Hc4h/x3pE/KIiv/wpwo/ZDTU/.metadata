@@ -1,0 +1,16 @@
+﻿{
+  "Name": "Menu_Tools_ScrollDrivers",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Id": "ZDTUGlFBt0uIYnHVSWRaTw",
+  "Reference": "AniWOyIB2EmcyKwwtqRJzg/ZDTUGlFBt0uIYnHVSWRaTw",
+  "ParentRef": "AniWOyIB2EmcyKwwtqRJzg/wpwo8MGnrEmfOcLFgNvehg",
+  "Created": "2024-08-14T21:14:57.0251667Z",
+  "Updated": "2024-08-14T21:15:37.9941892Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

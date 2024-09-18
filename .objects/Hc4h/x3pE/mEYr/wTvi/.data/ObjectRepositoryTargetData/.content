@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="-BsrqZeEo0K5XsoMPgNzeQ" Reference="AniWOyIB2EmcyKwwtqRJzg/wTvi-R5HvUauXIe7iYRTHA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="105, 37, 61, 16" DesignTimeScaleFactor="1" ElementType="InputBoxPassword" FullSelectorArgument="&lt;ctrl name='mpp_id' role='editable text' /&gt;" FuzzySelectorArgument="&lt;ctrl name='mpp_id' role='editable text' aastate='invisible, protected' automationid='' /&gt;" Guid="d1886c6d-362f-435a-947f-4d3e24cf1426" ImageBase64="" ScopeSelectorArgument="&lt;wnd app='tts_flm.exe' cls='FNWNS*' title='Profile Driver*' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="7207f969298e3f7f69d63942834fda73.png" xmlns="">0Zo9uRF4bZ0qYfXndRBkWHw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

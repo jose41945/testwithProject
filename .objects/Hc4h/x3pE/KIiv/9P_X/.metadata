@@ -1,0 +1,16 @@
+﻿{
+  "Name": "FindDriver_Minimize",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Id": "9P_X48aO1Ue6rVgBbxA8AA",
+  "Reference": "AniWOyIB2EmcyKwwtqRJzg/9P_X48aO1Ue6rVgBbxA8AA",
+  "ParentRef": "AniWOyIB2EmcyKwwtqRJzg/KIivtsH74EujIxeBSN5JVA",
+  "Created": "2024-08-15T15:41:15.8571744Z",
+  "Updated": "2024-08-15T15:41:38.8067844Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

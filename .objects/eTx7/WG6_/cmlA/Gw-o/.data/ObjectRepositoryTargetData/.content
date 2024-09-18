@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="dV71odkwskaIFo0lfboY6g" Reference="AniWOyIB2EmcyKwwtqRJzg/Gw-o5Li3Y0qx65NzdnH5UQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="https://www.carriersedge.com/ce/carrier_administrator_home.html" CVScreenId="19f0ea55-fa15-47e4-8f3e-ac6e95b333cb" CvTextArea="828, 421, 36, 13" CvTextArgument="Week" CvType="Text" DesignTimeRectangle="774, 420, 48, 16" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Week' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Week' parentid='modal11' tag='A' type='' class='' check:innerText='Week' /&gt;" Guid="841a833b-52d0-4b35-98cf-23eaa1b85c08" ImageBase64="" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Impact - * - CarriersEdge' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="1adab96500b79b5234b484032c02f7b7.png" xmlns="">0avkrye0Uyk2YakP7G-0cMw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

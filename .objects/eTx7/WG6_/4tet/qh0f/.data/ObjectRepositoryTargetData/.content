@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="2ihXWNnLwEC2FXWb4IMzPA" Reference="AniWOyIB2EmcyKwwtqRJzg/qh0fdQQaSkOiD133bM8JSw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="https://www.carriersedge.com/ce/rest_api/certificates/download?id=11445390&amp;wallet=false&amp;walletWithSignature=false" CVScreenId="f6535dca-57b9-401e-9153-c94887717ee2" CvElementArea="133, 365, 537, 25" CvType="InputBox" DesignTimeRectangle="136, 429, 791, 17" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlid='1001' aaname='File name:' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1001' aaname='File name:' /&gt;" Guid="ed702270-e71b-48c5-abef-85174f8f9fc8" ImageBase64="" ScopeSelectorArgument="&lt;wnd app='chrome.exe' title='Save As' /&gt;" SearchSteps="Selector, CV" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="55fb037b555cf8f1ea8ae15ab89b9571.png" xmlns="">0zJg0iV8uH0CR_3pGoc3NEw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

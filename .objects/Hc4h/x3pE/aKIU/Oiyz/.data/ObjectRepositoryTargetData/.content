@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="ax0zCxTJakSEcyurCR080A" Reference="AniWOyIB2EmcyKwwtqRJzg/OiyzfDd7OES8VVKuBmOT5w" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="182, 391, 68, 13" DesignTimeScaleFactor="1" FullSelectorArgument="[string.Format(&quot;&lt;wnd aaname='{0}' cls='pbdwst*' /&gt;&quot;, in_Type)]" FuzzySelectorArgument="&lt;wnd aaname='Defensive Driving' cls='pbdwst110' check:text='Defensive Driving' /&gt;" Guid="44a21deb-7685-4423-b143-a438fe0541d7" ImageBase64="" ScopeSelectorArgument="&lt;wnd app='tts_flm.exe' cls='FNWNS*' title='Driver/Equipment Status' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="3b18f43ad51ceb819012eb78d45f0863.png" xmlns="">0trcTEkREH0-QAyA7RQYpcQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+    <scg:List x:TypeArguments="ObjectRepositoryVariableData" x:Key="Variables" Capacity="1">
+      <ObjectRepositoryVariableData DefaultValue="126 Security" Name="in_Type" />
+    </scg:List>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

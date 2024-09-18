@@ -1,0 +1,15 @@
+﻿{
+  "Name": "DriverProfile",
+  "Type": "Screen",
+  "Id": "mEYrwYwvvUOS8e_MDRpRbA",
+  "Reference": "AniWOyIB2EmcyKwwtqRJzg/mEYrwYwvvUOS8e_MDRpRbA",
+  "ParentRef": "AniWOyIB2EmcyKwwtqRJzg/x3pEIUxbQkCj7E7j9Z_aUg",
+  "Created": "2024-08-15T19:12:40.7876057Z",
+  "Updated": "2024-08-15T19:12:51.4036542Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

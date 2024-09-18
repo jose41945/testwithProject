@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="J5sYaX8NvUK93ILkVpE6MQ" Reference="AniWOyIB2EmcyKwwtqRJzg/-tnd8_4y20C1iwFSjWHFEQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="https://www.carriersedge.com/ce/carrier_administrator_home.html" CVScreenId="cd8ff46f-efc0-45c7-82e1-6b3508763c94" CvElementArea="422, 636, 82, 32" CvTextArea="447, 644, 31, 13" CvTextArgument="Save" CvType="Button" DesignTimeRectangle="621, 690, 80, 29" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl tag='BUTTON' aaname='Save' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' aaname='Save' type='' class='btnSave' check:text='Save' /&gt;" Guid="1b3fb36d-2a9f-4618-a7ed-76d08ecd8ade" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Impact - * - CarriersEdge' /&gt;" SearchSteps="Selector, CV" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="b6d0a80e6f3b2ce1fcf9e4ac288e6464.png" xmlns="">0WqIPDPFovkiv9oFzWL8OKA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

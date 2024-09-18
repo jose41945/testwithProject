@@ -1,0 +1,16 @@
+﻿{
+  "Name": "Popup_Yes",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "35BnsiNX30GjFyKJMhtEhg",
+  "Reference": "AniWOyIB2EmcyKwwtqRJzg/35BnsiNX30GjFyKJMhtEhg",
+  "ParentRef": "AniWOyIB2EmcyKwwtqRJzg/KIivtsH74EujIxeBSN5JVA",
+  "Created": "2024-08-16T20:48:57.8152558Z",
+  "Updated": "2024-08-16T20:50:12.6644104Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

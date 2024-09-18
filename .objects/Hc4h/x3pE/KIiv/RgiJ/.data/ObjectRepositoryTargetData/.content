@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="xC2W0jqScEKtHNwfhMAvZw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="96, 94, 53, 35" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd aaname='No' cls='Button' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='No' cls='Button' title='&amp;amp;No' check:text='&amp;amp;No' /&gt;" Guid="f24eadea-d1f0-49ce-b5c6-e0b83d4d58fc" ImageBase64="" ScopeSelectorArgument="&lt;wnd app='tts_flm.exe' cls='FNWNS*' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="c9f2e99bf0e0974d8782d930952532df.png" xmlns="">02plMJ3eu6U2zEBP-SAcm-g</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

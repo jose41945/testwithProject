@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryScreenData ContentHash="Dwdn3-ZewE-PHgrnLTxMrw" Reference="AniWOyIB2EmcyKwwtqRJzg/4tetOCRoS0aJ4WFdD9rZSA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryScreenData.Data>
+    <TargetApp x:Key="TargetApp" Area="0, 0, 0, 0" BrowserType="Chrome" ContentHash="pTdTiXZWfk-5AlBCD6C4LQ" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFvSURBVDhPldC9SwJxGAdwE4oQC7IlXOqIBu9OvdKQyCGJXmgLRLyjsGgKWlyCliA6HKMpevEl6MW9TYhehoig/oCIcAkiHEocfEmw788ewSOHX1/4wPk8Pl/0TK1SiksNnSCAB0ZgACxQ3/9JYwE2WIILeIUcfMALZCAEbUCXCPtAwwm4LSekyndSLFaT4hfk8VyuJKQadsw7+MFw3A4RuC7GpcTdlk+PRaYOosG59EZ49uxwNZB61EfT+X3nPcoKKDvH9zqaj2dgGfo/d71mq32lR3AsjDmcWlRyaRnIyW7tze8LXW0vTp9kd4ZT1ZQosGMRhqAPDP/LragNVpiHJ5ei1mSXVvJ6wg+T48EAK1gD9obrv6ZVmooG4RJqDMpi7MgMxjfaIlTAKJBlBXBEa75QAaNTwTGt+EMFfijAHo35QwV2eIZNGvOHCrrhBsI05g8VdMEpyDTmDxX0wjpYaMwfKrCBzJ7/HSow/1JNP/f82S1lQ3MTAAAAAElFTkSuQmCC" Reference="AniWOyIB2EmcyKwwtqRJzg/4tetOCRoS0aJ4WFdD9rZSA" Selector="&lt;html app='chrome.exe' htmlwindowname='pdfForm' title='download' /&gt;" Title="download" Url="https://www.carriersedge.com/ce/rest_api/certificates/download?id=*">
+      <imageRef attrName="InformativeScreenshot" originalValue="0392eb924c95e0ba150fe8682a6cd7f0.jpg" xmlns="">0K96iWmu-oUO1bYZFGAxMmw</imageRef>
+    </TargetApp>
+  </ObjectRepositoryScreenData.Data>
+</ObjectRepositoryScreenData>

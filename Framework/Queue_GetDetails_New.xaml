@@ -1,0 +1,590 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Snapshot_QI" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Folder" Type="InArgument(x:String)">
+      <x:Property.Attributes>
+        <RequiredArgumentAttribute />
+      </x:Property.Attributes>
+    </x:Property>
+    <x:Property Name="out_QueueItems" Type="OutArgument(sd:DataTable)" />
+    <x:Property Name="in_CutoffTime" Type="InArgument(x:String)" />
+    <x:Property Name="in_ClientName" Type="InArgument(x:String)" />
+    <x:Property Name="in_TenantName" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>916,6920</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Cleanup_Jobs_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="38">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Core.Activities.Orchestrator</x:String>
+      <x:String>UiPath.Web.Activities</x:String>
+      <x:String>System.Web</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>UiPath.Activities.System.Collections</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="59">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Collections.Specialized</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Web.HttpUtility</AssemblyReference>
+      <AssemblyReference>System.Text.Encoding.CodePages</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Uses Orchestrator API to retrieve queue item data for the in_Folder.  The queue items that are returned are those which have not been deleted and have a CreationTime or EndProcessing that is less than the AgeDays old defined in the config file.  If API call fails a SystemException is thrown.&#xA;&#xA;The dataset includes&#xA;  - Constants: ClientName, TenantName, FolderPath&#xA;  - Standard fields: Key, Reference, CreationTime, StartProcessing, EndProcessing, Status&#xA;  - Calculated fields: QueueName, ExceptionType, ExceptionMessage, ExceptionDetails" DisplayName="Get_QIData" sap:VirtualizedContainerService.HintSize="926,6855" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="scg:Dictionary(x:Int32, x:String)" Default="[New Dictionary(Of Int32, String)]" Name="dict_Queues" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_OrchProperties" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="864,92" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Start: Get_QIData&quot;]" />
+    <Sequence sap2010:Annotation.AnnotationText="The queue ids from this call will be used to add the queue name to the results of the &quot;Get Queue Items from Orchestrator&quot; sequence." DisplayName="Get Queues from Orchestrator" sap:VirtualizedContainerService.HintSize="864,80" sap2010:WorkflowViewState.IdRef="Sequence_39">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="str_QueueResponseJSON" />
+        <Variable x:TypeArguments="x:Int32" Name="int_QueueResponseStatus" />
+        <Variable x:TypeArguments="njl:JObject" Name="jo_QueueResponse" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:OrchestratorHttpRequest DisplayName="Orch API - Get Queue Definitions for Folder" FolderPath="[in_Folder]" sap:VirtualizedContainerService.HintSize="532,242" sap2010:WorkflowViewState.IdRef="OrchestratorHttpRequest_4" JSONPayload="{}{}" Method="GET" RelativeEndpoint="/odata/QueueDefinitions" Result="[str_QueueResponseJSON]" StatusCode="[int_QueueResponseStatus]">
+        <ui:OrchestratorHttpRequest.ResponseHeaders>
+          <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" />
+        </ui:OrchestratorHttpRequest.ResponseHeaders>
+        <ui:OrchestratorHttpRequest.TimeoutMS>
+          <InArgument x:TypeArguments="x:Int32" />
+        </ui:OrchestratorHttpRequest.TimeoutMS>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:OrchestratorHttpRequest>
+      <ui:IfElseIf DisplayName="IF the response code is not good THEN throw system exception" sap:VirtualizedContainerService.HintSize="532,25" sap2010:WorkflowViewState.IdRef="IfElseIf_2">
+        <ui:IfElseIf.ConditionBlocks>
+          <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+            <ui:IfElseIfBlock BlockType="If" Condition="[int_QueueResponseStatus &lt;&gt; 200]">
+              <ui:IfElseIfBlock.Then>
+                <Sequence DisplayName="Log error and throw system exception" sap:VirtualizedContainerService.HintSize="450,329" sap2010:WorkflowViewState.IdRef="Sequence_54">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,88" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Error" Message="[&quot;Orchestrator API Error: &quot; &amp; str_QueueResponseJSON]" />
+                  <Throw Exception="[new SystemException(&quot;Bad response from Orchestrator API when trying to retrieve queue definitions: &quot; &amp; int_QueueResponseStatus)]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_7" />
+                </Sequence>
+              </ui:IfElseIfBlock.Then>
+            </ui:IfElseIfBlock>
+          </sc:BindingList>
+        </ui:IfElseIf.ConditionBlocks>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:IfElseIf>
+      <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="532,60" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_5" JsonObject="[jo_QueueResponse]" JsonString="[str_QueueResponseJSON]" />
+      <Sequence DisplayName="Add results to Queues dictionary" sap:VirtualizedContainerService.HintSize="532,419" sap2010:WorkflowViewState.IdRef="Sequence_41">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="njl:JArray" Name="ja_Queues" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:DeserializeJsonArray DisplayName="Deserialize JSON Array" sap:VirtualizedContainerService.HintSize="470,60" sap2010:WorkflowViewState.IdRef="DeserializeJsonArray_3" JsonArray="[ja_Queues]" JsonString="[jo_QueueResponse(&quot;value&quot;).ToString]" />
+        <ui:ForEach x:TypeArguments="njl:JObject" CurrentIndex="{x:Null}" DisplayName="For each queue in JSON array, add queue to dictionary" sap:VirtualizedContainerService.HintSize="470,208" sap2010:WorkflowViewState.IdRef="ForEach`1_14" Values="[ja_Queues]">
+          <ui:ForEach.Body>
+            <ActivityAction x:TypeArguments="njl:JObject">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="njl:JObject" Name="jQueue" />
+              </ActivityAction.Argument>
+              <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_26">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[dict_Queues(CINT(jQueue("Id")))]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[jQueue("Name").ToString]</InArgument>
+                </Assign.Value>
+              </Assign>
+            </ActivityAction>
+          </ui:ForEach.Body>
+        </ui:ForEach>
+      </Sequence>
+    </Sequence>
+    <Sequence DisplayName="Initialize queue items datatable and orchestrator properties datatable" sap:VirtualizedContainerService.HintSize="864,1668" sap2010:WorkflowViewState.IdRef="Sequence_56">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:BuildDataTable sap2010:Annotation.AnnotationText="Any fields that are included in the snapshot data table but not retrieved in the http request" DataTable="[out_QueueItems]" DisplayName="Build Data Table - snapshot specific fields" sap:VirtualizedContainerService.HintSize="431,102" sap2010:WorkflowViewState.IdRef="BuildDataTable_5" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;ClientName&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; /&gt;&#xA;                &lt;xs:element name=&quot;TenantName&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; /&gt;&#xA;                &lt;xs:element name=&quot;FolderPath&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; /&gt;&#xA;                &lt;xs:element name=&quot;SnapshotTsp_UTC&quot; msdata:Caption=&quot;&quot; type=&quot;xs:dateTime&quot; /&gt;&#xA;                &lt;xs:element name=&quot;QueueName&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; /&gt;&#xA;                &lt;xs:element name=&quot;LastModTsp_UTC&quot; msdata:Caption=&quot;&quot; type=&quot;xs:dateTime&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ExceptionType&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ExceptionMessage&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ExceptionDetails&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:BuildDataTable>
+      <ui:BuildDataTable sap2010:Annotation.AnnotationText="Any fields that we want to retrieve in the http request.&#xA;&#xA;Fields that should not be included in the final snapshot output must be removed after the Merge Data Table activity." DataTable="[dt_OrchProperties]" DisplayName="Build Data Table - API response properties" sap:VirtualizedContainerService.HintSize="431,147" sap2010:WorkflowViewState.IdRef="BuildDataTable_6" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;QueueDefinitionId&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Key&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Reference&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;CreationTime&quot; msdata:Caption=&quot;&quot; type=&quot;xs:dateTime&quot; /&gt;&#xA;                &lt;xs:element name=&quot;StartProcessing&quot; msdata:Caption=&quot;&quot; type=&quot;xs:dateTime&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;EndProcessing&quot; msdata:Caption=&quot;&quot; type=&quot;xs:dateTime&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Status&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ProcessingExceptionType&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ProcessingException&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:BuildDataTable>
+      <ui:MergeDataTable Destination="[out_QueueItems]" DisplayName="Merge Data Table" sap:VirtualizedContainerService.HintSize="431,133" sap2010:WorkflowViewState.IdRef="MergeDataTable_3" MissingSchemaAction="Add" Source="[dt_OrchProperties]" />
+      <ui:MultipleAssign sap2010:Annotation.AnnotationText="The client, tenant, folder and snapshot timestamp is the same for all records." DisplayName="Set defaults for snapshot specific fields" sap:VirtualizedContainerService.HintSize="431,236" sap2010:WorkflowViewState.IdRef="MultipleAssign_8">
+        <ui:MultipleAssign.AssignOperations>
+          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_18">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:Object">[out_QueueItems.Columns("ClientName").DefaultValue]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:Object">[in_ClientName]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_20">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:Object">[out_QueueItems.Columns("TenantName").DefaultValue]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:Object">[in_TenantName]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_17">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:Object">[out_QueueItems.Columns("FolderPath").DefaultValue]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:Object">[in_Folder]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_19">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:Object">[out_QueueItems.Columns("SnapshotTsp_UTC").DefaultValue]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:Object">[Now.ToUniversalTime]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+          </scg:List>
+        </ui:MultipleAssign.AssignOperations>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:MultipleAssign>
+      <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" sap2010:Annotation.AnnotationText="The QueueDefinitionId is not needed once the QueueName has been populated" ColumnName="QueueDefinitionId" DataTable="[out_QueueItems]" DisplayName="Remove Column - QueueDefinitionId" sap:VirtualizedContainerService.HintSize="431,228" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_6">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:RemoveDataColumn>
+      <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" sap2010:Annotation.AnnotationText="The ProcessingExceptionType is not needed once the ExceptionType has been populated" ColumnName="ProcessingExceptionType" DataTable="[out_QueueItems]" DisplayName="Remove Column - ProcessingExceptionType" sap:VirtualizedContainerService.HintSize="431,228" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_8">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:RemoveDataColumn>
+      <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" sap2010:Annotation.AnnotationText="The ProcessingException is not needed once the ExceptionMessage and ExceptionDetails have been populated." ColumnName="ProcessingException" DataTable="[out_QueueItems]" DisplayName="Remove Column - ProcessingException" sap:VirtualizedContainerService.HintSize="431,243" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_7">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:RemoveDataColumn>
+    </Sequence>
+    <Sequence DisplayName="Get Queue Items from Orchestrator" sap:VirtualizedContainerService.HintSize="864,4535" sap2010:WorkflowViewState.IdRef="Sequence_35">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:Int32" Default="1000" Name="int_BatchSize" />
+        <Variable x:TypeArguments="njl:JArray" Name="ja_QueueItems" />
+        <Variable x:TypeArguments="x:Int32" Name="int_SkipFactor" />
+        <Variable x:TypeArguments="x:String" Name="str_QueryCriteria" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Assign sap2010:Annotation.AnnotationText="The portion of the query that will be used to filter the data." DisplayName="Initialize Query String" sap:VirtualizedContainerService.HintSize="802,114" sap2010:WorkflowViewState.IdRef="Assign_31">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[str_QueryCriteria]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String" xml:space="preserve">["Status ne 'Deleted' AND (EndProcessing gt " &amp; in_CutoffTime &amp; _
+" OR CreationTime gt " &amp; in_CutoffTime &amp; ")"]</InArgument>
+        </Assign.Value>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Assign>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="802,92" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Attempting to retrieve queue items for Get_QIData with the following criteria: &quot; &amp; str_QueryCriteria]" />
+      <ui:InterruptibleDoWhile sap2010:Annotation.AnnotationText="The maximum number of items that can be included in the API response is 1000.  The body of this loop will make the API call and add the items from the response to the QueueItems datatable.&#xA;&#xA;It will continue to loop until the number of items in the response is less than the batch size." Condition="[ja_QueueItems.Count = int_BatchSize]" CurrentIndex="[int_SkipFactor]" DisplayName="Do While - 1000 items in API response" sap:VirtualizedContainerService.HintSize="802,4138" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+        <ui:InterruptibleDoWhile.Body>
+          <Sequence DisplayName="Get Queue Items from Orchestrator in batches of 1000" sap:VirtualizedContainerService.HintSize="766,3900" sap2010:WorkflowViewState.IdRef="Sequence_34">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="njl:JObject" Name="jo_Response" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Sequence DisplayName="Build and execute query" sap:VirtualizedContainerService.HintSize="704,773" sap2010:WorkflowViewState.IdRef="Sequence_7">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="str_FullQuery" />
+                <Variable x:TypeArguments="x:String" Name="str_ResponseJSON" />
+                <Variable x:TypeArguments="x:Int32" Name="int_ResponseStatus" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Assign DisplayName="Build full query string for HTTP request" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_17">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[str_FullQuery]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String" xml:space="preserve">["/odata/QueueItems?$filter=" &amp; Web.HttpUtility.UrlEncode(str_QueryCriteria, System.Text.Encoding.UTF8) &amp; _
+"&amp;$top=" &amp; int_BatchSize.ToString &amp; _
+"&amp;$count=true" &amp; _
+"&amp;$skip=" &amp; (int_BatchSize * int_SkipFactor).ToString &amp; _
+"&amp;$select=" &amp; String.Join(",", (From dc In dt_OrchProperties.Columns.Cast(Of DataColumn) Select dc.ColumnName))]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[&quot;Full Query: &quot; &amp; str_FullQuery]" />
+              <ui:OrchestratorHttpRequest DisplayName="Orch API - Get Queue Items" FolderPath="[in_Folder]" sap:VirtualizedContainerService.HintSize="434,242" sap2010:WorkflowViewState.IdRef="OrchestratorHttpRequest_1" JSONPayload="{}{}" Method="GET" RelativeEndpoint="[str_FullQuery]" Result="[str_ResponseJSON]" StatusCode="[int_ResponseStatus]">
+                <ui:OrchestratorHttpRequest.ResponseHeaders>
+                  <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" />
+                </ui:OrchestratorHttpRequest.ResponseHeaders>
+                <ui:OrchestratorHttpRequest.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:OrchestratorHttpRequest.TimeoutMS>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:OrchestratorHttpRequest>
+              <ui:IfElseIf DisplayName="IF the response code is not good THEN throw system exception" sap:VirtualizedContainerService.HintSize="434,25" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
+                <ui:IfElseIf.ConditionBlocks>
+                  <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+                    <ui:IfElseIfBlock BlockType="If" Condition="[int_ResponseStatus &lt;&gt; 200]">
+                      <ui:IfElseIfBlock.Then>
+                        <Sequence DisplayName="Log error and throw system exception" sap:VirtualizedContainerService.HintSize="450,329" sap2010:WorkflowViewState.IdRef="Sequence_53">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,88" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Error" Message="[&quot;Orchestrator API Error: &quot; &amp; str_ResponseJSON]" />
+                          <Throw Exception="[new SystemException(&quot;Bad response from Orchestrator API when trying to retrieve queue items: &quot; &amp; int_ResponseStatus)]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_6" />
+                        </Sequence>
+                      </ui:IfElseIfBlock.Then>
+                    </ui:IfElseIfBlock>
+                  </sc:BindingList>
+                </ui:IfElseIf.ConditionBlocks>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:IfElseIf>
+              <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[jo_Response]" JsonString="[str_ResponseJSON]" />
+            </Sequence>
+            <Sequence DisplayName="Add results to Queue Items datatable" sap:VirtualizedContainerService.HintSize="704,2976" sap2010:WorkflowViewState.IdRef="Sequence_37">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:DeserializeJsonArray sap2010:Annotation.AnnotationText="Get the value property of the JSON response as an array of queue items" DisplayName="Deserialize JSON Array" sap:VirtualizedContainerService.HintSize="642,102" sap2010:WorkflowViewState.IdRef="DeserializeJsonArray_2" JsonArray="[ja_QueueItems]" JsonString="[jo_Response(&quot;value&quot;).ToString]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:DeserializeJsonArray>
+              <ui:ForEach x:TypeArguments="njl:JObject" CurrentIndex="{x:Null}" DisplayName="For each queue item in json array, add row to datatable" sap:VirtualizedContainerService.HintSize="642,2723" sap2010:WorkflowViewState.IdRef="ForEach`1_20" Values="[ja_QueueItems]">
+                <ui:ForEach.Body>
+                  <ActivityAction x:TypeArguments="njl:JObject">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="njl:JObject" Name="jRow" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Add row to queue item data table" sap:VirtualizedContainerService.HintSize="606,2599" sap2010:WorkflowViewState.IdRef="Sequence_50">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="sd:DataTable" Name="dt_Temp" />
+                        <Variable x:TypeArguments="scg:List(s:DateTime)" Name="ts_DatetimeValues_List" />
+                        <Variable x:TypeArguments="scg:List(x:String)" Name="str_DatetimeColumns_List" />
+                        <Variable x:TypeArguments="x:String" Name="str_ExceptionMessage" />
+                        <Variable x:TypeArguments="x:String" Name="str_ExceptionDetails" />
+                      </Sequence.Variables>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:IfElseIf DisplayName="IF the ProcessingException property is not empty THEN get reason and details" sap:VirtualizedContainerService.HintSize="544,330" sap2010:WorkflowViewState.IdRef="IfElseIf_3">
+                        <ui:IfElseIf.ConditionBlocks>
+                          <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+                            <ui:IfElseIfBlock BlockType="If" Condition="[jRow(&quot;ProcessingException&quot;).ToString.Length &gt; 0]">
+                              <ui:IfElseIfBlock.Then>
+                                <ui:MultipleAssign DisplayName="Get ProcessingException reason and details" sap:VirtualizedContainerService.HintSize="431,132" sap2010:WorkflowViewState.IdRef="MultipleAssign_6">
+                                  <ui:MultipleAssign.AssignOperations>
+                                    <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_13">
+                                        <ui:AssignOperation.To>
+                                          <OutArgument x:TypeArguments="x:String">[str_ExceptionMessage]</OutArgument>
+                                        </ui:AssignOperation.To>
+                                        <ui:AssignOperation.Value>
+                                          <InArgument x:TypeArguments="x:String">[jRow("ProcessingException")("Reason").ToString]</InArgument>
+                                        </ui:AssignOperation.Value>
+                                      </ui:AssignOperation>
+                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_14">
+                                        <ui:AssignOperation.To>
+                                          <OutArgument x:TypeArguments="x:String">[str_ExceptionDetails]</OutArgument>
+                                        </ui:AssignOperation.To>
+                                        <ui:AssignOperation.Value>
+                                          <InArgument x:TypeArguments="x:String">[jRow("ProcessingException")("Details").ToString]</InArgument>
+                                        </ui:AssignOperation.Value>
+                                      </ui:AssignOperation>
+                                    </scg:List>
+                                  </ui:MultipleAssign.AssignOperations>
+                                </ui:MultipleAssign>
+                              </ui:IfElseIfBlock.Then>
+                            </ui:IfElseIfBlock>
+                          </sc:BindingList>
+                        </ui:IfElseIf.ConditionBlocks>
+                      </ui:IfElseIf>
+                      <InvokeMethod sap2010:Annotation.AnnotationText="ProcessingException property must be removed before the jRow object can be deserialized into a datatable" DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="544,193" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="Remove">
+                        <InvokeMethod.TargetObject>
+                          <InArgument x:TypeArguments="njl:JObject">[jRow]</InArgument>
+                        </InvokeMethod.TargetObject>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <InArgument x:TypeArguments="x:String">ProcessingException</InArgument>
+                      </InvokeMethod>
+                      <ui:DeserializeJson x:TypeArguments="sd:DataTable" sap2010:Annotation.AnnotationText="Deserialize the json array object using the square brackets to get a datatable with one row." DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="544,102" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_6" JsonObject="[dt_Temp]" JsonString="[&quot;[&quot; &amp; jRow.ToString &amp; &quot;]&quot;]">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:DeserializeJson>
+                      <Assign DisplayName="Rename ProcessingExceptionType column" sap:VirtualizedContainerService.HintSize="544,82" sap2010:WorkflowViewState.IdRef="Assign_32">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[dt_Temp.Columns("ProcessingExceptionType").ColumnName]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">ExceptionType</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="ExceptionMessage" DataTable="[dt_Temp]" DisplayName="Add Data Column - ExceptionMessage" sap:VirtualizedContainerService.HintSize="544,186" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_3" />
+                      <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="ExceptionDetails" DataTable="[dt_Temp]" DisplayName="Add Data Column - ExceptionDetails" sap:VirtualizedContainerService.HintSize="544,186" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_4" />
+                      <ui:MultipleAssign DisplayName="Assign exception message and details" sap:VirtualizedContainerService.HintSize="544,132" sap2010:WorkflowViewState.IdRef="MultipleAssign_7">
+                        <ui:MultipleAssign.AssignOperations>
+                          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_15">
+                              <ui:AssignOperation.To>
+                                <OutArgument x:TypeArguments="x:Object">[dt_Temp(0)("ExceptionMessage")]</OutArgument>
+                              </ui:AssignOperation.To>
+                              <ui:AssignOperation.Value>
+                                <InArgument x:TypeArguments="x:Object">[str_ExceptionMessage]</InArgument>
+                              </ui:AssignOperation.Value>
+                            </ui:AssignOperation>
+                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_16">
+                              <ui:AssignOperation.To>
+                                <OutArgument x:TypeArguments="x:Object">[dt_Temp(0)("ExceptionDetails")]</OutArgument>
+                              </ui:AssignOperation.To>
+                              <ui:AssignOperation.Value>
+                                <InArgument x:TypeArguments="x:Object">[str_ExceptionDetails]</InArgument>
+                              </ui:AssignOperation.Value>
+                            </ui:AssignOperation>
+                          </scg:List>
+                        </ui:MultipleAssign.AssignOperations>
+                      </ui:MultipleAssign>
+                      <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="QueueName" DataTable="[dt_Temp]" DisplayName="Add Data Column - QueueName" sap:VirtualizedContainerService.HintSize="544,186" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" />
+                      <Assign DisplayName="Get the Queue Name using the QueueDefinitionId" sap:VirtualizedContainerService.HintSize="544,82" sap2010:WorkflowViewState.IdRef="Assign_30">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Object">[dt_Temp(0)("QueueName")]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Object">[dict_Queues(CINT(dt_Temp(0)("QueueDefinitionId")))]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" ColumnName="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" Column="[New Data.DataColumn(&quot;LastModTsp_UTC&quot;, GetType(DateTime))]" DataTable="[dt_Temp]" DisplayName="Add Data Column - Last modified time UTC" sap:VirtualizedContainerService.HintSize="544,186" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_2" />
+                      <ui:MultipleAssign sap2010:Annotation.AnnotationText="1. Get a list of all datetime column names&#xA;2. Get a list of values as datetimes from the columns in (1) where the value is not DBNull&#xA;3. Take the max of the values from (2) and convert to UTC for &quot;last modified time&quot;" DisplayName="Get Last Modified Time" sap:VirtualizedContainerService.HintSize="544,250" sap2010:WorkflowViewState.IdRef="MultipleAssign_5">
+                        <ui:MultipleAssign.AssignOperations>
+                          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
+                              <ui:AssignOperation.To>
+                                <OutArgument x:TypeArguments="scg:List(x:String)">[str_DatetimeColumns_List]</OutArgument>
+                              </ui:AssignOperation.To>
+                              <ui:AssignOperation.Value>
+                                <InArgument x:TypeArguments="scg:List(x:String)">[dt_Temp.Columns.Cast(Of DataColumn)().Where(Function(dc) dc.DataType = GetType(DateTime)).Select(Function(dc) dc.ColumnName).ToList()]</InArgument>
+                              </ui:AssignOperation.Value>
+                            </ui:AssignOperation>
+                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_11">
+                              <ui:AssignOperation.To>
+                                <OutArgument x:TypeArguments="scg:List(s:DateTime)">[ts_DatetimeValues_List]</OutArgument>
+                              </ui:AssignOperation.To>
+                              <ui:AssignOperation.Value>
+                                <InArgument x:TypeArguments="scg:List(s:DateTime)">[str_DatetimeColumns_List.Where(function(dc) NOT DBNull.Value.Equals(dt_Temp(0)(dc))).Select(function(dc) CDATE(dt_Temp(0)(dc))).ToList()]</InArgument>
+                              </ui:AssignOperation.Value>
+                            </ui:AssignOperation>
+                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
+                              <ui:AssignOperation.To>
+                                <OutArgument x:TypeArguments="x:Object">[dt_Temp(0)("LastModTsp_UTC")]</OutArgument>
+                              </ui:AssignOperation.To>
+                              <ui:AssignOperation.Value>
+                                <InArgument x:TypeArguments="x:Object">[ts_DatetimeValues_List.Max().ToUniversalTime]</InArgument>
+                              </ui:AssignOperation.Value>
+                            </ui:AssignOperation>
+                          </scg:List>
+                        </ui:MultipleAssign.AssignOperations>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:MultipleAssign>
+                      <ui:MergeDataTable Destination="[out_QueueItems]" DisplayName="Merge Data Table" sap:VirtualizedContainerService.HintSize="544,133" sap2010:WorkflowViewState.IdRef="MergeDataTable_2" MissingSchemaAction="Ignore" Source="[dt_Temp]" />
+                    </Sequence>
+                  </ActivityAction>
+                </ui:ForEach.Body>
+              </ui:ForEach>
+            </Sequence>
+          </Sequence>
+        </ui:InterruptibleDoWhile.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:InterruptibleDoWhile>
+    </Sequence>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="864,92" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Complete: Get_QIData. &quot; &amp; out_QueueItems.RowCount &amp; &quot; records found.&quot;]" />
+  </Sequence>
+</Activity>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="wU4MWSZfV0Sv7JfPaiqMHQ" Reference="AniWOyIB2EmcyKwwtqRJzg/jjLZzBWpG0O3MQdQWPXNag" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="https://www.carriersedge.com/ce/carrier_administrator_home.html" CVScreenId="002b201c-2330-4dbb-ad9e-5127c5278b7f" CvTextArea="303, 288, 17, 13" CvTextArgument="All" CvType="Text" DesignTimeRectangle="304, 287, 16, 16" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='progress' tag='A' href='selector?id=programsProgress*' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='progress' tag='A' href='selector?id=programsProgress*' type='' class='popUp modalMedium smallipop-initialized smallipop10' aaname='All' check:text='All' /&gt;" Guid="3f6e6e71-f808-4707-a5ae-4ec7c82c3f5d" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Impact - * - CarriersEdge' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Visible" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="c1f934603aa0da7dd8a0376999a3147f.png" xmlns="">0HrUU-vrT4EayV_-AAsgYRw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

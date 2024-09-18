@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="iz0jTJPngk2eHHUi4avy4A" Reference="AniWOyIB2EmcyKwwtqRJzg/HYh2q0tD1kGHYr2Z5_obWQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="1091, 217, 118, 15" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd cls='PBTabControl*' /&gt;&lt;wnd cls='FNUDO*' title='Quick Find' /&gt;&lt;wnd cls='pbdw???' /&gt;&lt;ctrl role='client' /&gt;&lt;ctrl name='mpp_lastname' role='editable text' /&gt;" FuzzySelectorArgument="&lt;wnd cls='FNWND*' title='Find Drivers' /&gt;&lt;wnd cls='FNUDO*' title='Quick Find' /&gt;&lt;wnd cls='pbdw110' /&gt;&lt;ctrl name='mpp_lastname' role='editable text' automationid='' /&gt;" Guid="4638823c-041e-44cb-a7b8-3a0a1e24446e" ImageBase64="" ScopeSelectorArgument="&lt;wnd app='tts_flm.exe' cls='FNWND*' title='File Maintenance' /&gt;&lt;wnd cls='FNWND*' title='Find Drivers' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="f20450ed5d33729f1bb595d641079f67.png" xmlns="">0fnRW9-RDhk6OE38mkv7zWg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

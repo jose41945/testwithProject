@@ -1,0 +1,17 @@
+﻿{
+  "Name": "SaveSelection",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "-tnd8_4y20C1iwFSjWHFEQ",
+  "Reference": "AniWOyIB2EmcyKwwtqRJzg/-tnd8_4y20C1iwFSjWHFEQ",
+  "ParentRef": "AniWOyIB2EmcyKwwtqRJzg/cmlAl9OuiE-_vzRhBU290w",
+  "Created": "2024-08-21T19:08:05.0206657Z",
+  "Updated": "2024-08-21T19:23:49.5950928Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

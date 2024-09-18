@@ -1,0 +1,16 @@
+﻿{
+  "Name": "Menu_Window",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Id": "6rTyVe6VskC0XUnhe2TnOg",
+  "Reference": "AniWOyIB2EmcyKwwtqRJzg/6rTyVe6VskC0XUnhe2TnOg",
+  "ParentRef": "AniWOyIB2EmcyKwwtqRJzg/KIivtsH74EujIxeBSN5JVA",
+  "Created": "2024-08-14T21:25:21.7599986Z",
+  "Updated": "2024-08-14T21:25:37.8972555Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="mgRrjL3XdUO51Fo5gtYKUQ" Reference="AniWOyIB2EmcyKwwtqRJzg/YjRWfZ0ts0-o_b0xtTh3FQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="30, 182, 54, 19" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;wnd cls='Button' title='Driver' /&gt;" FuzzySelectorArgument="&lt;wnd cls='Button' title='Driver' /&gt;" Guid="6f907d85-3def-4a7c-9c24-5d316c336684" ImageBase64="" ScopeSelectorArgument="&lt;wnd app='tts_flm.exe' cls='FNWND*' title='File Maintenance' /&gt;&lt;wnd cls='FNWND*' title='Driver File Maintenance' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="5843fc4c8a44965087b144542fa337e1.png" xmlns="">0PMJPGIh0kUS6z6dPHS-3wA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

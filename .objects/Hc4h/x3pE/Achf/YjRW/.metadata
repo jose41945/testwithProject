@@ -1,0 +1,16 @@
+﻿{
+  "Name": "DriverLabel",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Id": "YjRWfZ0ts0-o_b0xtTh3FQ",
+  "Reference": "AniWOyIB2EmcyKwwtqRJzg/YjRWfZ0ts0-o_b0xtTh3FQ",
+  "ParentRef": "AniWOyIB2EmcyKwwtqRJzg/Achf_pWmR0e1H1NtHuPHVw",
+  "Created": "2024-08-14T21:49:42.3692696Z",
+  "Updated": "2024-08-14T21:50:10.536216Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

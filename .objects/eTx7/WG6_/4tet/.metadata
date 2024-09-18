@@ -1,0 +1,15 @@
+﻿{
+  "Name": "DownloadPDF",
+  "Type": "Screen",
+  "Id": "4tetOCRoS0aJ4WFdD9rZSA",
+  "Reference": "AniWOyIB2EmcyKwwtqRJzg/4tetOCRoS0aJ4WFdD9rZSA",
+  "ParentRef": "AniWOyIB2EmcyKwwtqRJzg/WG6_1vs1nE6_bkKaQ8g10w",
+  "Created": "2024-08-21T20:39:12.9312543Z",
+  "Updated": "2024-09-02T05:04:04.4560547Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

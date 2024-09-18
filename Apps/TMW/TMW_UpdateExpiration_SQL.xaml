@@ -1,0 +1,409 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="TMW_Update_Expiration_SQL" this:TMW_Update_Expiration_SQL.in_NewExpireDate="[CDate(&quot;2026/08/29&quot;)]" this:TMW_Update_Expiration_SQL.in_OnlineCompletionDate="[CDate(&quot;2024/08/30&quot;)]" this:TMW_Update_Expiration_SQL.in_Instance="SPG" this:TMW_Update_Expiration_SQL.in_DriverID="88905" this:TMW_Update_Expiration_SQL.in_ExpirationCode="SECU" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_NewExpireDate" Type="InArgument(s:DateTime)" />
+    <x:Property Name="in_OnlineCompletionDate" Type="InArgument(s:DateTime)" />
+    <x:Property Name="in_Instance" Type="InArgument(x:String)" />
+    <x:Property Name="in_DriverID" Type="InArgument(x:String)" />
+    <x:Property Name="in_ExpirationCode" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1110,2744</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Top100_Get_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>UiPath.Database</x:String>
+      <x:String>UiPath.Database.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>UiPath.Database</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="TMW Update Expiration SQL" sap:VirtualizedContainerService.HintSize="642,2679" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_Expirations" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="580,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Start: TMW Update Expiration SQL&quot;]" />
+    <ui:AddLogFields DisplayName="Add Log Fields - Application" sap:VirtualizedContainerService.HintSize="580,122" sap2010:WorkflowViewState.IdRef="AddLogFields_1">
+      <ui:AddLogFields.Fields>
+        <InArgument x:TypeArguments="x:String" x:Key="Application">TMW SQL</InArgument>
+      </ui:AddLogFields.Fields>
+    </ui:AddLogFields>
+    <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="580,2010" sap2010:WorkflowViewState.IdRef="Sequence_26">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="str_NewDescription" />
+        <Variable x:TypeArguments="x:String" Name="str_CurDescription" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Sequence DisplayName="Find Expiration" sap:VirtualizedContainerService.HintSize="518,1038" sap2010:WorkflowViewState.IdRef="Sequence_35">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <TryCatch DisplayName="Try Catch - Query DB for Expiration" sap:VirtualizedContainerService.HintSize="454,839" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <TryCatch.Try>
+            <Sequence DisplayName="Query DB" sap:VirtualizedContainerService.HintSize="416,579" sap2010:WorkflowViewState.IdRef="Sequence_27">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="ss:SecureString" Name="sstr_ConnSelect" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:GetRobotCredential TimeoutMS="{x:Null}" Username="{x:Null}" AssetName="[&quot;TMW_ConnectionString_&quot; &amp; in_Instance]" CacheStrategy="None" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="354,175" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[sstr_ConnSelect]" />
+              <ui:ExecuteQuery ContinueOnError="{x:Null}" ExistingDbConnection="{x:Null}" TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="DriverID: 88905 (SPG) 21465 (FUEL)" CommandType="Text" ConnectionSecureString="[sstr_ConnSelect]" DataTable="[dt_Expirations]" DisplayName="Run query" sap:VirtualizedContainerService.HintSize="354,152" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" ProviderName="Microsoft.Data.SqlClient" Sql="SELECT exp_id                [DriverID]&#xA;     , l.abbr                [ExpirationCode]&#xA;     , l.name                [ExpirationName]&#xA;     , ex.exp_creatdate      [CreationDate]&#xA;     , ex.exp_expirationdate [ExpirationDate]&#xA;     , exp_compldate         [CompletedDate]&#xA;     , exp_description       [Description]&#xA;     , exp_updateby          [ExpirationUpdatedBy]&#xA;     , exp_key               [ExpirationKey]&#xA;FROM dbo.expiration      ex&#xA;    INNER JOIN labelfile l&#xA;        ON exp_code = l.abbr AND l.labeldefinition = 'DrvExp'&#xA;WHERE l.abbr = @ExpirationCode&#xA;      and ex.exp_idtype = 'DRV'&#xA;      and exp_id = @DriverID">
+                <ui:ExecuteQuery.Parameters>
+                  <InArgument x:TypeArguments="x:String" x:Key="DriverID">[in_DriverID]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="ExpirationCode">[in_ExpirationCode]</InArgument>
+                </ui:ExecuteQuery.Parameters>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:ExecuteQuery>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,164" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[&quot;Expirations found in TMW: &quot; &amp; dt_Expirations.RowCount]" />
+            </Sequence>
+          </TryCatch.Try>
+          <TryCatch.Catches>
+            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="420,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ActivityAction x:TypeArguments="s:Exception">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Catch Query DB" sap:VirtualizedContainerService.HintSize="416,374" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,173" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Error" Message="[&quot;Failed to connect to or query TMW: &quot; &amp; exception.Message]" />
+                  <Throw Exception="[New SystemException(&quot;Failed to connect to or query TMW: &quot; &amp; exception.Message)]" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                </Sequence>
+              </ActivityAction>
+            </Catch>
+          </TryCatch.Catches>
+        </TryCatch>
+        <Switch x:TypeArguments="x:Int32" sap2010:Annotation.AnnotationText="" DisplayName="Switch - 1 exists, 0 needs inserting, many is bad" Expression="[dt_Expirations.RowCount]" sap:VirtualizedContainerService.HintSize="454,79" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+          <Switch.Default>
+            <Sequence DisplayName="Many Expirations Found - Throw" sap:VirtualizedContainerService.HintSize="416,374" sap2010:WorkflowViewState.IdRef="Sequence_41">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,173" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Info" Message="[&quot;Ambiguous expirations found in TMW with the given parameters (Count=&quot; &amp; dt_Expirations.RowCount &amp; &quot;): &quot; &amp; in_DriverID &amp; &quot; &quot; &amp; in_ExpirationCode]" />
+              <Throw Exception="[New BusinessRuleException(&quot;Ambiguous expirations found in TMW with the given parameters (Count=&quot; &amp; dt_Expirations.RowCount &amp; &quot;): &quot; &amp; in_DriverID &amp; &quot; &quot; &amp; in_ExpirationCode)]" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="Throw_4" />
+            </Sequence>
+          </Switch.Default>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence x:Key="1" DisplayName="1 Expirations Found - Update" sap:VirtualizedContainerService.HintSize="592,836" sap2010:WorkflowViewState.IdRef="Sequence_40">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="530,173" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[&quot;Exactly one expiration found, continuing to update...&quot;]" />
+            <Assign sap:VirtualizedContainerService.HintSize="530,114" sap2010:WorkflowViewState.IdRef="Assign_14">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[str_CurDescription]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[dt_Expirations.Rows(0).Item("Description").ToString]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <If Condition="[System.Text.RegularExpressions.Regex.IsMatch(str_CurDescription, &quot;Completed Online\s*[^\s,]*&quot;, RegexOptions.IgnoreCase)]" DisplayName="If pattern already exists THEN replace ELSE add Online Completion to front" sap:VirtualizedContainerService.HintSize="530,205" sap2010:WorkflowViewState.IdRef="If_7">
+              <If.Then>
+                <Sequence DisplayName="Replace" sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_15">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[str_NewDescription]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(str_CurDescription, "Completed Online\s*[^\s,]*", "Completed Online " &amp; in_OnlineCompletionDate.ToString("MM.dd.yy"), RegexOptions.IgnoreCase)]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Add Online Completion to Front" sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_44">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_19">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[str_NewDescription]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[String.Join(CStr(iif(str_CurDescription.Length = 0, "", ",")),{"Completed Online " &amp; in_OnlineCompletionDate.ToString("MM.dd.yy"), str_CurDescription})]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Else>
+            </If>
+          </Sequence>
+          <Sequence x:Key="0" DisplayName="0 Expirations Found - Insert" sap:VirtualizedContainerService.HintSize="496,307" sap2010:WorkflowViewState.IdRef="Sequence_42">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_17">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[str_CurDescription]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">
+                  <Literal x:TypeArguments="x:String" Value="" />
+                </InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_18">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[str_NewDescription]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">["Completed Online " &amp; in_OnlineCompletionDate.ToString("MM.dd.yy")]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </Switch>
+      </Sequence>
+      <Sequence DisplayName="Update Expiration" sap:VirtualizedContainerService.HintSize="518,852" sap2010:WorkflowViewState.IdRef="Sequence_36">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="x:String" Name="str_SystemUser" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:GetEnvironmentVariable DisplayName="Get Environment Variable - system user" sap:VirtualizedContainerService.HintSize="456,112" sap2010:WorkflowViewState.IdRef="GetEnvironmentVariable_1" Variable="UserName" VariableValue="[str_SystemUser]" />
+        <TryCatch DisplayName="Try Catch - Update Expiration" sap:VirtualizedContainerService.HintSize="456,629" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <TryCatch.Try>
+            <Sequence DisplayName="Try Update Expiration" sap:VirtualizedContainerService.HintSize="416,669" sap2010:WorkflowViewState.IdRef="Sequence_34">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="ss:SecureString" Name="sstr_ConnInsert" />
+                <Variable x:TypeArguments="x:Int32" Name="int_InsertedRecords" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:GetRobotCredential TimeoutMS="{x:Null}" Username="{x:Null}" AssetName="[&quot;TMW_ConnectionString_&quot; &amp; in_Instance]" CacheStrategy="None" DisplayName="Get Credential" FolderPath="Shared" sap:VirtualizedContainerService.HintSize="354,175" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[sstr_ConnInsert]" />
+              <ui:ExecuteNonQuery ContinueOnError="{x:Null}" ExistingDbConnection="{x:Null}" TimeoutMS="{x:Null}" AffectedRecords="[int_InsertedRecords]" CommandType="Text" ConnectionSecureString="[sstr_ConnInsert]" DisplayName="Run command - insert record" sap:VirtualizedContainerService.HintSize="354,121" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_1" ProviderName="Microsoft.Data.SqlClient" Sql="INSERT into dbo.KAG_expiration_upload&#xA;(&#xA;    exp_idtype&#xA;  , exp_id&#xA;  , exp_code&#xA;  , exp_lastdate&#xA;  , exp_expirationdate&#xA;  , exp_routeto&#xA;  , exp_completed&#xA;  , exp_priority&#xA;  , exp_compldate&#xA;  , exp_description&#xA;  , exp_milestoexp&#xA;  , exp_city&#xA;  , mov_number&#xA;  , exp_control_avl_date&#xA;  , exp_source&#xA;  , upl_source&#xA;  , upl_createddt&#xA;  , upl_processdt&#xA;  , upl_status&#xA;  , upl_explanation&#xA;)&#xA;VALUES&#xA;(   'DRV'           -- exp_idtype - char(3)&#xA;  , @DriverID       -- exp_id - varchar(13)  --DRIVERID&#xA;  , @ExpirationCode -- exp_code - varchar(6)  (DEFDRV, SECU)&#xA;  , default         -- exp_lastdate - datetime&#xA;  , @ExpirationDate -- exp_expirationdate - datetime&#xA;  , default   -- exp_routeto - varchar(12)&#xA;  , default   -- exp_completed - char(1)&#xA;  , default   -- exp_priority - varchar(6)&#xA;  , default -- exp_compldate - datetime&#xA;  , @NewDescription -- exp_description - varchar(100)&#xA;  , null            -- exp_milestoexp - int&#xA;  , default   -- exp_city - int&#xA;  , null      -- mov_number - int&#xA;  , default   -- exp_control_avl_date - char(1)&#xA;  , null            -- exp_source - varchar(30)&#xA;  , @SystemUser     -- upl_source - varchar(15)&#xA;  , default         -- upl_createddt - datetime&#xA;  , null            -- upl_processdt - datetime&#xA;  , 'INSERT'        -- upl_status - varchar(6)  --ALWAYS ENTERED AS AN INSERT AND THE PROCESS WILL DETERMINE IF INSERT OR UPDATE&#xA;  , null            -- upl_explanation - varchar(255)&#xA;    );">
+                <ui:ExecuteNonQuery.Parameters>
+                  <InArgument x:TypeArguments="x:String" x:Key="DriverID">[in_DriverID]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="ExpirationCode">[in_ExpirationCode]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="ExpirationDate">[in_NewExpireDate.ToString("yyyy-MM-dd")]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="NewDescription">[str_NewDescription]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="SystemUser">[str_SystemUser]</InArgument>
+                </ui:ExecuteNonQuery.Parameters>
+              </ui:ExecuteNonQuery>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,173" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="Info" Message="[&quot;Expiration records inserted/updated: &quot; &amp; int_InsertedRecords]" />
+              <ui:ExecuteNonQuery ContinueOnError="{x:Null}" ExistingDbConnection="{x:Null}" TimeoutMS="{x:Null}" AffectedRecords="[int_InsertedRecords]" CommandType="Text" ConnectionSecureString="[sstr_ConnInsert]" DisplayName="Run command - execute expiration process" sap:VirtualizedContainerService.HintSize="354,112" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_2" ProviderName="Microsoft.Data.SqlClient" Sql="execute dbo.KAG_Expiration_Process @ValidateOnly = 0">
+                <ui:ExecuteNonQuery.Parameters>
+                  <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                </ui:ExecuteNonQuery.Parameters>
+              </ui:ExecuteNonQuery>
+            </Sequence>
+          </TryCatch.Try>
+          <TryCatch.Catches>
+            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="422,444" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ActivityAction x:TypeArguments="s:Exception">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Catch Update Expiration" sap:VirtualizedContainerService.HintSize="416,374" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,173" sap2010:WorkflowViewState.IdRef="LogMessage_20" Level="Error" Message="[&quot;Failed to connect to or update expiration in TMW: &quot; &amp; exception.Message]" />
+                  <Throw Exception="[New SystemException(&quot;Failed to connect to or update expiration in TMW: &quot; &amp; exception.Message)]" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="Throw_6" />
+                </Sequence>
+              </ActivityAction>
+            </Catch>
+          </TryCatch.Catches>
+        </TryCatch>
+      </Sequence>
+    </Sequence>
+    <ui:RemoveLogFields DisplayName="Remove Log Fields - Application" sap:VirtualizedContainerService.HintSize="580,122" sap2010:WorkflowViewState.IdRef="RemoveLogFields_1">
+      <ui:RemoveLogFields.Fields>
+        <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
+          <InArgument x:TypeArguments="x:String">Application</InArgument>
+        </scg:List>
+      </ui:RemoveLogFields.Fields>
+    </ui:RemoveLogFields>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="580,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;End: TMW Update Expiration SQL&quot;]" />
+  </Sequence>
+</Activity>

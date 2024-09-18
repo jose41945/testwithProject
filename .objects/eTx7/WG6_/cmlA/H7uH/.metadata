@@ -1,0 +1,16 @@
+﻿{
+  "Name": "Options_IncludePersonal",
+  "Type": "Element",
+  "TaxonomyType": "Checkbox",
+  "Id": "H7uHRD-XdESUXnOLrF2zYQ",
+  "Reference": "AniWOyIB2EmcyKwwtqRJzg/H7uHRD-XdESUXnOLrF2zYQ",
+  "ParentRef": "AniWOyIB2EmcyKwwtqRJzg/cmlAl9OuiE-_vzRhBU290w",
+  "Created": "2024-08-22T15:14:55.4307791Z",
+  "Updated": "2024-08-22T15:15:33.6881741Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

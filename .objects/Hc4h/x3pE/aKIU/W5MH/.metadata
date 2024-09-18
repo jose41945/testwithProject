@@ -1,0 +1,16 @@
+﻿{
+  "Name": "DynamicExpiration_SelectedAlt",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Id": "W5MHYzLSPUexRqHdec4sag",
+  "Reference": "AniWOyIB2EmcyKwwtqRJzg/W5MHYzLSPUexRqHdec4sag",
+  "ParentRef": "AniWOyIB2EmcyKwwtqRJzg/aKIUbm_0l0ySLUPtx6LoKQ",
+  "Created": "2024-08-19T17:28:18.5677332Z",
+  "Updated": "2024-08-19T17:33:02.6267432Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

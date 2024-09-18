@@ -1,0 +1,16 @@
+﻿{
+  "Name": "NewSearch",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "HmSFb5EjQUCEUU4gm8ucFw",
+  "Reference": "AniWOyIB2EmcyKwwtqRJzg/HmSFb5EjQUCEUU4gm8ucFw",
+  "ParentRef": "AniWOyIB2EmcyKwwtqRJzg/pXxxqwGEukuC_WyRiQKimQ",
+  "Created": "2024-08-16T21:18:08.0418979Z",
+  "Updated": "2024-08-16T21:18:34.8325836Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

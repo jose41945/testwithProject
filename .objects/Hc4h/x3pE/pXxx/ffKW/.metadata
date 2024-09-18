@@ -1,0 +1,16 @@
+﻿{
+  "Name": "RowsFound",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Id": "ffKW-GPS-U-7K0hN0CgH6A",
+  "Reference": "AniWOyIB2EmcyKwwtqRJzg/ffKW-GPS-U-7K0hN0CgH6A",
+  "ParentRef": "AniWOyIB2EmcyKwwtqRJzg/pXxxqwGEukuC_WyRiQKimQ",
+  "Created": "2024-08-15T19:07:55.3191717Z",
+  "Updated": "2024-08-15T19:08:36.796264Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

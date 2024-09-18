@@ -1,0 +1,110 @@
+﻿drop table if exists dbo.DriverQualificationsTraining_Dispatcher;
+create table dbo.DriverQualificationsTraining_Dispatcher
+(
+	-- BEGIN PROCESS SPECIFIC FIELDS --
+	SiteKey NVARCHAR(50),
+	TMWInstance NVARCHAR(50),
+	DirectoryNames NVARCHAR(MAX),
+	Programs NVARCHAR(MAX),
+	RunDateTime DATETIME,
+	-- BEGIN TECH FIELDS --
+	Job_Id NVARCHAR(12),
+	Job_HostMachineName NVARCHAR(255),
+	Job_RobotUser NVARCHAR(255),
+	T_Key NVARCHAR(36),
+	T_Reference NVARCHAR(255),
+	T_Action NVARCHAR(50),
+	T_Success BIT,
+	T_ExceptionType NVARCHAR(20),
+	T_ExceptionMessage NVARCHAR(MAX),
+	T_LastModTsp DATETIME
+);
+
+drop table if exists dbo.DriverQualificationsTraining_Performer;
+create table dbo.DriverQualificationsTraining_Performer
+(
+	-- BEGIN PROCESS SPECIFIC FIELDS --
+	RowNum INT,
+	DriverFirstName NVARCHAR(255),
+	DriverLastName NVARCHAR(255),
+	DriverID NVARCHAR(5),
+	ProgramKey NVARCHAR(255),
+	DriverFolderFound BIT,
+	TMWDriverFound BIT,
+	CertificatePath NVARCHAR(MAX),
+	EndDate DATETIME,
+	NewExpireDate DATETIME,
+	-- BEGIN TECH FIELDS --
+	Job_Id NVARCHAR(12),
+	Job_HostMachineName NVARCHAR(255),
+	Job_RobotUser NVARCHAR(255),
+	T_SourceKey NVARCHAR(36),
+	T_RetryNbr INT,
+	T_Key NVARCHAR(36),
+	T_Reference NVARCHAR(255),
+	T_Action NVARCHAR(50),
+	T_LastMilestone NVARCHAR(255),
+	T_Success BIT,
+	T_CanRetry BIT,
+	T_ExceptionType NVARCHAR(20),
+	T_ExceptionMessage NVARCHAR(MAX),
+	T_ExecutionSeconds INT,
+	D_LastMilestone NVARCHAR(255),
+	D_Success BIT,
+	D_ExceptionType NVARCHAR(20),
+	D_ExceptionMessage NVARCHAR(MAX),
+	T_LastModTsp DATETIME
+);
+
+drop view if exists dbo.v_DriverQualificationsTraining;
+go
+create view dbo.v_DriverQualificationsTraining as
+SELECT
+	d.T_Reference as SourceReference,
+	p.T_Reference as Reference,
+	d.RunDateTime,
+	d.SiteKey,
+	d.TMWInstance,
+	p.DriverFirstName,
+	p.DriverLastName,
+	p.DriverID,
+	p.ProgramKey,
+	p.DriverFolderFound,
+	p.TMWDriverFound,
+	p.CertificatePath,
+	p.EndDate,
+	p.NewExpireDate,
+	d.T_LastModTsp as CreateTsp,
+	p.T_LastModTsp as CompleteTsp,
+	p.T_ExecutionSeconds as ExecutionSeconds,
+	CASE WHEN COALESCE(d.T_LastModTsp,p.T_LastModTsp) > COALESCE(p.T_LastModTsp,d.T_LastModTsp)
+		THEN COALESCE(d.T_LastModTsp,p.T_LastModTsp) ELSE COALESCE(p.T_LastModTsp,d.T_LastModTsp)
+	END as LastModTsp,
+	p.D_LastMilestone as LastMilestone,
+	p.D_Success as Success,
+	p.D_ExceptionType as ExceptionType,
+	p.D_ExceptionMessage as ExceptionMessage
+FROM
+	DriverQualificationsTraining_Dispatcher d FULL OUTER JOIN DriverQualificationsTraining_Performer p ON d.T_Key = p.T_SourceKey
+WHERE
+	d.T_Success = 1 OR d.T_Success IS NULL
+go
+
+drop table if exists dbo._EmailLog;
+create table dbo._EmailLog
+(
+	-- BEGIN EMAIL FIELDS --
+	ID INT IDENTITY(1,1) PRIMARY KEY,
+	Process NVARCHAR(255),
+	[Action] NVARCHAR(32),
+	[From] NVARCHAR(255),
+	[ReplyTo] NVARCHAR(255),
+	[To] NVARCHAR(255),
+	[CC] NVARCHAR(255),
+	[Subject] NVARCHAR(255),
+	Attachments NVARCHAR(MAX),
+	HighImportance BIT,
+	-- BEGIN TECH FIELDS --
+	Job_Id NVARCHAR(12),
+	SentTsp DATETIME DEFAULT GETDATE()
+);

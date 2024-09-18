@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="13c4KjxwWEeD-UM0h0qqdg" Reference="AniWOyIB2EmcyKwwtqRJzg/Uq9sCGm1XUSY6iyYPw2m6g" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:p="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="https://www.carriersedge.com/ce/carrier_administrator_home.html" DesignTimeRectangle="243, 371, 367, 23704" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl parentid='modal*' tag='DIV' innertext=' &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;Required Programs &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;2019 08 August Modules &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;2019 08-09 August and September Safety Modules &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;2019 08-09 August and September Safety Modules &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;2019 10 October Safety Modules &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;2019 11-12 November - December Safety Modules &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;2020 01 January Safety Modules &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;2020 02-03 February-March Safety Modules &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;2020 04-05 April-May Safety Modules &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;2020 06 June Safety Modules &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;2020 07 July Safety Modules &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;2020 08 August Modules &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;2020 09 September Safety Modules &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;2020 10 Oc*' /&gt;" Guid="d0ef9f31-b64f-4237-b2a8-3104e9df00a4" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Impact - KAG Food Products, LLC - CarriersEdge' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="88dd820919e748e1437459006a6ba21b.png" xmlns="">01sjJ5VLaa0CJqNx7zgyNvw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">ForEachUiElement</x:String>
+    <p:InArgument x:TypeArguments="x:String" x:Key="ExtractDataSettings" xml:space="preserve">&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;
+	&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='CurrentElement'&gt;
+		&lt;IsValidName&gt;true&lt;/IsValidName&gt;
+		&lt;ValidationErrorMessage /&gt;
+		&lt;IsExtra&gt;false&lt;/IsExtra&gt;
+		&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;
+		&lt;Format xsi:type='TextColumnFormat' /&gt;
+	&lt;/Column&gt;
+&lt;/Table&gt;</p:InArgument>
+    <x:Null x:Key="NextLinkTarget" />
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

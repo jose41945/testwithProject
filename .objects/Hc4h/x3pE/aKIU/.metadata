@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Expiration",
+  "Type": "Screen",
+  "Id": "aKIUbm_0l0ySLUPtx6LoKQ",
+  "Reference": "AniWOyIB2EmcyKwwtqRJzg/aKIUbm_0l0ySLUPtx6LoKQ",
+  "ParentRef": "AniWOyIB2EmcyKwwtqRJzg/x3pEIUxbQkCj7E7j9Z_aUg",
+  "Created": "2024-08-15T20:27:58.4336901Z",
+  "Updated": "2024-08-15T20:28:07.5586275Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

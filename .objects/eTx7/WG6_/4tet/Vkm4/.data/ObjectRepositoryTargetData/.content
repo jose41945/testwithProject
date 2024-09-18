@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="0d_htsK-ZkWZZO29nVrW5Q" Reference="AniWOyIB2EmcyKwwtqRJzg/Vkm4MIDnsk6Df8gfiOYiLw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="https://www.carriersedge.com/ce/rest_api/certificates/download?id=11427481&amp;wallet=false&amp;walletWithSignature=false" CVScreenId="e1b6cfff-5bc2-47f9-929b-d965a8a0ecb7" CvElementArea="470, 434, 88, 26" CvTextArea="501, 440, 26, 12" CvTextArgument="Save" CvType="Button" DesignTimeRectangle="470, 434, 88, 26" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd aaname='Save' title='&amp;amp;Save' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Save' title='&amp;amp;Save' check:text='unchecked' /&gt;" Guid="51a4e5aa-a18f-40e3-a5b6-81f92b86cdce" ScopeSelectorArgument="&lt;wnd app='chrome.exe' title='Save As' /&gt;" SearchSteps="Selector, CV" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="609f4dacc9433d06e7d8610448cbbd6d.png" xmlns="">0ueDDi8FmEk2qAbXHmEXquw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>
